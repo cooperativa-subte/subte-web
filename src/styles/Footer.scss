@@ -1,11 +1,19 @@
 footer {
+  color: #FFFFFF;
   .row {
-    height: 20vh;
-    background-color: #EAEDED;
+    height: 15vh;
+    background-color: #000000;
   }
   .contacto-container {
     p {
       margin-bottom: 0;
+    }
+  }
+  .social-networks-container {
+    i {
+      color: #CACFD2;
+      font-size: 2em;
+      margin-right: 0.5em;
     }
   }
 }

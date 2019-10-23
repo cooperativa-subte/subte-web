@@ -1,13 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
+import { getProjects } from '../../api/api'
+
+import ProjectCard from './ProjectCard'
+
+import '../../styles/Projects.scss'
 
 export default function Projects() {
+
+  const [projects, setProjects] = useState([])
+
+  useEffect( () => {
+    getProjects().then( (response) => {
+      setProjects(response)
+    } )
+  }, [] )
+
   return (
-    <div className='home-container container'>
+    <div className='project-container container'>
       <div className='container'>
-        <div className='row justify-content-center'>
-          <div className='col-6 text-center'>
-            <h4>SUBTE Proyectos</h4>
-          </div>
+        <div className='row mb-4'>
+          {
+            projects ? projects.map((project) => {
+            return (
+              <ProjectCard key={project.id} project={project}></ProjectCard>
+            )
+          }) : ''}
         </div>
       </div>
     </div>

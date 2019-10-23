@@ -9,6 +9,8 @@ import Services from './sections/Services'
 import Projects from './sections/Projects'
 import Contact from './sections/Contact'
 
+import ProjectDetail from './sections/projects/ProjectDetail'
+
 import '../styles/Body.scss'
 
 export default function Body() {
@@ -28,6 +30,8 @@ export default function Body() {
           <Route exact path='/services' component={Services} />
           <Route exact path='/projects' component={Projects} />
           <Route exact path='/contact' component={Contact} />
+
+          <Route path='/projects/:id' children={<ProjectDetail />} />
         </Switch>
       </CSSTransition>
     </TransitionGroup>
