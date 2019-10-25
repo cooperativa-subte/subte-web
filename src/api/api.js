@@ -9,6 +9,16 @@ function getProjects() {
   })
 }
 
+function getProjectDetail(name) {
+  return new Promise((resolve) => {
+    resolve({
+      name: name,
+      description: 'Comuna es una cooperativa de trabajo que integramos investigadoras/es de las ciencias económicas y que comienza a trabajar en setiembre de 2014. Nuestro propósito es generar conocimiento con organizaciones sociales, tanto con sindicatos como con cooperativas de trabajo y de vivienda así como otras organizaciones populares a fin de contribuir al pensamiento crítico y la acción colectiva. Intentamos sostener acuerdos de trabajo que nos permitan el despliegue de una estrategia que combina el aporte en tres grandes ejes: formación; elaboración de documentos de investigación y asesoramiento especializado.',
+      
+    })
+  })
+}
+
 export {
   getProjects
 }
