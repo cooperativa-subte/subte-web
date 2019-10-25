@@ -4,7 +4,7 @@ import { Link, useRouteMatch } from 'react-router-dom'
 
 function ProjectCard(props) {
 
-  let { path, url } = useRouteMatch();
+  let { url } = useRouteMatch();
 
   const { project } = props;
 
