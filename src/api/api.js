@@ -9,7 +9,7 @@ function getProjects() {
   })
 }
 
-function getProjectDetail(name) {
+function getAsyncProjectDetail(name) {
   return new Promise((resolve) => {
     resolve({
       name: name,
@@ -21,5 +21,5 @@ function getProjectDetail(name) {
 
 export {
   getProjects,
-  getProjectDetail
+  getAsyncProjectDetail
 }

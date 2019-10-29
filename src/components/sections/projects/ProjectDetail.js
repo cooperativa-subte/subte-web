@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
 import { useParams } from 'react-router-dom'
+import ImgSpinner from '../../../utilities/ImgSpinner'
+import Img from 'react-image'
 
-import { getProjectDetail } from '../../../api/api'
+import { getAsyncProjectDetail } from '../../../api/api'
 
 export default function ProjectDetail() {
   let { id } = useParams();
@@ -10,19 +12,25 @@ export default function ProjectDetail() {
   const [projectDetail, setProjectDetail] = useState({})
 
   useEffect(() => {
-    getProjectDetail(id).then((response) => {
+
+    getAsyncProjectDetail(id).then((response) => {
+
       setProjectDetail(response)
       console.log(response);
 
+
     })
-  }, [])
+  }, [id])
 
   return (
     <div>
       {
-        projectDetail !== {} ?
-          // <img src={img} alt={projectDetail.name} /> :
-          console.log('nada') : 
+        projectDetail !== {} ? 
+          <div>
+            <Img src={[projectDetail.img]} alt={projectDetail.name} loader={ <ImgSpinner/> } />
+          </div>
+          
+           :
           'No hay nada'
       }
 

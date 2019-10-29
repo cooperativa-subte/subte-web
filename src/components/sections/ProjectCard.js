@@ -1,6 +1,7 @@
 import React from 'react'
-
+import Img from 'react-image'
 import { Link, useRouteMatch } from 'react-router-dom'
+import ImgSpinner from 'react-image'
 
 function ProjectCard(props) {
 
@@ -14,7 +15,7 @@ function ProjectCard(props) {
       <div className='row justify-content-center'>
         <div className='col-11'>
           <Link to={`${url}/${project.url}`}>
-            <img className='img-fluid' src={project.imgCover} alt={project.name} />
+            <Img className='img-fluid' src={[project.imgCover]} alt={project.name} loader={ <ImgSpinner/> } />
           </Link>
         </div>
       </div>
