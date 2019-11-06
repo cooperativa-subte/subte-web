@@ -1,0 +1,11 @@
+.project-card-container {
+  h4 {
+    border-bottom: 2px solid white;
+    width: fit-content;
+  }
+  &:hover {
+    h4 {
+      border-bottom: 2px solid black;
+    }
+  }
+}
