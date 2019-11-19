@@ -1,9 +1,10 @@
 .project-detail-container {
   .carousel-container {
 
-    .img {
-      width: 200px;
+    img {
+      cursor: pointer;
     }
+
     .s-carousel-item {
       display: none;
       &.active {

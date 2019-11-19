@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react'
 import LeftArrow from '../../images/left-arrow.svg'
 import RightArrow from '../../images/right-arrow.svg'
 
-export default function Carousel({ urlsImgs: trabajosUrls, onImgClick }) {
+export default function CustomCarousel({ urlsImgs: trabajosUrls, onImgClick }) {
 
   const [carouselItems, setCarouselItems] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)

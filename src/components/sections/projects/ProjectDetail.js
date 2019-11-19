@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
+
+import { Modal, Button, Carousel } from 'react-bootstrap'
 
 import { useParams } from 'react-router-dom'
 
 import { getProjectDetail } from '../../../api/api'
-import Carousel from '../../utils/Carousel'
+import CustomCarousel from '../../utils/CustomCarousel'
 
 import '../../../styles/ProjectDetail.scss'
 
@@ -12,6 +14,11 @@ export default function ProjectDetail() {
 
   const [projectDetail, setProjectDetail] = useState(null)
   const [trabajosUrls, setTrabajosUrls] = useState([])
+  const [showModal, setShowModal] = useState(false);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [direction, setDirection] = useState(null);
+
+  const handleClose = () => setShowModal(false);
 
   useEffect(() => {
     getProjectDetail(id).then((response) => {
@@ -22,7 +29,13 @@ export default function ProjectDetail() {
   }, [id])
 
   function handleImgClick(index) {
-    console.log(trabajosUrls[index])
+    setShowModal(true)
+    setCarouselIndex(index);
+  }
+
+  const handleSelect = (selectedIndex, e) => {
+    setCarouselIndex(selectedIndex);
+    setDirection(e.direction);
   }
 
   return (
@@ -42,11 +55,31 @@ export default function ProjectDetail() {
             <h2 className='mt-4'>Trabajos</h2>
             {
               trabajosUrls.length > 0 ?
-                <Carousel urlsImgs={trabajosUrls} onImgClick={handleImgClick} /> : <></>
+                <CustomCarousel urlsImgs={trabajosUrls} onImgClick={handleImgClick} /> : <></>
             }
           </div> :
           'No hay nada'
       }
+      <Modal show={showModal} onHide={handleClose} centered>
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>
+          <Carousel activeIndex={carouselIndex} indicators={false} direction={direction} onSelect={handleSelect}>
+            {
+              trabajosUrls.map((trabajo, index) => {
+                return (
+                  <Carousel.Item key={index}>
+                    <img
+                      className="d-block w-100"
+                      src={trabajo.highRes}
+                      alt="Trabajos"
+                    />
+                  </Carousel.Item>
+                )
+              })
+            }
+          </Carousel>
+        </Modal.Body>
+      </Modal>
 
     </div>
   )
