@@ -17,13 +17,34 @@ function getProjectDetail(name) {
       description: 'Comuna es una cooperativa de trabajo que integran investigadoras/es de las ciencias económicas y que comienza a trabajar en setiembre de 2014. Desde el comienzo de Subte nos interesa vincularnos con otras cooperativas y organizaciones, además de parecernos súper importante tener claridad de la economía de nuestra cooperativa y del mundo en general. Es por ello que nos interesó formar un vínculo con Comuna.',
       img: 'https://res.cloudinary.com/mepediacobas/image/upload/v1572376540/subte-web/comuna_logo.jpg',
       trabajosUrls: [
-        'https://via.placeholder.com/200',
-        'https://via.placeholder.com/200',
-        'https://via.placeholder.com/200',
-        'https://via.placeholder.com/200',
-        'https://via.placeholder.com/200',
-        'https://via.placeholder.com/200',
-        'https://via.placeholder.com/200',
+        {
+          lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574195031/subte-web/comuna1.png',
+          highRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574196183/subte-web/comuna_h1.png'
+        },
+        {
+          lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574195031/subte-web/comuna2.png',
+          highRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574196183/subte-web/comuna_h2.png'
+        },
+        {
+          lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574195031/subte-web/comuna3.png',
+          highRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574196183/subte-web/comuna_h3.png'
+        },
+        {
+          lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574195031/subte-web/comuna4.png',
+          highRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574196183/subte-web/comuna_h4.png'
+        },
+        {
+          lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574195031/subte-web/comuna5.png',
+          highRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574196183/subte-web/comuna_h5.png'
+        },
+        {
+          lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574195031/subte-web/comuna6.png',
+          highRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574196183/subte-web/comuna_h6.png'
+        },
+        {
+          lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574195031/subte-web/comuna7.png',
+          highRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574196183/subte-web/comuna_h7.png'
+        },
       ]
     })
   })

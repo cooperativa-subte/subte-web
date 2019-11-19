@@ -1,16 +1,13 @@
 .project-detail-container {
   .carousel-container {
-    height: 200px;
+
     .img {
       width: 200px;
     }
     .s-carousel-item {
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0s, opacity 2s;
+      display: none;
       &.active {
-        visibility: visible;
-        opacity: 1;
+        display: block;
       }
     }
   }
