@@ -3,11 +3,15 @@ import React, { useState, useRef } from 'react'
 import LeftArrow from '../../images/left-arrow.svg'
 import RightArrow from '../../images/right-arrow.svg'
 
-export default function Carousel({ urlsImgs: trabajosUrls }) {
+export default function Carousel({ urlsImgs: trabajosUrls, onImgClick }) {
 
   const [carouselItems, setCarouselItems] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const carouselElement = useRef(null)
+
+  function showModal(index) {
+    onImgClick(index)
+  }
 
   function passSlides(direction) {
 
@@ -53,7 +57,7 @@ export default function Carousel({ urlsImgs: trabajosUrls }) {
                   trabajosUrls.map((trabajo, index) => {
                     return (
                       <div key={index} className={`s-carousel-item col-4  ${index < 3 ? 'active' : ''}`}>
-                        <img src={trabajo} alt='1' className='img-fluid' />
+                        <img src={trabajo.lowRes} alt='1' className='img-fluid' onClick={() => { showModal(index) }} />
                       </div>
                     )
                   })

@@ -21,6 +21,10 @@ export default function ProjectDetail() {
     })
   }, [id])
 
+  function handleImgClick(index) {
+    console.log(trabajosUrls[index])
+  }
+
   return (
     <div className='project-detail-container'>
       {
@@ -38,7 +42,7 @@ export default function ProjectDetail() {
             <h2 className='mt-4'>Trabajos</h2>
             {
               trabajosUrls.length > 0 ?
-                <Carousel urlsImgs={trabajosUrls} /> : <></>
+                <Carousel urlsImgs={trabajosUrls} onImgClick={handleImgClick} /> : <></>
             }
           </div> :
           'No hay nada'
