@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-on-images-loaded": "^2.2.3",
     "react-router-dom": "^5.1.2",
     "react-transition-group": "^4.3.0"
   },
