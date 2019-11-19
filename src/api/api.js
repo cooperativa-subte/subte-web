@@ -23,6 +23,7 @@ function getProjectDetail(name) {
         'https://via.placeholder.com/200',
         'https://via.placeholder.com/200',
         'https://via.placeholder.com/200',
+        'https://via.placeholder.com/200',
       ]
     })
   })
