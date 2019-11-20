@@ -16,7 +16,7 @@ function App() {
         <Header></Header>
 
         <div className='content-body'>
-          <Body></Body>
+          <Body />
         </div>
 
         <Footer></Footer>

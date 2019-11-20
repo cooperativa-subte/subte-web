@@ -1,5 +1,13 @@
-.doc-container {
-
-  font-family: 'Fira Sans', sans-serif;
-
+@font-face {
+  font-family: 'Helvetica Now Display';
+  src: url('./fonts/HelveticaNowDisplay-Regular.ttf') format("truetype");
+}
+@font-face {
+  font-family: 'Helvetica Now Display Bold';
+  src: url('./fonts/HelveticaNowDisplay-Bold.ttf') format('truetype')
+}
+body {
+  .doc-container{
+    font-family: 'Helvetica Now Display', sans-serif;
+  }
 }
