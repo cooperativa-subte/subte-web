@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import logoSrc from '../images/logo_subte_horizontal.png'
+import logoSrc from '../images/LogoSUBTE_horizontal.svg'
 
 import '../styles/Header.scss'
 
@@ -10,9 +10,9 @@ function Header() {
     <header className='container-fluid'>
       <nav className='row align-items-center'>
         <div className='col-3'>
-          <div className='row justify-content-center'>
-            <div className='col-10'>
-              <NavLink exact to='/' className='link-img'>
+          <div className='row '>
+            <div className='col-11'>
+              <NavLink exact to='/' className='ml-5 d-block link-img'>
                 <img className='img-fluid' src={logoSrc} alt='Logo Subte' />
               </NavLink>
             </div>
@@ -23,7 +23,7 @@ function Header() {
             <div className='col-8 text-right mr-4'>
               <NavLink exact to='/about' className='' activeClassName='active'>Quiénes Somos</NavLink>
               <NavLink exact to='/services' className='' activeClassName='active'>Servicios</NavLink>
-              <NavLink exact to='/projects' className='' activeClassName='active'>Trabajos</NavLink>
+              <NavLink exact to='/projects' className='' activeClassName='active'>Portfolio</NavLink>
               <NavLink exact to='/contact' className='' activeClassName='active'>Contacto</NavLink>
             </div>
           </div>
