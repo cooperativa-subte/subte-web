@@ -1,42 +1,56 @@
-import React, { useState, useEffect } from 'react'
-
-import { Modal, Carousel } from 'react-bootstrap'
-
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import { useParams } from 'react-router-dom'
-
 import { getProjectDetail } from '../../../api/api'
-import CustomCarousel from '../../utils/CustomCarousel'
+import { useScrollPosition } from '../../utils/useScrollPosition'
+import { AppContext } from '../../../App'
 
 import '../../../styles/ProjectDetail.scss'
 
 export default function ProjectDetail() {
   let { id } = useParams();
 
+  let descriptionEle = useRef(null)
+  let descContainerEle = useRef(null)
+
   const [projectDetail, setProjectDetail] = useState(null)
   const [trabajosUrls, setTrabajosUrls] = useState([])
-  const [showModal, setShowModal] = useState(false);
-  const [carouselIndex, setCarouselIndex] = useState(0);
-  const [direction, setDirection] = useState(null);
+  const [hideOnScroll, setHideOnScroll] = useState(true)
+  const [stykyClasses, setStykyClasses] = useState('')
 
-  const handleClose = () => setShowModal(false);
+  const appContext = useContext(AppContext)
 
   useEffect(() => {
+
     getProjectDetail(id).then((response) => {
 
       setProjectDetail(response)
       setTrabajosUrls(response.trabajosUrls)
     })
-  }, [id])
 
-  function handleImgClick(index) {
-    setShowModal(true)
-    setCarouselIndex(index);
-  }
+  }, [id, hideOnScroll])
 
-  const handleSelect = (selectedIndex, e) => {
-    setCarouselIndex(selectedIndex);
-    setDirection(e.direction);
-  }
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+
+      if (currPos.y < 70) {
+
+        setStykyClasses('fixed-position')
+      } else {
+        setStykyClasses('')
+      }
+
+      const isShow = currPos.y > prevPos.y
+      if (isShow !== hideOnScroll) {
+        // console.log(isShow)
+        setHideOnScroll(isShow)
+      }
+    },
+    [appContext.bodyElement.current, descContainerEle],
+    descContainerEle,
+    false,
+    50,
+    appContext.bodyElement.current
+  )
 
   return (
     <div className='container-fluid project-detail-container'>
@@ -57,42 +71,27 @@ export default function ProjectDetail() {
               </div>
             </div>
             <div className='row mt-5 ml-5'>
-              <div className='col-5 text-left pl-0'>
-                <p>{projectDetail.description}</p>
+              <div className='col-5 text-left pl-0' ref={descContainerEle}>
+                <p ref={descriptionEle} className={stykyClasses}>{projectDetail.description}</p>
               </div>
               <div className='col-6'>
-                <img className='img-fluid' src={projectDetail.img} alt={projectDetail.name} />
+                <div className='row mb-5'>
+                  <div className='col-12 mt-2'>
+                    <img className='img-fluid' src={projectDetail.img} alt={projectDetail.name} />
+                  </div>
+                  {
+                    trabajosUrls.map((trabajo, index) => (
+                      <div key={index} className='col-12 mt-2'>
+                        <img className='img-fluid' src={trabajo.lowRes} alt={`Projecto ${index}`} />
+                      </div>
+                    ))
+                  }
+                </div>
               </div>
             </div>
-            <h2 className='mt-4'>Trabajos</h2>
-            {
-              trabajosUrls.length > 0 ?
-                <CustomCarousel urlsImgs={trabajosUrls} onImgClick={handleImgClick} /> : <></>
-            }
           </div> :
-          'No hay nada'
+          <></>
       }
-      <Modal show={showModal} onHide={handleClose} centered>
-        <Modal.Header closeButton></Modal.Header>
-        <Modal.Body>
-          <Carousel activeIndex={carouselIndex} indicators={false} direction={direction} onSelect={handleSelect}>
-            {
-              trabajosUrls.map((trabajo, index) => {
-                return (
-                  <Carousel.Item key={index}>
-                    <img
-                      className="d-block w-100"
-                      src={trabajo.highRes}
-                      alt="Trabajos"
-                    />
-                  </Carousel.Item>
-                )
-              })
-            }
-          </Carousel>
-        </Modal.Body>
-      </Modal>
-
     </div>
   )
 }

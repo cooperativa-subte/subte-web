@@ -28,7 +28,7 @@ export default function Body() {
           <Route exact path='/' component={Home} />
           <Route exact path='/about' component={About} />
           <Route exact path='/services' component={Services} />
-          <Route exact path='/projects' component={Projects} />
+          <Route exact path='/projects' render={() => (<Projects></Projects> ) } />
           <Route exact path='/contact' component={Contact} />
 
           <Route path='/projects/:id' children={<ProjectDetail />} />

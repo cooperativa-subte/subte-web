@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import './App.scss';
@@ -7,21 +7,29 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Body from './components/Body'
 
+export const AppContext = React.createContext({
+  bodyElement: null
+});
+
 function App() {
+
+  let bodyElement = useRef(null)
 
   return (
     <div className='doc-container'>
-      <Router>
+      <AppContext.Provider value={{bodyElement}}>
+        <Router>
 
-        <Header></Header>
+          <Header></Header>
 
-        <div className='content-body'>
-          <Body />
-        </div>
+          <div ref={bodyElement} className='content-body'>
+            <Body />
+          </div>
 
-        <Footer></Footer>
+          <Footer></Footer>
 
-      </Router>
+        </Router>
+      </AppContext.Provider>
     </div>
   );
 }

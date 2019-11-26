@@ -5,7 +5,8 @@ import logoSrc from '../images/LogoSUBTE_horizontal.svg'
 
 import '../styles/Header.scss'
 
-function Header() {
+export default function Header() {
+
   return (
     <header className='container-fluid'>
       <nav className='row align-items-center'>
@@ -32,5 +33,3 @@ function Header() {
     </header>
   )
 }
-
-export default Header;
