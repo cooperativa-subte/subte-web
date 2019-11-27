@@ -6,6 +6,7 @@ function getScrollPosition({ element, useWindow }) {
   if (!isBrowser) return { x: 0, y: 0 }
 
   const target = element ? element.current : document.body
+
   const position = target.getBoundingClientRect()
 
   return useWindow
@@ -19,10 +20,15 @@ export function useScrollPosition(effect, deps, element, useWindow, wait, scroll
   let throttleTimeout = null
 
   const callBack = () => {
-    const currPos = getScrollPosition({ element, useWindow })
-    effect({ prevPos: position.current, currPos })
-    position.current = currPos
-    throttleTimeout = null
+    if (element.current) {
+
+      console.log(element)
+
+      const currPos = getScrollPosition({ element, useWindow })
+      effect({ prevPos: position.current, currPos })
+      position.current = currPos
+      throttleTimeout = null
+    }
   }
 
   useLayoutEffect(() => {
@@ -36,7 +42,7 @@ export function useScrollPosition(effect, deps, element, useWindow, wait, scroll
       }
     }
 
-    scrollElement && scrollElement ? 
+    scrollElement && scrollElement ?
       scrollElement.addEventListener('scroll', handleScroll) : window.addEventListener('scroll', handleScroll)
 
     return () => window.removeEventListener('scroll', handleScroll)

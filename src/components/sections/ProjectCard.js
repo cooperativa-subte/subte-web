@@ -4,11 +4,9 @@ import { Link, useRouteMatch } from 'react-router-dom'
 
 import '../../styles/ProjectCard.scss'
 
-function ProjectCard(props) {
+function ProjectCard({ project }) {
 
   let { url } = useRouteMatch();
-
-  const { project } = props;
 
   return (
     <div className='col-4 project-card-container text-center mt-4'>
