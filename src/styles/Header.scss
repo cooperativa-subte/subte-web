@@ -1,5 +1,8 @@
 header {
-  min-height: 4em;
+  min-height: 10vh;
+  &.box-shadow {
+    box-shadow: 0px -15px 35px black;
+  }
 }
 
 nav {
@@ -7,6 +10,7 @@ nav {
     &.active {
       border-bottom: none;
     }
+    margin-left: 0;
   }
   a {
     font-family: 'Helvetica Now Display Bold', sans-serif;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Route, Switch, useLocation } from 'react-router-dom'
@@ -13,27 +13,36 @@ import ProjectDetail from './sections/projects/ProjectDetail'
 
 import '../styles/Body.scss'
 
-export default function Body() {
+export default function Body({ setBodyInnerElement }) {
 
+  let bodyContainer = useRef(null)
   let location = useLocation();
 
-  return (
-    <TransitionGroup>
-      <CSSTransition
-        key={location.key}
-        classNames="fade"
-        timeout={1000}
-      >
-        <Switch location={location}>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/services' component={Services} />
-          <Route exact path='/projects' render={() => (<Projects></Projects> ) } />
-          <Route exact path='/contact' component={Contact} />
+  useEffect(() => {
 
-          <Route path='/projects/:id' children={<ProjectDetail />} />
-        </Switch>
-      </CSSTransition>
-    </TransitionGroup>
+    setBodyInnerElement(bodyContainer.current)
+
+  }, [bodyContainer, setBodyInnerElement])
+
+  return (
+    <div ref={bodyContainer}>
+      <TransitionGroup>
+        <CSSTransition
+          key={location.key}
+          classNames="fade"
+          timeout={1000}
+        >
+          <Switch location={location}>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/services' component={Services} />
+            <Route exact path='/projects' render={() => (<Projects></Projects>)} />
+            <Route exact path='/contact' component={Contact} />
+
+            <Route path='/projects/:id' children={<ProjectDetail />} />
+          </Switch>
+        </CSSTransition>
+      </TransitionGroup>
+    </div>
   )
 }

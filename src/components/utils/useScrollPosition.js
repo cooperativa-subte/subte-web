@@ -22,8 +22,6 @@ export function useScrollPosition(effect, deps, element, useWindow, wait, scroll
   const callBack = () => {
     if (element.current) {
 
-      console.log(element)
-
       const currPos = getScrollPosition({ element, useWindow })
       effect({ prevPos: position.current, currPos })
       position.current = currPos

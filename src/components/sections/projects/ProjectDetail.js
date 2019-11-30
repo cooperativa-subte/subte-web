@@ -88,34 +88,6 @@ export default function ProjectDetail() {
               </div>
             </div>
           </div> : <></>
-
-
-        // <div className='text-center mt-5'>
-        //   <div className='row text-left'>
-        //     <div className='col-4 ml-5'>
-
-        //     </div>
-        //     <div className='col-4 offset-xl-3 text-right'>
-
-        //     </div>
-        //   </div>
-        //   <div className='row'>
-        //     <div className='col-11 ml-5'>
-
-        //     </div>
-        //   </div>
-        //   <div className='row mt-5 ml-5'>
-        //     <div className='col-5 text-left pl-0'>
-
-        //     </div>
-        //     <div className='offset-xl-1 col-6'>
-        //       <div className='row mb-5'>
-
-        //       </div>
-        //     </div>
-        //   </div>
-        // </div> :
-        // <></>
       }
     </div>
   )

@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import logoSrc from '../images/LogoSUBTE_horizontal.svg'
 
 import '../styles/Header.scss'
 
-export default function Header() {
+export default function Header({shadow}) {
+
+  let [headerClasses, setHeaderClasses] = useState('container-fluid')
+
+  useEffect(() => {
+    shadow ? setHeaderClasses('container-fluid box-shadow') : setHeaderClasses('container-fluid')
+  }, [shadow])
 
   return (
-    <header className='container-fluid'>
+    <header className={headerClasses}>
       <nav className='row justify-content-center'>
         <div className='col-xl-11'>
           <div className='row justify-content-between align-items-center'>
             <div className='col-3'>
-              <NavLink exact to='/' className='ml-5 d-block link-img'>
+              <NavLink exact to='/' className='d-block link-img mr-5 pr-3'>
                 <img className='img-fluid' src={logoSrc} alt='Logo Subte' />
               </NavLink>
             </div>
