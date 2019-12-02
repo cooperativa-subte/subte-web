@@ -14,3 +14,8 @@ body {
 .negrita {
   font-family: 'Helvetica Now Display Bold', sans-serif;
 }
+
+.content-body {
+  height: 75vh;
+  overflow-y: auto;
+}

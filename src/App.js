@@ -9,9 +9,6 @@ import Body from './components/Body'
 
 import { useScrollPosition } from './components/utils/useScrollPosition'
 
-export const AppContext = React.createContext({
-  bodyElement: null
-});
 
 function App() {
 
@@ -20,32 +17,30 @@ function App() {
   let [bodyInnerElement, setBodyInnerElement] = useState(null)
   let [headerShadow, setHeaderShadow] = useState(false)
 
-  useScrollPosition( ({prevPos, currPos}) => {
+  useScrollPosition(({ prevPos, currPos }) => {
 
     setHeaderShadow(currPos.y < 65)
   },
-  [bodyInnerElement],
-  {current: bodyInnerElement},
-  false,
-  50,
-  bodyElement.current
+    [bodyInnerElement],
+    { current: bodyInnerElement },
+    false,
+    50,
+    bodyElement.current
   )
 
   return (
     <div className='doc-container'>
-      <AppContext.Provider value={{bodyElement}}>
-        <Router>
+      <Router>
 
-          <Header shadow={headerShadow}></Header>
+        <Header shadow={headerShadow}></Header>
 
-          <div ref={bodyElement} className='content-body'>
-            <Body setBodyInnerElement={ setBodyInnerElement } />
-          </div>
+        <div ref={bodyElement} className='content-body'>
+          <Body setBodyInnerElement={setBodyInnerElement} />
+        </div>
 
-          <Footer></Footer>
+        <Footer></Footer>
 
-        </Router>
-      </AppContext.Provider>
+      </Router>
     </div>
   );
 }

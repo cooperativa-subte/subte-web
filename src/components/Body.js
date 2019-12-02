@@ -25,12 +25,18 @@ export default function Body({ setBodyInnerElement }) {
   }, [bodyContainer, setBodyInnerElement])
 
   return (
-    <div ref={bodyContainer}>
+    <div className='body-container' ref={bodyContainer}>
       <TransitionGroup>
         <CSSTransition
           key={location.key}
           classNames="fade"
           timeout={1000}
+          onExit={(ele) => {
+            ele.style.display = 'none'
+          }}
+          onExited={(ele) => {
+            ele.style.display = 'block'
+          }}
         >
           <Switch location={location}>
             <Route exact path='/' component={Home} />

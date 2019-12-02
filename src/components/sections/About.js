@@ -7,7 +7,7 @@ import subteGif from '../../images/subte_gif_color_color.gif'
 function About() {
 
   return (
-    <div className='home-container container'>
+    <div className='section-container container'>
       <div className='row align-items-center justify-content-center'>
         <div className='col-6 text-center'>
           <h3>SUBTE es mucho más que una cooperativa</h3>

@@ -1,22 +1,14 @@
-import React, { useState, useEffect, useRef, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProjectDetail } from '../../../api/api'
-import { useScrollPosition } from '../../utils/useScrollPosition'
-import { AppContext } from '../../../App'
 
 import '../../../styles/ProjectDetail.scss'
 
 export default function ProjectDetail() {
   let { id } = useParams();
 
-  let descriptionEle = useRef(null)
-  let descContainerEle = useRef(null)
-
   const [projectDetail, setProjectDetail] = useState(null)
   const [trabajosUrls, setTrabajosUrls] = useState([])
-  const [stykyClasses, setStykyClasses] = useState('')
-
-  const appContext = useContext(AppContext)
 
   useEffect(() => {
 
@@ -27,18 +19,6 @@ export default function ProjectDetail() {
     })
 
   }, [id])
-
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-
-      currPos.y < 70 ? setStykyClasses('fixed-position') : setStykyClasses('')
-    },
-    [appContext.bodyElement.current, descContainerEle],
-    descContainerEle,
-    false,
-    50,
-    appContext.bodyElement.current
-  )
 
   return (
     <div className='container-fluid project-detail-container'>
@@ -63,19 +43,12 @@ export default function ProjectDetail() {
                 </div>
               </div>
 
-              <div className='row justify-content-between mt-3'>
-                <div className='col-5' ref={descContainerEle}>
-                  <p ref={descriptionEle} className={stykyClasses}>{projectDetail.description}</p>
+              <div className='row justify-content-between my-3'>
+                <div className='col-5'>
+                  <p className='sticky-position'>{projectDetail.description}</p>
                 </div>
                 <div className='col-6'>
                   <div className='row'>
-                    {
-                      projectDetail.img ?
-                        <div className='col-12 mt-2'>
-                          <img className='img-fluid' src={projectDetail.img} alt={projectDetail.name} />
-                        </div> : <></>
-                    }
-
                     {
                       trabajosUrls.map((trabajo, index) => (
                         <div key={index} className='col-12 mt-2'>

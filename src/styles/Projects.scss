@@ -1,0 +1,17 @@
+.project-container {
+  min-height: 75vh;
+  .tags-container {
+    .tag-button {
+      margin-right: 0.50rem;
+      cursor: pointer;
+      &.active {
+        border-bottom: 1px solid black;
+      }
+    }
+
+    .tag-button:last-child {
+      margin-right: 0;
+    }
+  
+  }
+}

@@ -30,11 +30,8 @@
     transform: rotate(135deg);
   }
 
-  .fixed-position {
-    position: fixed;
-    top: 12vh;
-    flex: 0 0 41.666667%;
-    max-width: 37.666667%;
-    padding-right: 15px;
+  .sticky-position {
+    position: sticky;
+    top: 2vh
   }
 }
