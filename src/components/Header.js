@@ -15,21 +15,18 @@ export default function Header({ shadow }) {
   const menuItemsEle = useRef(null)
 
   useEffect(() => {
-    shadow && !isMobile ? setHeaderClasses('container-fluid box-shadow') : setHeaderClasses('container-fluid')
-    shadow && isMobile ? setHeaderClasses('container box-shadow') : setHeaderClasses('container')
+    console.log(isMobile)
+    let classes = isMobile ? ' container ' : 'container-fluid'
+    classes += shadow ? ' box-shadow ' : ' '
+    setHeaderClasses(classes)
   }, [shadow])
 
   const toggleMenu = () => {
-    console.log(isMobile)
-    if (isMobile) {
-      // showMenu ? menuItemsEle.current.className = 'row items-container open' : menuItemsEle.current.className = 'row items-container'
-      setShowMenu(!showMenu)
-    }
+    setShowMenu(!showMenu)
   }
 
   return (
     <header className={headerClasses}>
-
       <BrowserView>
         <nav className='row justify-content-center'>
           <div className='col-xl-11'>
@@ -75,7 +72,7 @@ export default function Header({ shadow }) {
               <div className='col-12 text-right mt-2'>
                 <NavLink exact to='/projects' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Portfolio</NavLink>
               </div>
-              <div className='col-12 text-right mt-2'>
+              <div className='col-12 text-right my-2 pb-2'>
                 <NavLink exact to='/contact' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Contacto</NavLink>
               </div>
             </div>
