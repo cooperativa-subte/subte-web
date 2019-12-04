@@ -15,7 +15,6 @@ export default function Header({ shadow }) {
   const menuItemsEle = useRef(null)
 
   useEffect(() => {
-    console.log(isMobile)
     let classes = isMobile ? ' container ' : 'container-fluid'
     classes += shadow ? ' box-shadow ' : ' '
     setHeaderClasses(classes)

@@ -8,6 +8,7 @@ import About from './sections/About'
 import Services from './sections/Services'
 import Projects from './sections/Projects'
 import Contact from './sections/Contact'
+import Footer from '../components/Footer'
 
 import ProjectDetail from './sections/projects/ProjectDetail'
 
@@ -49,6 +50,7 @@ export default function Body({ setBodyInnerElement }) {
           </Switch>
         </CSSTransition>
       </TransitionGroup>
+      <Footer />
     </div>
   )
 }

@@ -3,7 +3,7 @@ footer {
   .row {
 
     background-color: #000000;
-    height: 15vh;
+    min-height: 15vh;
   }
   .contacto-container {
     p {
@@ -12,6 +12,7 @@ footer {
     }
   }
   .social-networks-container {
+    text-align: right;
     a {
       i {
         color: #CACFD2;
@@ -23,6 +24,11 @@ footer {
       i {
         margin-right: 0;
       }
+    }
+  }
+  @media (max-width: 576px) {
+    .social-networks-container {
+      text-align: center;
     }
   }
 }

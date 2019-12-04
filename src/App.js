@@ -4,7 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import './App.scss';
 
 import Header from './components/Header'
-import Footer from './components/Footer'
 import Body from './components/Body'
 
 import { useScrollPosition } from './components/utils/useScrollPosition'
@@ -37,8 +36,6 @@ function App() {
         <div ref={bodyElement} className='content-body'>
           <Body setBodyInnerElement={setBodyInnerElement} />
         </div>
-
-        <Footer></Footer>
 
       </Router>
     </div>
