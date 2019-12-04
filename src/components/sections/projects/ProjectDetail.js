@@ -29,25 +29,25 @@ export default function ProjectDetail() {
             <div className='col-xl-11'>
 
               <div className='row justify-content-between'>
-                <div className='col-4'>
+                <div className='col-12 col-md-4'>
                   <h2 className='negrita'>{projectDetail.name}</h2>
                 </div>
-                <div className='col-5 text-right'>
+                <div className='col-12 col-md-5 text-right'>
                   <p>{projectDetail.shortDescription}</p>
                 </div>
               </div>
 
               <div className='row'>
-                <div className='col-xl-12'>
+                <div className='col-12'>
                   <img src={projectDetail.coverPhoto} alt='Cover Project' className='img-fluid' />
                 </div>
               </div>
 
               <div className='row justify-content-between my-3'>
-                <div className='col-5'>
+                <div className='col-12 col-md-5'>
                   <p className='sticky-position'>{projectDetail.description}</p>
                 </div>
-                <div className='col-6'>
+                <div className='col-12 col-md-6'>
                   <div className='row'>
                     {
                       trabajosUrls.map((trabajo, index) => (
