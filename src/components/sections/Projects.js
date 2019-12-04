@@ -49,21 +49,23 @@ export default function Projects() {
     <div className='project-container container-fluid'>
       <div className='row justify-content-center'>
         <div className='col-11'>
-          <div className='row'>
-            <div className='col-xl-12 text-right tags-container'>
+          <div className='row mb-4'>
+            <div className='col-xl-12 text-right tags-container overflow-auto'>
               {
                 tags.length > 0 &&
                 tags.map((tag, i) => (
                   <span key={i} onClick={() => { filterProjects(tag) }} className={
-                    activeTag === tag ? 'active tag-button': 'tag-button'
+                    activeTag === tag ? 'active tag-button' : 'tag-button'
                   }>{tag}</span>
                 ))
               }
             </div>
             {
-              filteredProjects.length > 0 && filteredProjects.map((project) => {
+              filteredProjects.length > 0 && filteredProjects.map((project, i) => {
                 return (
-                  <ProjectCard key={project.id} project={project}></ProjectCard>
+                  <div className={`col-12 col-md-4 project-card-container text-center mt-4`}>
+                    <ProjectCard key={project.id} project={project}></ProjectCard>
+                  </div>
                 )
               })
             }

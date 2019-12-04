@@ -2,7 +2,7 @@ header {
   min-height: 10vh;
   &.box-shadow {
     box-shadow: 0px -15px 35px black;
-    position: relative;
+    // position: relative;
     z-index: 10;
   }
 }
@@ -38,12 +38,16 @@ nav {
 
     font-size: 2em;
 
+    .link-img {
+      margin: 0;
+    }
+
     a.active {
       margin: 0;
     }
 
     .menu-icon {
-      font-size: 0.75em;
+      width: 0.75em;
     }
     .menu-bar {
       background-color: white;
@@ -59,17 +63,17 @@ nav {
 
       &.menu-items-enter-active, &.menu-items-enter-done {
         margin-top: 0%;
-        transition: all 1s;
+        transition: all 675ms;
       }
       &.menu-items-exit {
         margin-top: 0%;
       }
       &.menu-items-exit-active {
         margin-top: -100%;
-        transition: all 1s;
+        transition: all 675ms;
       }
       div:last-child {
-        box-shadow: 0px 15px 25px -20px black;
+        // box-shadow: 0px 15px 25px -20px black;
       }
     }
   }
