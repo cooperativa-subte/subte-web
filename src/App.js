@@ -6,7 +6,7 @@ import './App.scss';
 import Header from './components/Header'
 import Body from './components/Body'
 
-import { useScrollPosition } from './components/utils/useScrollPosition'
+import { useScrollPosition } from './components/utils/CustomHooks'
 
 
 function App() {

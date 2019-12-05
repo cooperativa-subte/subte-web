@@ -1,6 +1,28 @@
-import { useRef, useLayoutEffect } from 'react'
+import { useState, useRef, useLayoutEffect } from 'react'
 
 const isBrowser = typeof window !== `undefined`
+
+const useSignUpForm = (initialState, callback) => {
+  const [inputs, setInputs] = useState(initialState)
+
+  const handleSubmit = (event) => {
+    if (event) {
+      event.preventDefault()
+    }
+    callback()
+  }
+
+  const handleInputChange = (event) => {
+    event.persist()
+    setInputs((inputs) => ({ ...inputs, [event.target.name]: event.target.value }))
+  }
+
+  return {
+    handleSubmit,
+    handleInputChange,
+    inputs
+  };
+}
 
 function getScrollPosition({ element, useWindow }) {
   if (!isBrowser) return { x: 0, y: 0 }
@@ -14,7 +36,7 @@ function getScrollPosition({ element, useWindow }) {
     : { x: position.left, y: position.top }
 }
 
-export function useScrollPosition(effect, deps, element, useWindow, wait, scrollElement) {
+function useScrollPosition(effect, deps, element, useWindow, wait, scrollElement) {
   const position = useRef(getScrollPosition({ useWindow }))
 
   let throttleTimeout = null
@@ -45,4 +67,9 @@ export function useScrollPosition(effect, deps, element, useWindow, wait, scroll
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, deps)
+}
+
+export {
+  useSignUpForm,
+  useScrollPosition
 }

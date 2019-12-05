@@ -1,3 +1,5 @@
+const EMAIL_URI = 'https://subte-api.herokuapp.com/contactemail'
+
 function getProjects() {
   return new Promise((resolve, reject) => {
     resolve([
@@ -108,7 +110,33 @@ function getProjectDetail(name) {
   })
 }
 
+const sendContactEmail = async ({email, tel, name, text}) => {
+
+  const emailData = {
+    from: email,
+    tel: tel !== '' ? tel : undefined,
+    name,
+    text
+  }
+
+  return await sendPostRequest(emailData)
+}
+
+const sendPostRequest = async (data) => {
+
+  const response = await fetch(EMAIL_URI, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+
+  return await response.json()
+}
+
 export {
   getProjects,
-  getProjectDetail
+  getProjectDetail,
+  sendContactEmail
 }
