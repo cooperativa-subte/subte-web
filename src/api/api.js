@@ -119,12 +119,12 @@ const sendContactEmail = async ({email, tel, name, text}) => {
     text
   }
 
-  return await sendPostRequest(emailData)
+  return await sendPostRequest(EMAIL_URI, emailData)
 }
 
-const sendPostRequest = async (data) => {
+const sendPostRequest = async (URI, data) => {
 
-  const response = await fetch(EMAIL_URI, {
+  const response = await fetch(URI, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

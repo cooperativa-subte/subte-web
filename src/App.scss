@@ -6,6 +6,10 @@
   font-family: 'Helvetica Now Display Bold';
   src: url('./fonts/HelveticaNowDisplay-Bold.ttf') format('truetype')
 }
+@font-face {
+  font-family: 'Helvetica Now Display Italic';
+  src: url('./fonts/HelveticaNowDisplay-RegIta.ttf') format('truetype')
+}
 body {
   .doc-container{
     font-family: 'Helvetica Now Display', sans-serif;
@@ -13,6 +17,9 @@ body {
 }
 .negrita {
   font-family: 'Helvetica Now Display Bold', sans-serif;
+}
+.italica {
+  font-family: 'Helvetica Now Display Italic', sans-serif;
 }
 
 .content-body {

@@ -3,6 +3,9 @@
   .row {
     min-height: 75vh;
   }
+  .row .row {
+    min-height: unset;
+  }
 }
 .home-container {
   background-color: black;

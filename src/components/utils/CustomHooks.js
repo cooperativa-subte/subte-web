@@ -13,8 +13,12 @@ const useSignUpForm = (initialState, callback) => {
   }
 
   const handleInputChange = (event) => {
-    event.persist()
-    setInputs((inputs) => ({ ...inputs, [event.target.name]: event.target.value }))
+    if (event.custom) {
+      setInputs((inputs) => ({ ...inputs, [event.name]: event.value }))
+    } else {
+      event.persist()
+      setInputs((inputs) => ({ ...inputs, [event.target.name]: event.target.value }))
+    }
   }
 
   return {
@@ -24,7 +28,7 @@ const useSignUpForm = (initialState, callback) => {
   };
 }
 
-function getScrollPosition({ element, useWindow }) {
+const getScrollPosition = ({ element, useWindow }) => {
   if (!isBrowser) return { x: 0, y: 0 }
 
   const target = element ? element.current : document.body
@@ -36,7 +40,7 @@ function getScrollPosition({ element, useWindow }) {
     : { x: position.left, y: position.top }
 }
 
-function useScrollPosition(effect, deps, element, useWindow, wait, scrollElement) {
+const useScrollPosition = (effect, deps, element, useWindow, wait, scrollElement) => {
   const position = useRef(getScrollPosition({ useWindow }))
 
   let throttleTimeout = null
