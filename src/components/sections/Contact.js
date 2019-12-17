@@ -21,7 +21,6 @@ export default function Contact() {
   let stopper = `${spinnerTextRef.current}...`
 
   useEffect(() => {
-    console.log(spinnerText)
   }, [spinnerText])
 
   const onSubmitForm = async () => {
@@ -46,7 +45,6 @@ export default function Contact() {
             message: 'Hubo un error al mandar el mail, intente de nuevo o comuniquese con el mail hola@subte.uy. ¡Gracias!'
           })
         }
-        console.log(response)
       } catch (err) {
         console.log(err)
       } finally {
@@ -65,7 +63,6 @@ export default function Contact() {
 
   const setSendingIntervalEvent = () => {
     return setInterval(() => {
-      // console.log(spinnerTextRef.current)
 
       spinnerTextRef.current === stopper ?
         spinnerTextRef.current = 'Enviando' :
