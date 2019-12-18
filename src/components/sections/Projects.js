@@ -13,7 +13,7 @@ export default function Projects() {
   const [projects, setProjects] = useState([])
   const [filteredProjects, setFilteredProjects] = useState([])
   const [tags, setTags] = useState([])
-  const [activeTag, setActiveTag] = useState('')
+  const [activeTag, setActiveTag] = useState(ALL_PROJECTS)
   const [loading, setLoading] = useState(true);
 
   let { url } = useRouteMatch();
