@@ -7,21 +7,21 @@ function getProjects() {
         id: 2,
         name: 'SINTEP',
         url: 'sintep',
-        imgCover: 'https://res.cloudinary.com/mepediacobas/image/upload/v1573076215/subte-web/projects-covers/sintep-cover.png',
+        cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1573076215/subte-web/projects-covers/sintep-cover.png',
         tags: ['Sindicato', 'Audiovisual']
       },
       {
         id: 3,
         name: 'Milongas Extremas',
         url: 'milongas-extremas',
-        imgCover: 'https://res.cloudinary.com/mepediacobas/image/upload/v1573076216/subte-web/projects-covers/milongas-cover.png',
+        cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1573076216/subte-web/projects-covers/milongas-cover.png',
         tags: ['Afiche']
       },
       {
         id: 5,
         name: 'Ades Montevideo',
         url: 'adesmontevideo',
-        imgCover: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574886344/subte-web/projects-covers/adesmontevideo-cover.png',
+        cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574886344/subte-web/projects-covers/adesmontevideo-cover.png',
         tags: ['Sindicato', 'Afiche']
       }
     ])

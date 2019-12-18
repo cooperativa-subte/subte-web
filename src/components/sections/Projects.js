@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { Link, useRouteMatch } from 'react-router-dom'
+import Spinner from 'react-bootstrap/Spinner'
 
 import { getProjects } from '../../api/api'
-
-import ProjectCard from './ProjectCard'
 
 import '../../styles/Projects.scss'
 
@@ -14,6 +14,9 @@ export default function Projects() {
   const [filteredProjects, setFilteredProjects] = useState([])
   const [tags, setTags] = useState([])
   const [activeTag, setActiveTag] = useState('')
+  const [loading, setLoading] = useState(true);
+
+  let { url } = useRouteMatch();
 
   useEffect(() => {
     getProjects().then((projects) => {
@@ -45,12 +48,47 @@ export default function Projects() {
     }))
   }
 
+  const counter = useRef(0);
+  const imageLoaded = () => {
+    counter.current += 1;
+    if (counter.current >= projects.length) {
+      setLoading(false);
+    }
+  }
+
   return (
     <div className='project-container container-fluid'>
       <div className='row justify-content-center'>
         <div className='col-11'>
-          <div className='row mb-4'>
-            <div className='col-xl-12 text-right tags-container overflow-auto'>
+          <div className='row pb-4 project-cards-container'>
+            {
+              filteredProjects.length > 0 && filteredProjects.map((project, i) => {
+                return (
+                  <div key={project.id} className={`col-12 col-md-4 project-card-container text-center mt-4`}>
+
+                    <Link to={`${url}/${project.url}`}>
+                      <h4>{project.name}</h4>
+                      <div className='spinner-container' style={{ display: loading ? 'block' : 'none' }}>
+                        <Spinner animation="border" role="status">
+                          <span className="sr-only">Loading...</span>
+                        </Spinner>
+                      </div>
+                      <img
+                        style={{ display: loading ? 'none' : 'block' }}
+                        key={i}
+                        src={project.cardImgURI}
+                        onLoad={imageLoaded}
+                        alt={project.name}
+                        className='img-fluid'
+                      />
+                    </Link>
+                  </div>
+                )
+              })
+            }
+          </div>
+          <div className='row'>
+            <div className='col-xl-12 text-right tags-container overflow-auto py-2'>
               {
                 tags.length > 0 &&
                 tags.map((tag, i) => (
@@ -60,15 +98,6 @@ export default function Projects() {
                 ))
               }
             </div>
-            {
-              filteredProjects.length > 0 && filteredProjects.map((project, i) => {
-                return (
-                  <div className={`col-12 col-md-4 project-card-container text-center mt-4`}>
-                    <ProjectCard key={project.id} project={project}></ProjectCard>
-                  </div>
-                )
-              })
-            }
           </div>
         </div>
       </div>

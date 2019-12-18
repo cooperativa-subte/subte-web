@@ -129,7 +129,7 @@ export default function Contact() {
             </div>
             <div className='col-md-7'>
               <form className='row mb-3' onSubmit={handleSubmit} autoComplete='on' noValidate>
-                <div className='col-12 col-md-8 mt-2'>
+                <div className='col-12 col-md-8'>
                   <label className='d-block'>Nombre Completo:</label>
                   <input name='name' type='text' className='w-100' required onChange={handleInputChange} value={inputs.name} onBlur={() => validateForm('name')} />
                 </div>
@@ -147,7 +147,7 @@ export default function Contact() {
                     <div className='col-6'>
                       <label>Teléfono:</label>
                     </div>
-                    <div className='col-4 text-right italica'>
+                    <div className='col-4 text-right italica subte-font-sm'>
                       <span>Opcional</span>
                     </div>
                   </div>
