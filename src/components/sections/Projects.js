@@ -87,8 +87,8 @@ export default function Projects() {
               })
             }
           </div>
-          <div className='row'>
-            <div className='col-xl-12 text-right tags-container overflow-auto py-2'>
+          <div className='row justify-content-end'>
+            <div className='col-xl-4 text-right tags-container overflow-auto py-2'>
               {
                 tags.length > 0 &&
                 tags.map((tag, i) => (

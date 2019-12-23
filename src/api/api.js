@@ -5,9 +5,9 @@ function getProjects() {
     resolve([
       {
         id: 2,
-        name: 'SINTEP',
+        name: 'Campaña Institucional de SINTEP',
         url: 'sintep',
-        cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1573076215/subte-web/projects-covers/sintep-cover.png',
+        cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1576701659/subte-web/projects-covers/sintep_cover_card.png',
         tags: ['Sindicato', 'Audiovisual']
       },
       {
