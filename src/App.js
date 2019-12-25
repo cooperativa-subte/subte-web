@@ -17,8 +17,7 @@ function App() {
   let [headerShadow, setHeaderShadow] = useState(false)
 
   useScrollPosition(({ prevPos, currPos }) => {
-
-    setHeaderShadow(currPos.y < 65)
+    setHeaderShadow(currPos.y < 50)
   },
     [bodyInnerElement],
     { current: bodyInnerElement },
