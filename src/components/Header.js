@@ -54,7 +54,7 @@ export default function Header({ shadow }) {
               </NavLink>
             </div>
             <div className='col-5 text-right mr-3'>
-              <img className='menu-icon' src={menuIcon} alt='Menu Icon' onClick={() => { toggleMenu() }}/>
+              <img className='menu-icon' src={menuIcon} alt='Menu Icon' onClick={() => { toggleMenu() }} />
             </div>
           </div>
           <CSSTransition in={showMenu} timeout={675} classNames='menu-items'>

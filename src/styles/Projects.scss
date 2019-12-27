@@ -2,7 +2,7 @@
 
 .project-container {
   min-height: 75vh;
-  h4 {
+  h5 {
     border-bottom: 2px solid white;
     width: fit-content;
     color: initial;
@@ -10,7 +10,7 @@
   a:hover {
     text-decoration: none;
 
-    h4 {
+    h5 {
       border-bottom: 2px solid $black;
     }
   }

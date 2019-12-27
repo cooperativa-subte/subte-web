@@ -12,16 +12,16 @@ function getProjects() {
       },
       {
         id: 3,
-        name: 'Milongas Extremas',
+        name: 'Arte de Disco de Milongas Extremas',
         url: 'milongas-extremas',
-        cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1573076216/subte-web/projects-covers/milongas-cover.png',
+        cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1577457975/subte-web/projects-covers/milongas_cover_card.png',
         tags: ['Afiche']
       },
       {
         id: 5,
-        name: 'Ades Montevideo',
+        name: 'Revista para Ades Montevideo',
         url: 'adesmontevideo',
-        cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1574886344/subte-web/projects-covers/adesmontevideo-cover.png',
+        cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1577458381/subte-web/projects-covers/ades_cover_card.png',
         tags: ['Sindicato', 'Afiche']
       }
     ])

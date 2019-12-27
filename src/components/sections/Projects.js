@@ -64,10 +64,10 @@ export default function Projects() {
             {
               filteredProjects.length > 0 && filteredProjects.map((project, i) => {
                 return (
-                  <div key={project.id} className={`col-12 col-md-4 project-card-container text-center mt-4`}>
+                  <div key={project.id} className={`col-12 col-md-4 project-card-container text-left mt-4`}>
 
                     <Link to={`${url}/${project.url}`}>
-                      <h4>{project.name}</h4>
+                      <h5>{project.name}</h5>
                       <div className='spinner-container' style={{ display: loading ? 'block' : 'none' }}>
                         <Spinner animation="border" role="status">
                           <span className="sr-only">Loading...</span>
