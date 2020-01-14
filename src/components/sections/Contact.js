@@ -9,12 +9,17 @@ import '../../styles/Contact.scss'
 const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
 /* eslint-enable no-control-regex */
 
-export default function Contact() {
+let qs = require('qs')
+
+export default function Contact(props) {
 
   const [errors, setErrors] = useState({})
   const [userMessage, setUserMessage] = useState({})
   const [showSpinner, setShowSpinner] = useState(false)
   const [spinnerText, setSpinnerText] = useState('')
+  const [messageText] = useState(() => (
+    qs.parse(props.location.search.slice(1)).subject != null ? qs.parse(props.location.search.slice(1)).subject : ''
+  ))
 
   const spinnerTextRef = useRef('Enviando')
 
@@ -22,6 +27,10 @@ export default function Contact() {
 
   useEffect(() => {
   }, [spinnerText])
+
+  useEffect(() => {
+    
+  }, [])
 
   const onSubmitForm = async () => {
     await validateForm()
@@ -49,7 +58,7 @@ export default function Contact() {
         console.log(err)
       } finally {
         setShowSpinner(false)
-        clearIntervalEvent(interval)
+        clearInterval(interval)
       }
     }
   }
@@ -58,7 +67,7 @@ export default function Contact() {
     name: '',
     tel: '',
     email: '',
-    message: ''
+    message: `${messageText}`
   }, onSubmitForm);
 
   const setSendingIntervalEvent = () => {
@@ -71,10 +80,6 @@ export default function Contact() {
       setSpinnerText(spinnerTextRef.current)
 
     }, 300)
-  }
-
-  const clearIntervalEvent = (interval) => {
-    clearInterval(interval)
   }
 
   const validateForm = async (inputName) => {

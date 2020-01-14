@@ -68,7 +68,7 @@ export default function Projects() {
 
                     <Link to={`${url}/${project.url}`}>
                       <h5>{project.name}</h5>
-                      <div className='spinner-container' style={{ display: loading ? 'block' : 'none' }}>
+                      <div className='spinner-container text-center' style={{ display: loading ? 'block' : 'none' }}>
                         <Spinner animation="border" role="status">
                           <span className="sr-only">Loading...</span>
                         </Spinner>

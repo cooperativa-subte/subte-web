@@ -11,7 +11,7 @@ function About() {
       <div className='row align-items-center justify-content-center my-3 my-md-0'>
         <div className='col-12 col-md-6 text-center'>
           <h3>SUBTE es mucho más que una cooperativa</h3>
-          <p>Somos un colectivo, un grupo de amigas y amigos, una cooperativa de trabajo en formación, un espacio donde nos juntamos a hacer lo que más nos gusta hacer, diseñar, programar, ilustrar, enseñar, crear, pensar y muchas cosas más.</p>
+          <p>Somos un colectivo, un grupo de amigas y amigos, una cooperativa de trabajo en formación, un espacio donde nos juntamos a hacer lo que más nos gusta, diseñar, programar, ilustrar, enseñar, crear, pensar y muchas cosas más.</p>
         </div>
         <div className='col-md-1'></div>
         <div className='col-10 col-md-4'>
