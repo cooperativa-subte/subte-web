@@ -1,5 +1,16 @@
+
+// Ohters
 .project-detail-container {
   min-height: 68vh;
+  .title {
+    font-size: 55px;
+  }
+  .description-p {
+    font-size: 19px;
+    .grey {
+      color: #999
+    }
+  }
   .carousel-container {
 
     img {
@@ -34,5 +45,17 @@
   .sticky-position {
     position: sticky;
     top: 2vh
+  }
+}
+
+// Mobile
+@media screen and (max-width: 576px) {
+  .project-detail-container {
+    .title {
+      font-size: 35px;
+    }
+    .subtitle {
+      font-size: 27px;
+    }
   }
 }

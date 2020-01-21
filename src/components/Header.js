@@ -36,7 +36,7 @@ export default function Header({ shadow }) {
                 </NavLink>
               </div>
               <div className='col-7 text-right'>
-                <NavLink exact to='/about' className='' activeClassName='active'>Quiénes Somos</NavLink>
+                <NavLink exact to='/about' className='' activeClassName='active'>Nosotres</NavLink>
                 <NavLink exact to='/services' className='' activeClassName='active'>Servicios</NavLink>
                 <NavLink exact to='/projects' className='' activeClassName='active'>Portfolio</NavLink>
                 <NavLink exact to='/contact' className='' activeClassName='active'>Contacto</NavLink>
@@ -63,7 +63,7 @@ export default function Header({ shadow }) {
                 <NavLink exact to='/' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Inicio</NavLink>
               </div>
               <div className='col-12 text-right mt-2'>
-                <NavLink exact to='/about' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Quiénes Somos</NavLink>
+                <NavLink exact to='/about' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Quiénes somos</NavLink>
               </div>
               <div className='col-12 text-right mt-2'>
                 <NavLink exact to='/services' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Servicios</NavLink>

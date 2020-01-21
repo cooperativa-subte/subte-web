@@ -5,17 +5,17 @@ function getProjects() {
     resolve([
       {
         id: 2,
-        name: 'Campaña Institucional de SINTEP',
+        name: 'Campaña de afiliación de SINTEP',
         url: 'sintep',
-        cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1576701659/subte-web/projects-covers/sintep_cover_card.png',
-        tags: ['Sindicato', 'Audiovisual']
+        cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579628144/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_00_cover.png',
+        tags: ['Audiovisual', 'Gráfico', 'Diseño web']
       },
       {
         id: 3,
         name: 'Arte de Disco de Milongas Extremas',
         url: 'milongas-extremas',
         cardImgURI: 'https://res.cloudinary.com/mepediacobas/image/upload/v1577457975/subte-web/projects-covers/milongas_cover_card.png',
-        tags: ['Afiche']
+        tags: ['Gráfico']
       },
       {
         id: 5,
@@ -29,35 +29,57 @@ function getProjects() {
 }
 
 function getProjectDetail(name) {
-  let obj = null;
+  let project = null;
 
   //TODO: Remove when is neccessary
 
   if (name === 'sintep') {
-    obj = {
+    project = {
       name: 'Sintep',
-      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-      shortDescription: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-      coverPhoto: 'https://res.cloudinary.com/mepediacobas/image/upload/v1576591835/subte-web/sintep_project_cover.png',
+      shortDescription: 'Campaña de afiliación del Sindicato de Trabajadores y Trabajadoras de la Enseñanza Privada.',
+      descriptionPharagraphs: [
+        'Con un mensaje cálido y afectivo, tomando en cuenta la coyuntura nacional y regional, y dando visibilidad a referentes de la base militante, nos propusimos informar y generar confianza en la organización sindical.',
+        'Diseño de identidad visual y piezas audiovisuales.'
+      ],
+      coverVideo: 'https://www.youtube.com/embed/_8hSeJe-ULc?&autoplay=1&mute=1',
       trabajosUrls: [
-        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1576591651/subte-web/projects-mockups/Sintep_01.jpg' },
-        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1576591651/subte-web/projects-mockups/Sintep_02.jpg' },
-      ]
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579615989/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_02_00_00.jpg' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579615989/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_02_00_01.jpg' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579615989/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_02_00_02.jpg' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579615989/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_02_01.jpg' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579615989/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_02_02.jpg' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579615989/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_02_03.jpg' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579615991/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_03_01.jpg' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579615999/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_04.gif' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579615999/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_05.jpg' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579615999/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_06_00.jpg' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579615999/subte-web/projects-mockups/Nos%20Tenemos%20que%20Unir/08_06_01.jpg' },
+      ],
+      client: 'Sintep',
+      sector: 'Educación, Sindical',
+      tags: 'Audiovisual, Gráfico, Diseño web',
+      date: 'Agosto, 2019'
     }
   } else if (name === 'milongas-extremas') {
-    obj = {
-      name: 'Milongas Extremas',
-      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-      shortDescription: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-      coverPhoto: 'https://res.cloudinary.com/mepediacobas/image/upload/v1576591210/subte-web/milongas_project_cover.png',
+    project = {
+      name: 'Milongas Extremas: Arte de disco Temprano',
+      shortDescription: 'Diseño del arte del disco “Temprano” de Milongas Extremas.',
+      descriptionPharagraphs: [
+        'Milongas Extremas es un cuarteto de guitarras criollas y voces, con espíritu roquero, un carácter musical único, propio y una actitud escénica que expone lo extremo de sus milongas.',
+      ],
+      coverPhoto: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579628413/subte-web/projects-mockups/Milongas%20Extremas/01_00.jpg',
       trabajosUrls: [
-        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1576590824/subte-web/projects-mockups/Milongas_01.jpg' },
-        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1576590824/subte-web/projects-mockups/Milongas_02.jpg' },
-        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1576590824/subte-web/projects-mockups/Milongas_03.jpg' },
-      ]
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579628414/subte-web/projects-mockups/Milongas%20Extremas/01_01.jpg' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579628414/subte-web/projects-mockups/Milongas%20Extremas/01_02.jpg' },
+        { lowRes: 'https://res.cloudinary.com/mepediacobas/image/upload/v1579628414/subte-web/projects-mockups/Milongas%20Extremas/01_03.jpg' },
+      ],
+      client: 'Milongas Extremas',
+      sector: 'Música',
+      tags: 'Gráfico',
+      date: '2016'
     }
   } else {
-    obj = {
+    project = {
       name: 'Ades Montevideo',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
       shortDescription: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
@@ -83,7 +105,7 @@ function getProjectDetail(name) {
   }
 
   return new Promise((resolve) => {
-    resolve(obj)
+    resolve(project)
   })
 }
 
