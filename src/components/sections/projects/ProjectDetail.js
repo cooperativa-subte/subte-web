@@ -41,7 +41,7 @@ export default function ProjectDetail() {
                 <div className='col-12 text-center'>
                   {
                     projectDetail.coverVideo ?
-                      <iframe width="1008" height="567" src={ projectDetail.coverVideo} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> :
+                      <iframe title='cover-video' width="1008" height="567" src={ projectDetail.coverVideo} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> :
                       <img src={projectDetail.coverPhoto} alt='Cover Project' className='img-fluid' />
                   }
 

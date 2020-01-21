@@ -29,7 +29,7 @@ export default function Contact(props) {
   }, [spinnerText])
 
   useEffect(() => {
-    
+
   }, [])
 
   const onSubmitForm = async () => {
@@ -116,38 +116,33 @@ export default function Contact(props) {
   }
 
   const clearForm = () => {
-    handleInputChange({custom: true, name: 'name', value: ''})
-    handleInputChange({custom: true, name: 'email', value: ''})
-    handleInputChange({custom: true, name: 'tel', value: ''})
-    handleInputChange({custom: true, name: 'message', value: ''})
+    handleInputChange({ custom: true, name: 'name', value: '' })
+    handleInputChange({ custom: true, name: 'email', value: '' })
+    handleInputChange({ custom: true, name: 'tel', value: '' })
+    handleInputChange({ custom: true, name: 'message', value: '' })
   }
 
   return (
     <div className='contact-section-container section-container container-fluid'>
       <div className='row justify-content-center'>
         <div className='col-11'>
-          <div className='row justify-content-center'>
-            <div className='col-12 col-md-5 text-right'>
-              <h4 className='mb-4'>Contactanos</h4>
-              <p className='mb-0'>Desde Subte estamos muy interesadxs en saber de nuestro visitante en la web. Es por eso que nos gustaría recibir mensajes con inquietudes, sugerencias, opiones y/o cualquier otra cosa que nos quieras comunicar. Te responderemos en cuanto leamos el mensaje.</p>
-              <p className='negrita'>¡Gracias!</p>
-            </div>
-            <div className='col-md-7'>
-              <form className='row mb-3' onSubmit={handleSubmit} autoComplete='on' noValidate>
-                <div className='col-12 col-md-8'>
+          <div className='row justify-content-center mb-5'>
+            <div className='col-md-6'>
+              <form className='row mb-3 justify-content-center' onSubmit={handleSubmit} autoComplete='on' noValidate>
+                <div className='col-12 col-md-10'>
                   <label className='d-block'>Nombre Completo:</label>
                   <input name='name' type='text' className='w-100' required onChange={handleInputChange} value={inputs.name} onBlur={() => validateForm('name')} />
                 </div>
                 {
                   errors.name ?
-                    <div className='col-12 col-md-8 mt-2 error'>
+                    <div className='col-12 col-md-10 mt-2 error'>
                       <span>El nombre completo tiene que tener al menos <span className='negrita'>3 letras</span></span>
                     </div>
                     :
                     <></>
                 }
                 <div className='w-100'></div>
-                <div className='col-12 col-md-8 mt-2'>
+                <div className='col-12 col-md-10 mt-2'>
                   <div className='row justify-content-between'>
                     <div className='col-6'>
                       <label>Teléfono:</label>
@@ -159,7 +154,7 @@ export default function Contact(props) {
                   <input name='tel' type='text' className='w-100' onChange={handleInputChange} value={inputs.tel} />
                 </div>
                 <div className='w-100'></div>
-                <div className='col-12 col-md-8 mt-2'>
+                <div className='col-12 col-md-10 mt-2'>
                   <label className='d-block'>Email:</label>
                   <input
                     name='email'
@@ -174,7 +169,7 @@ export default function Contact(props) {
                 </div>
                 {
                   errors.email ?
-                    <div className='col-12 col-md-8 mt-2 error'>
+                    <div className='col-12 col-md-10 mt-2 error'>
                       <p className='my-0'><span>Por favor ingrese una dirección de email válida.</span></p>
                       <p className='my-0'><span>Ej. <i>nombreapellido@gmail.com</i></span></p>
                     </div>
@@ -182,7 +177,7 @@ export default function Contact(props) {
                     <></>
                 }
                 <div className='w-100'></div>
-                <div className='col-12 col-md-8 mt-2'>
+                <div className='col-12 col-md-10 mt-2'>
                   <label className='d-block'>Mensaje:</label>
                   <textarea
                     name='message'
@@ -195,7 +190,7 @@ export default function Contact(props) {
                 </div>
                 {
                   errors.message ?
-                    <div className='col-12 col-md-8 mt-2 error'>
+                    <div className='col-12 col-md-10 mt-2 error'>
                       <span>El mensaje tiene que tener al menos <span className='negrita'>10 letras</span></span>
                     </div>
                     :
@@ -205,10 +200,10 @@ export default function Contact(props) {
                 {/* Error de cuando se envio el mail correctamente */}
                 {
                   userMessage ?
-                    <div className='col-12 col-md-8 mt-2 error'>
+                    <div className='col-12 col-md-10 mt-2 error'>
                       {
-                        userMessage.type === 'success' ? 
-                          <span className='success'>{userMessage.message}</span>:
+                        userMessage.type === 'success' ?
+                          <span className='success'>{userMessage.message}</span> :
                           <span className='error server'>{userMessage.message}</span>
                       }
                     </div>
@@ -216,7 +211,7 @@ export default function Contact(props) {
                     <></>
                 }
                 <div className='w-100'></div>
-                <div className='col-12 col-md-8 mt-2'>
+                <div className='col-12 col-md-10 mt-2'>
                   {
                     showSpinner ?
                       <div>{spinnerTextRef.current}</div> :
@@ -224,6 +219,14 @@ export default function Contact(props) {
                   }
                 </div>
               </form>
+            </div>
+            <div className='col-12 col-md-6'>
+              <h4 className='mb-4'>Contactanos</h4>
+              <p className='mb-0'>Desde Subte estamos muy interesadxs en saber de nuestro visitante en la web. Es por eso que nos gustaría recibir mensajes con inquietudes, sugerencias, opiones y/o cualquier otra cosa que nos quieras comunicar. Te responderemos en cuanto leamos el mensaje.</p>
+              <p className='negrita'>¡Gracias!</p>
+              <div className='align-center'>
+                <iframe title='map-radiopedal' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.784452366346!2d-56.18463988518026!3d-34.911858380380814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f8034649710d3%3A0x6c230f4b5e56653e!2sRadio%20Pedal!5e0!3m2!1sen!2suy!4v1579632537507!5m2!1sen!2suy" width="400" height="300" frameborder="0" style={{ border: '0px' }} allowfullscreen=""></iframe>
+              </div>
             </div>
           </div>
         </div>

@@ -60,6 +60,18 @@ export default function Projects() {
     <div className='project-container container-fluid'>
       <div className='row justify-content-center'>
         <div className='col-11'>
+          <div className='row justify-content-start'>
+            <div className='col-xl-4 text-left tags-container overflow-auto py-2'>
+              {
+                tags.length > 0 &&
+                tags.map((tag, i) => (
+                  <span key={i} onClick={() => { filterProjects(tag) }} className={
+                    activeTag === tag ? 'active tag-button' : 'tag-button'
+                  }>{tag}</span>
+                ))
+              }
+            </div>
+          </div>
           <div className='row pb-4 project-cards-container'>
             {
               filteredProjects.length > 0 && filteredProjects.map((project, i) => {
@@ -67,7 +79,6 @@ export default function Projects() {
                   <div key={project.id} className={`col-12 col-md-4 project-card-container text-left mt-4`}>
 
                     <Link to={`${url}/${project.url}`}>
-                      <h5>{project.name}</h5>
                       <div className='spinner-container text-center' style={{ display: loading ? 'block' : 'none' }}>
                         <Spinner animation="border" role="status">
                           <span className="sr-only">Loading...</span>
@@ -81,23 +92,12 @@ export default function Projects() {
                         alt={project.name}
                         className='img-fluid'
                       />
+                      <h5 className='mt-2'>{project.name}</h5>
                     </Link>
                   </div>
                 )
               })
             }
-          </div>
-          <div className='row justify-content-end'>
-            <div className='col-xl-4 text-right tags-container overflow-auto py-2'>
-              {
-                tags.length > 0 &&
-                tags.map((tag, i) => (
-                  <span key={i} onClick={() => { filterProjects(tag) }} className={
-                    activeTag === tag ? 'active tag-button' : 'tag-button'
-                  }>{tag}</span>
-                ))
-              }
-            </div>
           </div>
         </div>
       </div>
