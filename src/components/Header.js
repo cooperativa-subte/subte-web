@@ -27,9 +27,9 @@ export default function Header({ shadow }) {
   return (
     <header className={headerClasses}>
       <BrowserView>
-        <nav className='row justify-content-center'>
+        <nav className='row justify-content-center align-items-center'>
           <div className='col-xl-11'>
-            <div className='row justify-content-between align-items-center'>
+            <div className='row justify-content-between align-items-center menu-content'>
               <div className='col-3'>
                 <NavLink exact to='/' className='d-block link-img mr-5 pr-3'>
                   <img className='img-fluid' src={logoSrc} alt='Logo Subte' />

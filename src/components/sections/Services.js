@@ -14,15 +14,48 @@ export default function Services() {
     <div className='section-container container-fluid services-container'>
       <div className='row justify-content-center'>
         <div className='col-11 text-center'>
-          <h1>Estos son nuestros Servicios</h1>
 
           <div className='row justify-content-around align-items-center mt-4'>
-            <div className='col-8 col-md-6 col-xl-3'>
+            <div className='col-8 col-md-3'>
               <img className='img-fluid' src={disenioImg} alt='Foto Diseño' />
             </div>
-            <div className='col-md-4 text-center'>
+            <div className='col-md-3 text-left service-desc'>
               <h3>Diseño Gráfico</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique metus felis, et porta leo elementum eget. Nunc fermentum ligula ac vestibulum tempus. Nam ullamcorper, justo a sodales vehicula, metus justo blandit metus, et tincidunt felis dolor in magna. Nam eleifend orci a leo porta condimentum. In euismod ullamcorper nunc.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique metus felis, et porta leo elementum eget. Nunc fermentum ligula ac vestibulum tempus. Nam ullamcorper, justo a sodales vehicula, metus justo blandit metus. </p>
+            </div>
+            <div className='col-8 col-md-3'>
+              <img className='img-fluid' src={merketingImg} alt='Foto Diseño' />
+            </div>
+            <div className='col-md-3 text-left service-desc'>
+              <h3>Marketing Digital</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique metus felis, et porta leo elementum eget. Nunc fermentum ligula ac vestibulum tempus. Nam ullamcorper, justo a sodales vehicula, metus justo blandit metus.</p>
+            </div>
+          </div>
+
+          <div className='row justify-content-around align-items-center mt-4'>
+            <div className='col-md-3 text-left service-desc'>
+              <h3>Diseño Gráfico</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique metus felis, et porta leo elementum eget. Nunc fermentum ligula ac vestibulum tempus. Nam ullamcorper, justo a sodales vehicula, metus justo blandit metus. </p>
+            </div>
+            <div className='col-8 col-md-3'>
+              <img className='img-fluid' src={disenioImg} alt='Foto Diseño' />
+            </div>
+            <div className='col-md-3 text-left service-desc'>
+              <h3>Marketing Digital</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique metus felis, et porta leo elementum eget. Nunc fermentum ligula ac vestibulum tempus. Nam ullamcorper, justo a sodales vehicula, metus justo blandit metus.</p>
+            </div>
+            <div className='col-8 col-md-3'>
+              <img className='img-fluid' src={merketingImg} alt='Foto Diseño' />
+            </div>
+          </div>
+
+          <div className='row justify-content-around align-items-center mt-4'>
+            <div className='col-8 col-md-6'>
+              <img className='img-fluid' src={disenioImg} alt='Foto Diseño' />
+            </div>
+            <div className='col-md-6 text-left service-desc'>
+              <h3>Diseño Gráfico</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique metus felis, et porta leo elementum eget. Nunc fermentum ligula ac vestibulum tempus. Nam ullamcorper, justo a sodales vehicula, metus justo blandit metus, et tincidunt felis dolor in magna. </p>
             </div>
           </div>
 

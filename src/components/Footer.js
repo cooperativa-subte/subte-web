@@ -10,17 +10,7 @@ function Footer() {
         <div className='col-xl-11'>
 
           <div className='row justify-content justify-content-between align-items-center'>
-            {/* 
-            <div className='d-none d-md-block col-md-5 text-center'>
-              <div className='row justify-content-left'>
-                <div className='contacto-container col-12 col-md-8 align-self-center text-left pt-3 pt-md-0'>
-                  <p>San Salvador 1510 (Radiopedal)</p>
-                  <p><a href='mailto:hola@subte.uy' target='_blank' rel='noopener noreferrer'>hola@subte.uy</a></p>
-                </div>
-              </div>
-
-            </div> */}
-            <div className='col-12 col-md-6 info-container'>
+            <div className='col-12 col-md-6 info-container text-center text-md-left'>
               <p>San Salvador 1510 (Radiopedal)</p>
               <p><a href='mailto:hola@subte.uy' target='_blank' rel='noopener noreferrer'>hola@subte.uy</a></p>
             </div>

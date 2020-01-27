@@ -1,8 +1,9 @@
 @import './variables';
 
 .services-container {
-  .img-fluid {
-    border-radius: 50%;
-    border: 1px solid $grey;
+  .service-desc {
+    p {
+      font-size: 19px;
+    }
   }
 }

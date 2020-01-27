@@ -10,16 +10,13 @@ header {
 }
 
 nav {
-  .link-img {
-    &.active {
-      border-bottom: none;
-    }
-    margin-left: 0;
+  .menu-content {
+    height: 10vh;
   }
   a {
     font-family: 'Helvetica Now Display Bold', sans-serif;
     border: none;
-    color: #999;
+    color: #000000;
     margin: 0.75em 1em;
 
     &:hover {
@@ -33,6 +30,14 @@ nav {
     }
     &:last-child {
       margin-right: 0;
+    }
+    &.link-img {
+      &.active,
+      &:hover {
+        border-bottom: none;
+        text-decoration: none;
+      }
+      margin-left: 0;
     }
   }
 }

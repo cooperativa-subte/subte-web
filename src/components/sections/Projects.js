@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 import Spinner from 'react-bootstrap/Spinner'
 
-import { getProjects } from '../../api/api'
+import { getProjects } from '../../api/_api'
 
 import '../../styles/Projects.scss'
 
@@ -72,7 +72,7 @@ export default function Projects() {
               }
             </div>
           </div>
-          <div className='row pb-4 project-cards-container'>
+          <div className='row pb-4 project-cards-container mb-3'>
             {
               filteredProjects.length > 0 && filteredProjects.map((project, i) => {
                 return (

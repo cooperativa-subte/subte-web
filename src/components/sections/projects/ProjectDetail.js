@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProjectDetail } from '../../../api/api'
+import { getProjectDetail } from '../../../api/_api'
 
 import '../../../styles/ProjectDetail.scss'
 
@@ -54,7 +54,7 @@ export default function ProjectDetail() {
                   <div className='sticky-position font-medium'>
                     {
                       projectDetail.descriptionPharagraphs.map((p, i) => (
-                        <p key={i} className='description-p'>{p}</p>
+                        <p key={i} className={`description-p ${i === 0 ? 'pt-3': ''}`}>{p}</p>
                       ))
                     }
                     <p className='description-p'><span className='negrita grey'>Cliente: </span>{projectDetail.client}</p>
