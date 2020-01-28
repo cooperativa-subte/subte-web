@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProjectDetail } from '../../../api/_api'
 
@@ -9,15 +9,27 @@ export default function ProjectDetail() {
 
   const [projectDetail, setProjectDetail] = useState(null)
   const [trabajosUrls, setTrabajosUrls] = useState([])
+  const [bottomStickPosition, setBottomStickPosition] = useState(false)
+
+  let stickyElement = useRef(null)
 
   useEffect(() => {
-
+    
     getProjectDetail(id).then((project) => {
-
+      
       setProjectDetail(project)
       setTrabajosUrls(project.trabajosUrls)
+      if (stickyElement.current) {
+  
+        const totalSpace = document.body.clientHeight - (document.body.clientHeight * 0.1)
+  
+        if (stickyElement.current.clientHeight > totalSpace) {
+          setBottomStickPosition(true)
+        }
+  
+      }
     })
-
+    
   }, [id])
 
   return (
@@ -50,8 +62,8 @@ export default function ProjectDetail() {
 
               <div className='row my-3'>
 
-                <div className='col-12 col-md-6 d-flex'>
-                  <div className='position-sticky font-medium mt-auto'>
+                <div className={`col-12 col-md-6 ${bottomStickPosition ? 'bottom-stick-container': 'top-stick-container'}`}>
+                  <div className={`position-sticky font-medium mt-auto ${bottomStickPosition ? 'bottom-stick': 'top-stick'}`} ref={stickyElement}>
                     {
                       projectDetail.descriptionPharagraphs.map((p, i) => (
                         <p key={i} className={`description-p ${i === 0 ? 'pt-3': ''}`}>{p}</p>

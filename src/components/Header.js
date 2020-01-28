@@ -63,16 +63,16 @@ export default function Header({ shadow }) {
                 <NavLink exact to='/' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Inicio</NavLink>
               </div>
               <div className='col-12 text-right mt-2'>
-                <NavLink exact to='/about' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Quiénes somos</NavLink>
+                <NavLink exact to='/nosotres' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Quiénes somos</NavLink>
               </div>
               <div className='col-12 text-right mt-2'>
-                <NavLink exact to='/services' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Servicios</NavLink>
+                <NavLink exact to='/servicios' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Servicios</NavLink>
               </div>
               <div className='col-12 text-right mt-2'>
-                <NavLink exact to='/projects' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Portfolio</NavLink>
+                <NavLink exact to='/portfolio' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Portfolio</NavLink>
               </div>
               <div className='col-12 text-right my-2 pb-2'>
-                <NavLink exact to='/contact' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Contacto</NavLink>
+                <NavLink exact to='/contacto' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Contacto</NavLink>
               </div>
             </div>
           </CSSTransition>

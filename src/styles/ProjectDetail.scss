@@ -11,8 +11,16 @@
       color: #999
     }
   }
-  .position-sticky {
-    bottom: 0;
+  .bottom-stick-container {
+    display: flex;
+    .bottom-stick {
+      bottom: 0;
+    }
+  }
+  .top-stick-container {
+    .top-stick {
+      top: 2vh;
+    }
   }
   #cover-video {
     width: 1008px;
