@@ -11,40 +11,12 @@
       color: #999
     }
   }
-  .carousel-container {
-
-    img {
-      cursor: pointer;
-    }
-
-    .s-carousel-item {
-      display: none;
-      &.active {
-        display: block;
-      }
-    }
+  .position-sticky {
+    bottom: 0;
   }
-  .arrow {
-    width: 2.5em;
-    cursor: pointer;
-  }
-  #back-arrow,
-  #forward-arrow {
-    position: absolute;
-    transform: rotate(-45deg);
-    width: 1rem;
-    height: 1rem;
-    border-left: 3px solid black;
-    border-top: 3px solid black;
-    cursor: pointer;
-  }
-  #forward-arrow {
-    transform: rotate(135deg);
-  }
-
-  .sticky-position {
-    position: sticky;
-    top: 2vh
+  #cover-video {
+    width: 1008px;
+    height: 567px;
   }
 }
 
@@ -56,6 +28,10 @@
     }
     .subtitle {
       font-size: 27px;
+    }
+    #cover-video {
+      width: 400px;
+      height: 225px;
     }
   }
 }

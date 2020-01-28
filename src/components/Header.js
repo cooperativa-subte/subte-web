@@ -36,10 +36,10 @@ export default function Header({ shadow }) {
                 </NavLink>
               </div>
               <div className='col-7 text-right'>
-                <NavLink exact to='/about' className='' activeClassName='active'>Nosotres</NavLink>
-                <NavLink exact to='/services' className='' activeClassName='active'>Servicios</NavLink>
-                <NavLink exact to='/projects' className='' activeClassName='active'>Portfolio</NavLink>
-                <NavLink exact to='/contact' className='' activeClassName='active'>Contacto</NavLink>
+                <NavLink exact to='/nosotres' className='' activeClassName='active'>Nosotres</NavLink>
+                <NavLink exact to='/servicios' className='' activeClassName='active'>Servicios</NavLink>
+                <NavLink exact to='/portfolio' className='' activeClassName='active'>Portfolio</NavLink>
+                <NavLink exact to='/contacto' className='' activeClassName='active'>Contacto</NavLink>
               </div>
             </div>
           </div>

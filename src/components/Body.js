@@ -41,12 +41,12 @@ export default function Body({ setBodyInnerElement }) {
         >
           <Switch location={location}>
             <Route exact path='/' component={Home} />
-            <Route exact path='/about' component={About} />
-            <Route exact path='/services' component={Services} />
-            <Route exact path='/projects' render={() => (<Projects></Projects>)} />
-            <Route exact path='/contact' component={Contact} />
+            <Route exact path='/nosotres' component={About} />
+            <Route exact path='/servicios' component={Services} />
+            <Route exact path='/portfolio' render={() => (<Projects></Projects>)} />
+            <Route exact path='/contacto' component={Contact} />
 
-            <Route path='/projects/:id' children={<ProjectDetail />} />
+            <Route path='/portfolio/:id' children={<ProjectDetail />} />
           </Switch>
         </CSSTransition>
       </TransitionGroup>

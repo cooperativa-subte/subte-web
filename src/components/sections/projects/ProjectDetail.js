@@ -41,7 +41,7 @@ export default function ProjectDetail() {
                 <div className='col-12 text-center'>
                   {
                     projectDetail.coverVideo ?
-                      <iframe title='cover-video' width="1008" height="567" src={ projectDetail.coverVideo} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> :
+                      <iframe id='cover-video' title='cover-video' src={ projectDetail.coverVideo} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> :
                       <img src={projectDetail.coverPhoto} alt='Cover Project' className='img-fluid' />
                   }
 
@@ -50,8 +50,8 @@ export default function ProjectDetail() {
 
               <div className='row my-3'>
 
-                <div className='col-12 col-md-6 '>
-                  <div className='sticky-position font-medium'>
+                <div className='col-12 col-md-6 d-flex'>
+                  <div className='position-sticky font-medium mt-auto'>
                     {
                       projectDetail.descriptionPharagraphs.map((p, i) => (
                         <p key={i} className={`description-p ${i === 0 ? 'pt-3': ''}`}>{p}</p>
