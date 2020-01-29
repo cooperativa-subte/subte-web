@@ -9,7 +9,7 @@ import '../../styles/Contact.scss'
 const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
 /* eslint-enable no-control-regex */
 
-let qs = require('qs')
+const qs = require('qs')
 
 export default function Contact(props) {
 
@@ -17,9 +17,11 @@ export default function Contact(props) {
   const [userMessage, setUserMessage] = useState({})
   const [showSpinner, setShowSpinner] = useState(false)
   const [spinnerText, setSpinnerText] = useState('')
-  const [messageText] = useState(() => (
+  const [messageText] = useState(() => {
+    console.log(props)
+  return (
     qs.parse(props.location.search.slice(1)).subject != null ? qs.parse(props.location.search.slice(1)).subject : ''
-  ))
+  )})
 
   const spinnerTextRef = useRef('Enviando')
 
@@ -128,7 +130,7 @@ export default function Contact(props) {
         <div className='col-11'>
           <div className='row justify-content-center mb-5'>
             <div className='col-md-6'>
-              <form className='row mb-3 justify-content-center' onSubmit={handleSubmit} autoComplete='on' noValidate>
+              <form className='row mb-3 justify-content-left' onSubmit={handleSubmit} autoComplete='on' noValidate>
                 <div className='col-12 col-md-10'>
                   <label className='d-block'>Nombre Completo:</label>
                   <input name='name' type='text' className='w-100' required onChange={handleInputChange} value={inputs.name} onBlur={() => validateForm('name')} />

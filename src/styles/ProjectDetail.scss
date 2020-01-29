@@ -1,4 +1,4 @@
-
+@import './variables';
 // Ohters
 .project-detail-container {
   min-height: 68vh;
@@ -11,6 +11,10 @@
       color: #999
     }
   }
+  #cover-video {
+    width: 1008px;
+    height: 567px;
+  }
   .bottom-stick-container {
     display: flex;
     .bottom-stick {
@@ -22,9 +26,9 @@
       top: 2vh;
     }
   }
-  #cover-video {
-    width: 1008px;
-    height: 567px;
+  .tag-link {
+    color: $black;
+
   }
 }
 

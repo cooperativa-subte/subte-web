@@ -2,8 +2,6 @@ import React from 'react'
 
 import '../../styles/About.scss'
 
-import subteGif from '../../images/subte_gif_color_color.gif'
-
 function About() {
 
   return (
@@ -18,7 +16,11 @@ function About() {
         <div className='col-10 col-md-6'>
           <div className='row justify-content-center'>
             <div className='col-md-10'>
-              <img className='img-fluid' src={subteGif} alt='Subte Gif presentación' />
+              <p>Natalia Acosta</p>
+              <p>Joaquín Cabrera</p>
+              <p>Santiago Paradeda</p>
+              <p>Mariana Escobar</p>
+              <p>Francisco Cobas</p>
             </div>
           </div>
         </div>

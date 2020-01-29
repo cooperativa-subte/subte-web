@@ -16,16 +16,16 @@ const EMAIL_URI = 'https://subte-api.herokuapp.com/contactemail'
 function getProjects() {
   return new Promise((resolve, reject) => {
     resolve([
-      MilongasPortada,
-      RevistaAdesPortada,
-      EstatutosSintepPortada,
-      AffurVozYEcoPortada,
-      ComunaLibrillosPortada,
-      AcrinSignoPortada,
-      Zur1968Portada,
-      SintepCampaniaPortada,
       SintepInaguracionPortada,
       AicooPortada,
+      SintepCampaniaPortada,
+      Zur1968Portada,
+      ComunaLibrillosPortada,
+      AffurVozYEcoPortada,
+      EstatutosSintepPortada,
+      AcrinSignoPortada,
+      RevistaAdesPortada,
+      MilongasPortada,
     ])
   })
 }

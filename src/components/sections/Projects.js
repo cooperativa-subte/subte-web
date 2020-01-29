@@ -8,13 +8,18 @@ import '../../styles/Projects.scss'
 
 const ALL_PROJECTS = 'Todos'
 
-export default function Projects() {
+const qs = require('qs')
+
+export default function Projects(props) {
 
   const [projects, setProjects] = useState([])
   const [filteredProjects, setFilteredProjects] = useState([])
   const [tags, setTags] = useState([])
   const [activeTag, setActiveTag] = useState(ALL_PROJECTS)
   const [loading, setLoading] = useState(true);
+  const [filter] = useState(() => (
+    qs.parse(props.location.search.slice(1)).tag != null ? qs.parse(props.location.search.slice(1)).tag : ''
+  ))
 
   let { url } = useRouteMatch();
 
@@ -51,8 +56,9 @@ export default function Projects() {
   const counter = useRef(0);
   const imageLoaded = () => {
     counter.current += 1;
-    if (counter.current >= projects.length) {
+    if (counter.current >= filteredProjects.length) {
       setLoading(false);
+      counter.current = 0
     }
   }
 
@@ -61,12 +67,12 @@ export default function Projects() {
       <div className='row justify-content-center'>
         <div className='col-11'>
           <div className='row justify-content-start'>
-            <div className='col-xl-4 text-left tags-container overflow-auto py-2'>
+            <div className='col-12 text-left tags-container overflow-auto py-2'>
               {
                 tags.length > 0 &&
                 tags.map((tag, i) => (
                   <span key={i} onClick={() => { filterProjects(tag) }} className={
-                    activeTag === tag ? 'active tag-button' : 'tag-button'
+                    activeTag === tag ? 'active tag-button float-left' : 'tag-button float-left'
                   }>{tag}</span>
                 ))
               }

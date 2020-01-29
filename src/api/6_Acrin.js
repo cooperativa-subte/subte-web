@@ -1,14 +1,14 @@
 let AcrinSignoPortada = {
   id: 6,
-  name: 'Diseño de signo identificador',
+  name: 'Acrin',
   url: 'acrin-signo',
-  cardImgURI: 'https://res.cloudinary.com/subteuy/image/upload/v1580136572/subte.uy/Imagenes%20de%20Proyectos/6%20-%20Acrin/06_00_cover_tgryvj.png',
-  tags: ['Gráfico']
+  cardImgURI: 'https://res.cloudinary.com/subteuy/image/upload/v1580234684/subte.uy/Imagenes%20de%20Proyectos/6%20-%20Acrin/06_00_cover_gj0eal.jpg',
+  tags: ['Gráfico', 'Identidad']
 }
 
 let AcrinSigno = {
-  name: 'Diseño de signo identificador',
-  shortDescription: 'Diseño de signo identificador para la cooperativa de trabajo Acrin.',
+  name: 'Acrin',
+  shortDescription: 'Diseño de signo identificador para la cooperativa de trabajo Acrin',
   descriptionPharagraphs: [
     'Acrin es una carpintería cooperativa que elabora todo tipo de mobiliario para hogares y empresas, insumos para artesanxs y cartelería. En acrin.com.uy pueden ver sus productos.',
   ],
@@ -25,7 +25,7 @@ let AcrinSigno = {
   ],
   client: 'Acrin',
   sector: 'Cooperativismo, Carpintería',
-  tags: 'Gráfico',
+  tags: AcrinSignoPortada.tags,
   date: 'Diciembre, 2017'
 }
 

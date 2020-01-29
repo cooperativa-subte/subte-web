@@ -1,13 +1,15 @@
+@import './variables';
+
 footer {
   color: #FFFFFF;
   .row {
 
     background-color: #000000;
-    min-height: 15vh;
+    min-height: 10vh;
   }
   .info-container {
     p {
-      font-size: 19px;
+      font-size: $font-small;
       margin-bottom: 0;
     }
     a {

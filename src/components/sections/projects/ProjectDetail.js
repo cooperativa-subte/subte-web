@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { useParams } from 'react-router-dom'
-import { getProjectDetail } from '../../../api/_api'
+import { useParams, NavLink } from 'react-router-dom'
+import { getProjectDetail, getProjects } from '../../../api/_api'
 
 import '../../../styles/ProjectDetail.scss'
 
@@ -11,25 +11,28 @@ export default function ProjectDetail() {
   const [trabajosUrls, setTrabajosUrls] = useState([])
   const [bottomStickPosition, setBottomStickPosition] = useState(false)
 
+  const [projects, setProjects] = useState([])
+
   let stickyElement = useRef(null)
 
   useEffect(() => {
-    
+
     getProjectDetail(id).then((project) => {
-      
+
       setProjectDetail(project)
       setTrabajosUrls(project.trabajosUrls)
       if (stickyElement.current) {
-  
         const totalSpace = document.body.clientHeight - (document.body.clientHeight * 0.1)
-  
+
         if (stickyElement.current.clientHeight > totalSpace) {
           setBottomStickPosition(true)
         }
-  
       }
     })
-    
+    getProjects().then((projects) => {
+      console.log(projects)
+    })
+
   }, [id])
 
   return (
@@ -53,7 +56,7 @@ export default function ProjectDetail() {
                 <div className='col-12 text-center'>
                   {
                     projectDetail.coverVideo ?
-                      <iframe id='cover-video' title='cover-video' src={ projectDetail.coverVideo} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> :
+                      <iframe id='cover-video' width="100%" title='cover-video' src={projectDetail.coverVideo} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> :
                       <img src={projectDetail.coverPhoto} alt='Cover Project' className='img-fluid' />
                   }
 
@@ -62,16 +65,26 @@ export default function ProjectDetail() {
 
               <div className='row my-3'>
 
-                <div className={`col-12 col-md-6 ${bottomStickPosition ? 'bottom-stick-container': 'top-stick-container'}`}>
-                  <div className={`position-sticky font-medium mt-auto ${bottomStickPosition ? 'bottom-stick': 'top-stick'}`} ref={stickyElement}>
+                <div className={`col-12 col-md-6 ${bottomStickPosition ? 'bottom-stick-container' : 'top-stick-container'}`}>
+                  <div className={`position-sticky font-medium mt-auto ${bottomStickPosition ? 'bottom-stick' : 'top-stick'}`} ref={stickyElement}>
                     {
                       projectDetail.descriptionPharagraphs.map((p, i) => (
-                        <p key={i} className={`description-p ${i === 0 ? 'pt-3': ''}`}>{p}</p>
+                        <p key={i} className={`description-p ${i === 0 ? 'pt-3' : ''}`}>{p}</p>
                       ))
                     }
                     <p className='description-p'><span className='negrita grey'>Cliente: </span>{projectDetail.client}</p>
                     <p className='description-p'><span className='negrita grey'>Sector: </span>{projectDetail.sector}</p>
-                    <p className='description-p'><span className='negrita grey'>Tipo de Proyecto: </span>{projectDetail.tags}</p>
+                    <p className='description-p'>
+                      <span className='negrita grey'>Tipo de Proyecto: </span>
+                      {
+                        projectDetail.tags.map((tag, i) => (
+                          <span key={i}>
+                            <NavLink exact to={`/portfolio?tag=${tag}`} className='tag-link ml-1'>{tag}</NavLink>
+                            { i === projectDetail.tags.length - 1 ? '': ','}
+                          </span>
+                        ))
+                      }
+                    </p>
                     <p className='description-p'><span className='negrita grey'>Mes/Año: </span>{projectDetail.date}</p>
                   </div>
                 </div>
@@ -85,6 +98,7 @@ export default function ProjectDetail() {
                         </div>
                       ))
                     }
+                    <NavLink exact to='/nosotres' className='' activeClassName='active'>Anterior</NavLink>
                   </div>
                 </div>
               </div>

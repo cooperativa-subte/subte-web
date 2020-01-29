@@ -1,14 +1,14 @@
 let AffurVozYEcoPortada = {
   id: 4,
-  name: 'Diseño revista Voz & Eco',
+  name: 'Voz & Eco',
   url: 'voz-y-eco',
-  cardImgURI: 'https://res.cloudinary.com/subteuy/image/upload/v1580136068/subte.uy/Imagenes%20de%20Proyectos/4_Affur_VozYEco/04_00_cover_onq7xs.png',
-  tags: ['Gráfico']
+  cardImgURI: 'https://res.cloudinary.com/subteuy/image/upload/v1580234602/subte.uy/Imagenes%20de%20Proyectos/4_Affur_VozYEco/04_00_cover_ycqynt.jpg',
+  tags: ['Gráfico', 'Editorial']
 }
 
 let AffurVozYEco = {
-  name: 'Revista Voz & Eco',
-  shortDescription: 'Diseño de publicación sindical para la Agremiación Federal de Funcionarios de la Universidad de la República.',
+  name: 'Voz & Eco',
+  shortDescription: 'Diseño de publicación sindical para la Agremiación Federal de Funcionarios de la Universidad de la República',
   descriptionPharagraphs: [
     'Las publicaciones sindicales impresas siguen siendo una muy buena forma de comunicar ideas, más allá de las ventajas que puede otorgar la comunicación digital. La publicación impresa se hace presente materialmente en los lugares de trabajo y en los hogares. Además, son una tarea militante que requiere de organización colectiva, de planificación. Su misma elaboración son un aprendizaje colectivo que aumenta las capacidades de la organización.',
   ],
@@ -23,7 +23,7 @@ let AffurVozYEco = {
   ],
   client: 'AFFUR',
   sector: 'Educación, Sindical',
-  tags: 'Gráfico',
+  tags: AffurVozYEcoPortada.tags,
   date: '2016'
 }
 

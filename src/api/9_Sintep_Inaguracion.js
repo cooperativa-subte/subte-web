@@ -1,14 +1,14 @@
 let SintepInaguracionPortada = {
   id: 9,
-  name: 'Audiovisual Inauguración del local',
+  name: 'Inauguración local SINTEP',
   url: 'sintep-inaguracion',
-  cardImgURI: 'https://res.cloudinary.com/subteuy/image/upload/v1580138558/subte.uy/Imagenes%20de%20Proyectos/9_Sintep_Inaguracion/09_00_cover_sxexjp.png',
+  cardImgURI: 'https://res.cloudinary.com/subteuy/image/upload/v1580234792/subte.uy/Imagenes%20de%20Proyectos/9_Sintep_Inaguracion/09_00_cover_i8txqy.jpg',
   tags: ['Audiovisual', 'Gráfico']
 }
 
 let SintepInaguracion = {
-  name: 'Inauguración del local',
-  shortDescription: 'Invitación audiovisual para la inauguración del nuevo local del Sindicato de Trabajadores y Trabajadoras de la Enseñanza Privada.',
+  name: 'Inauguración local SINTEP',
+  shortDescription: 'Invitación audiovisual para la inauguración del nuevo local del Sindicato de Trabajadores y Trabajadoras de la Enseñanza Privada',
   descriptionPharagraphs: [
     'Para un evento tan relevante como el de pasar a tener una casa propia, colectiva, accesible, con espacio para niños y niñas, con dormitorios para quienes vienen del interior, merecía una difusión cuidada, llena de ternura y detalles, como el nuevo local.',
   ],
@@ -28,7 +28,7 @@ let SintepInaguracion = {
   ],
   client: 'Sintep',
   sector: 'Educación, Sindical',
-  tags: 'Audiovisual, Gráfico',
+  tags: SintepInaguracionPortada.tags,
   date: 'Setiembre, 2019'
 }
 

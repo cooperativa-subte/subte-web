@@ -2,13 +2,13 @@ let SintepCampaniaPortada = {
   id: 8,
   name: 'Campaña de afiliación de SINTEP',
   url: 'sintep-campania',
-  cardImgURI: 'https://res.cloudinary.com/subteuy/image/upload/v1580137466/subte.uy/Imagenes%20de%20Proyectos/8_Sintep_Campania/08_00_cover_gjjycv.png',
-  tags: ['Audiovisual', 'Gráfico', 'Diseño web']
+  cardImgURI: 'https://res.cloudinary.com/subteuy/image/upload/v1580234761/subte.uy/Imagenes%20de%20Proyectos/8_Sintep_Campania/08_00_cover_g7pzjv.jpg',
+  tags: ['Audiovisual', 'Gráfico', 'Web']
 }
 
 let SintepCampania = {
   name: 'Campaña de afiliación de SINTEP',
-  shortDescription: 'Campaña de afiliación del Sindicato de Trabajadores y Trabajadoras de la Enseñanza Privada.',
+  shortDescription: 'Campaña de afiliación del Sindicato de Trabajadores y Trabajadoras de la Enseñanza Privada',
   descriptionPharagraphs: [
     'Con un mensaje cálido y afectivo, tomando en cuenta la coyuntura nacional y regional, y dando visibilidad a referentes de la base militante, nos propusimos informar y generar confianza en la organización sindical.',
     'Diseño de identidad visual y piezas audiovisuales.'
@@ -29,7 +29,7 @@ let SintepCampania = {
   ],
   client: 'Sintep',
   sector: 'Educación, Sindical',
-  tags: 'Audiovisual, Gráfico, Diseño web',
+  tags: SintepCampaniaPortada.tags,
   date: 'Agosto, 2019'
 }
 
