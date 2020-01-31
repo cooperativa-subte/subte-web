@@ -26,7 +26,7 @@ export default function Projects(props) {
   useEffect(() => {
     getProjects().then((projects) => {
       setProjects(projects)
-      setFilteredProjects(projects)
+
       setTags(projects.reduce((acc, currVal) => {
         if (currVal.tags) {
           currVal.tags.forEach((tag) => {
@@ -37,8 +37,17 @@ export default function Projects(props) {
         }
         return acc;
       }, [ALL_PROJECTS]))
+
+      if (filter) {
+        setFilteredProjects(projects.filter((project) => {
+            return project.tags.indexOf(filter) !== -1
+        }))
+        setActiveTag(filter)
+      } else {
+        setFilteredProjects(projects)
+      }
     })
-  }, [])
+  }, [filter])
 
   let filterProjects = (tag) => {
     if (tag !== activeTag) {
