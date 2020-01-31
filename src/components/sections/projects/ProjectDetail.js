@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useParams, NavLink } from 'react-router-dom'
 import { getProjectDetail, getProjects } from '../../../api/_api'
 
+import { ReactComponent as RightArrowSvg } from '../../../images/right-arrow.svg'
+import { ReactComponent as LeftArrowSvg } from '../../../images/left-arrow.svg'
+
 import '../../../styles/ProjectDetail.scss'
 
 export default function ProjectDetail() {
@@ -11,7 +14,8 @@ export default function ProjectDetail() {
   const [trabajosUrls, setTrabajosUrls] = useState([])
   const [bottomStickPosition, setBottomStickPosition] = useState(false)
 
-  const [projects, setProjects] = useState([])
+  const [beforeProjectUrl, setBeforeProjectUrl] = useState('')
+  const [afterProjectUrl, setAfterProjectUrl] = useState('')
 
   let stickyElement = useRef(null)
 
@@ -30,13 +34,32 @@ export default function ProjectDetail() {
       }
     })
     getProjects().then((projects) => {
-      console.log(projects)
+
+      let beforeProjectIndex = null
+      let afterProjectIndex = null
+
+      projects.forEach((p, i) => {
+        if (id === p.url) {
+          if (i === 0) {
+            beforeProjectIndex = projects.length - 1
+            afterProjectIndex = i + 1
+          } else if (i === projects.length - 1) {
+            beforeProjectIndex = i - 1
+            afterProjectIndex = 0
+          } else {
+            beforeProjectIndex = i - 1
+            afterProjectIndex = i + 1
+          }
+          setBeforeProjectUrl(projects[beforeProjectIndex].url)
+          setAfterProjectUrl(projects[afterProjectIndex].url)
+        }
+      })
     })
 
   }, [id])
 
   return (
-    <div className='container-fluid project-detail-container'>
+    <div className='container-fluid project-detail-container'  >
       {
         projectDetail !== null ?
 
@@ -80,7 +103,7 @@ export default function ProjectDetail() {
                         projectDetail.tags.map((tag, i) => (
                           <span key={i}>
                             <NavLink exact to={`/portfolio?tag=${tag}`} className='tag-link ml-1'>{tag}</NavLink>
-                            { i === projectDetail.tags.length - 1 ? '': ','}
+                            {i === projectDetail.tags.length - 1 ? '' : ','}
                           </span>
                         ))
                       }
@@ -98,13 +121,26 @@ export default function ProjectDetail() {
                         </div>
                       ))
                     }
-                    <NavLink exact to='/nosotres' className='' activeClassName='active'>Anterior</NavLink>
                   </div>
                 </div>
               </div>
             </div>
           </div> : <></>
       }
+      <div className={`footer-container`}>
+        <div className='row justify-content-center'>
+          <div className='col-11 align-self-center'>
+            <NavLink exact to={`/portfolio/${beforeProjectUrl}`} className='' activeClassName='active'>
+              <LeftArrowSvg />
+              <span className='ml-3'>Anterior</span>
+            </NavLink>
+            <NavLink exact to={`/portfolio/${afterProjectUrl}`} className='float-right' activeClassName='active'>
+              <span className='mr-3'>Siguiente</span>
+              <RightArrowSvg />
+            </NavLink>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

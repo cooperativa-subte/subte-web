@@ -12,8 +12,7 @@
     }
   }
   #cover-video {
-    width: 1008px;
-    height: 567px;
+    height: 643px;
   }
   .bottom-stick-container {
     display: flex;
@@ -29,6 +28,24 @@
   .tag-link {
     color: $black;
 
+  }
+  .footer-container {
+    background-color: white;
+    bottom: 0;
+    width: 100%;
+    .row {
+      height: 10vh;
+    }
+    a {
+      color: $black;
+      &:hover {
+        text-decoration-color: $black;
+      }
+    }
+    svg {
+      width: 2em;
+      fill: $black;
+    }
   }
 }
 

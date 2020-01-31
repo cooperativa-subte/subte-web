@@ -67,7 +67,7 @@ const useScrollPosition = (effect, deps, element, useWindow, wait, scrollElement
     }
 
     scrollElement && scrollElement ?
-      scrollElement.addEventListener('scroll', handleScroll) : window.addEventListener('scroll', handleScroll)
+      scrollElement.addEventListener('scroll', handleScroll, true) : window.addEventListener('scroll', handleScroll)
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, deps)

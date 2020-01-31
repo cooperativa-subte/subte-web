@@ -1,13 +1,6 @@
 import React from 'react'
 
-import { NavLink } from 'react-router-dom'
-
 import '../../styles/Services.scss'
-import merketingImg from '../../images/servicios_marketing.png'
-import disenioImg from '../../images/servicios_disenio.png'
-import illustrationImg from '../../images/servicios_illustration.png'
-import programmingImg from '../../images/servicios_programacion.png'
-import formacionImg from '../../images/servicios_formacion.png'
 
 export default function Services() {
   return (
