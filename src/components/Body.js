@@ -44,7 +44,6 @@ export default function Body({ setBodyInnerElement }) {
             <Route exact path='/nosotres' component={About} />
             <Route exact path='/servicios' component={Services} />
             <Route exact path='/portfolio' component={Projects} />
-            {/* <Route exact path='/portfolio' render={() => (<Projects></Projects>)} /> */}
             <Route exact path='/contacto' component={Contact} />
 
             <Route path='/portfolio/:id' children={<ProjectDetail />} />

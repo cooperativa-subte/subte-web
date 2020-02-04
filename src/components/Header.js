@@ -31,14 +31,14 @@ export default function Header({ shadow }) {
           <div className='col-xl-11'>
             <div className='row justify-content-between align-items-center menu-content'>
               <div className='col-3'>
-                <NavLink exact to='/' className='d-block link-img mr-5 pr-3'>
-                  <img className='img-fluid' src={logoSrc} alt='Logo Subte' />
+                <NavLink exact to='/' className='d-block link-img mr-5 pr-4'>
+                  <img className='logo-header' src={logoSrc} alt='Logo Subte' />
                 </NavLink>
               </div>
               <div className='col-7 text-right'>
                 <NavLink exact to='/nosotres' className='' activeClassName='active'>Nosotres</NavLink>
                 <NavLink exact to='/servicios' className='' activeClassName='active'>Servicios</NavLink>
-                <NavLink exact to='/portfolio' className='' activeClassName='active'>Portfolio</NavLink>
+                <NavLink exact to='/portfolio' className='' activeClassName='active'>Proyectos</NavLink>
                 <NavLink exact to='/contacto' className='' activeClassName='active'>Contacto</NavLink>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function Header({ shadow }) {
                 <NavLink exact to='/servicios' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Servicios</NavLink>
               </div>
               <div className='col-12 text-right mt-2'>
-                <NavLink exact to='/portfolio' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Portfolio</NavLink>
+                <NavLink exact to='/portfolio' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Proyectos</NavLink>
               </div>
               <div className='col-12 text-right my-2 pb-2'>
                 <NavLink exact to='/contacto' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Contacto</NavLink>

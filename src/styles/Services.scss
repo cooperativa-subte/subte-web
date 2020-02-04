@@ -1,6 +1,15 @@
 @import './variables';
 
 .services-container {
+  .black-intro {
+    background-color: $black;
+    height: 50vh;
+    color: white;
+    padding-top: 20vh;
+    h2 {
+      font-size: $font-x-big;
+    }
+  }
   h3 {
     font-size: 55px;
     top: 20vh;
@@ -13,7 +22,38 @@
       font-size: 19px;
     }
   }
-  .hola {
-    height: 150vh;
+  .accordion {
+    position: relative;
+    font-size: $font-medium;
+    .divider-line {
+      border-bottom: 1px solid $grey;
+      z-index: 100;
+    }
+    .card {
+      border: none;
+      &.expanded {
+        background-color: #ececec;
+        .card-header {
+          background-color: #ececec;
+        }
+      }
+      .card-header {
+        cursor: pointer;
+        background-color: white;
+        border: none;
+      }
+      .card-body {
+        width: 50%;
+      }
+    }
+    .service-title {
+      font-size: $font-big;
+      line-height: 1;
+      cursor: pointer;
+      svg {
+        width: 1em;
+        height: 1em;
+      }
+    }
   }
 }

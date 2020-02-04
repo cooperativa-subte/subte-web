@@ -13,7 +13,7 @@ let SintepCampania = {
     'Con un mensaje cálido y afectivo, tomando en cuenta la coyuntura nacional y regional, y dando visibilidad a referentes de la base militante, nos propusimos informar y generar confianza en la organización sindical.',
     'Diseño de identidad visual y piezas audiovisuales.'
   ],
-  coverVideo: 'https://www.youtube.com/embed/_8hSeJe-ULc?&autoplay=1&mute=1',
+  coverVideo: 'https://www.youtube.com/embed/KM3XfqSYS8I&autoplay=1&mute=1',
   trabajosUrls: [
     { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580137466/subte.uy/Imagenes%20de%20Proyectos/8_Sintep_Campania/08_02_00_00_d5w1gp.jpg' },
     { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580137469/subte.uy/Imagenes%20de%20Proyectos/8_Sintep_Campania/08_02_00_01_clkwlq.jpg' },

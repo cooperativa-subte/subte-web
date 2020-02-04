@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import {NavLink} from 'react-router-dom'
 
 import { useSignUpForm } from '../utils/CustomHooks'
 import { sendContactEmail } from '../../api/_api'
@@ -126,7 +127,7 @@ export default function Contact(props) {
 
   return (
     <div className='contact-section-container section-container container-fluid'>
-      <div className='row justify-content-center'>
+      <div className='row justify-content-center mt-5'>
         <div className='col-11'>
           <div className='row justify-content-center mb-5'>
             <div className='col-md-6'>
@@ -222,11 +223,10 @@ export default function Contact(props) {
                 </div>
               </form>
             </div>
-            <div className='col-12 col-md-6'>
+            <div className='col-12 col-md-6 about-us-text'>
               <h4 className='mb-4'>Contactanos</h4>
-              <p className='mb-0'>Desde Subte estamos muy interesadxs en saber de nuestro visitante en la web. Es por eso que nos gustaría recibir mensajes con inquietudes, sugerencias, opiones y/o cualquier otra cosa que nos quieras comunicar. Te responderemos en cuanto leamos el mensaje.</p>
-              <p className='negrita'>¡Gracias!</p>
-              <div className='align-center'>
+              <p className='mb-0'>Si buscás <NavLink exact to={`/servicios`}>servicios</NavLink> de diseño, programación o ilustración no dudes en ponerte en contacto con nosotres. Tenemos planes especiales para cooperativas y organizaciones sociales.</p>
+              <div className='align-center mt-4'>
                 <iframe title='map-radiopedal' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.784452366346!2d-56.18463988518026!3d-34.911858380380814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f8034649710d3%3A0x6c230f4b5e56653e!2sRadio%20Pedal!5e0!3m2!1sen!2suy!4v1579632537507!5m2!1sen!2suy" width="100%" height="300" frameBorder="0" style={{ border: '0px' }} allowFullScreen=""></iframe>
               </div>
             </div>
