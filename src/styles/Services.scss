@@ -53,6 +53,10 @@
       svg {
         width: 1em;
         height: 1em;
+        transition: all 0.3s ease-out;
+        &.expanded {
+          transform: rotate(45deg);
+        }
       }
     }
   }

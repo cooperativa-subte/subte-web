@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Accordion, Card } from 'react-bootstrap'
 
 import { ReactComponent as PlusIcon } from '../../images/plus-icon.svg'
-import { ReactComponent as MinusIcon } from '../../images/minus-icon.svg'
 
 import '../../styles/Services.scss'
 
@@ -69,9 +68,7 @@ export default function Services() {
                           onToggleAccordion(i)
                         }}>
                           {section.title}
-                          {
-                            section.isExpanded ? <MinusIcon className='float-right' /> : <PlusIcon className='float-right' />
-                          }
+                          <PlusIcon className={`float-right ${section.isExpanded && 'expanded' }`} />
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey={i}>
                           <Card.Body className='px-0'>
@@ -80,7 +77,6 @@ export default function Services() {
                                 <p key={index}>{d}</p>
                               ))
                             }
-
                           </Card.Body>
                         </Accordion.Collapse>
                       </div>
