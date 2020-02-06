@@ -8,7 +8,8 @@ import About from './sections/About'
 import Services from './sections/Services'
 import Projects from './sections/Projects'
 import Contact from './sections/Contact'
-import Footer from '../components/Footer'
+import Footer from './Footer'
+import Admin from './Admin'
 
 import ProjectDetail from './sections/projects/ProjectDetail'
 
@@ -44,9 +45,9 @@ export default function Body({ setBodyInnerElement }) {
             <Route exact path='/nosotres' component={About} />
             <Route exact path='/servicios' component={Services} />
             <Route exact path='/portfolio' component={Projects} />
-            <Route exact path='/contacto' component={Contact} />
-
             <Route path='/portfolio/:id' children={<ProjectDetail />} />
+            <Route exact path='/contacto' component={Contact} />
+            <Route exact path='/admin' component={Admin} />
           </Switch>
         </CSSTransition>
       </TransitionGroup>

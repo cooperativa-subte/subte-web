@@ -1,0 +1,10 @@
+@import './variables';
+
+.admin-container {
+	min-height: 80vh;
+	button {
+		background-color: black;
+		border: 1px solid black;
+		color: white;
+	}
+}
