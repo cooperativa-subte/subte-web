@@ -12,7 +12,7 @@ let SintepInaguracion = {
   descriptionPharagraphs: [
     'Para un evento tan relevante como el de pasar a tener una casa propia, colectiva, accesible, con espacio para niños y niñas, con dormitorios para quienes vienen del interior, merecía una difusión cuidada, llena de ternura y detalles, como el nuevo local.',
   ],
-  coverVideo: 'https://www.youtube.com/embed/tj02fPQOYzA?&autoplay=1&mute=1',
+  coverVideo: 'https://www.youtube.com/embed/tj02fPQOYzA??&autoplay=1&mute=1',
   trabajosUrls: [
     { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580138557/subte.uy/Imagenes%20de%20Proyectos/9_Sintep_Inaguracion/09_02_01_pmet8b.jpg' },
     { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580138559/subte.uy/Imagenes%20de%20Proyectos/9_Sintep_Inaguracion/09_03_01_01_lvqg7g.jpg' },
