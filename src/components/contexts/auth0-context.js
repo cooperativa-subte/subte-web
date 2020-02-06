@@ -1,7 +1,10 @@
-import React, { createContext } from 'react'
+import React, { createContext, useContext } from 'react'
 import createAuth0Client from '@auth0/auth0-spa-js'
 
 export const Auth0Context = createContext()
+
+// export the context as useAuth0
+export const useAuth0 = () => useContext(Auth0Context)
 
 export class Auth0Provider extends React.Component {
 
