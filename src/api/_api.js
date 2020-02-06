@@ -8,6 +8,8 @@ import { AcrinSignoPortada, AcrinSigno } from './6_Acrin';
 import { Zur1968Portada, Zur1968 } from './7_Zur_1968';
 import { SintepInaguracion, SintepInaguracionPortada } from './9_Sintep_Inaguracion';
 import { AicooPortada, Aicoo } from './11_Aicoo';
+import { PalabrasAlChePortada, PalabrasAlChe } from './12_PalabrasAlChe';
+import { MilongasSodrePortada, MilongasSodre } from './10_Milongas_Sodre';
 
 
 const EMAIL_URI = 'https://subte-api.herokuapp.com/contactemail'
@@ -26,6 +28,8 @@ function getProjects() {
       AcrinSignoPortada,
       RevistaAdesPortada,
       MilongasPortada,
+      PalabrasAlChePortada,
+      MilongasSodrePortada,
     ])
   })
 }
@@ -65,6 +69,12 @@ function getProjectDetail(name) {
       break;
     case 'aicoo-signo':
       project = Aicoo
+      break;
+    case 'palabras-al-che':
+      project = PalabrasAlChe
+      break;
+    case 'milongas-sodre':
+      project = MilongasSodre
       break;
     default:
       project = null

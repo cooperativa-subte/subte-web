@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { Carousel } from 'react-bootstrap'
 import { isMobile } from 'react-device-detect'
 
-import '../styles/Home.scss'
+import '../../styles/Home.scss'
 
 
 export default function Home() {
