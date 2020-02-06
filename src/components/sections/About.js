@@ -8,7 +8,7 @@ function About() {
   return (
     <div className='section-container container about-section-container'>
       <div className='row align-items-center justify-content-center my-5'>
-        <div className='col-12 col-md-6'>
+        <div className='col-12 col-md-6 px-0'>
           <p>SUBTE es una cooperativa de trabajo integrada por diseñadores, ilustradores y programadores. Nos unimos para apoyarnos mutuamente y ampliar horizontes, generando un espacio de creación y reflexión colectiva, así como también contribuir al crecimiento de quienes trabajan con nosotros mediante el diseño y la comunicación visual.</p>
           <p>Ofrecemos servicios de diseño gráfico, programación, ilustración, marketing digital, producción audiovisual y formación.</p>
           <p>Nos proponemos trabajar para mejorar la comunicación de organizaciones y personas teniendo en cuenta la sustentabilidad económica, social y ambiental de nuestros proyectos.</p>
