@@ -15,10 +15,10 @@ let AffurVozYEco = {
   coverPhoto: 'https://res.cloudinary.com/subteuy/image/upload/v1580136069/subte.uy/Imagenes%20de%20Proyectos/4_Affur_VozYEco/04_00_tdqeip.jpg',
   trabajosUrls: [
     { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580136068/subte.uy/Imagenes%20de%20Proyectos/4_Affur_VozYEco/04_01_01_lmsdej.jpg' },
-    { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580136068/subte.uy/Imagenes%20de%20Proyectos/4_Affur_VozYEco/04_01_02_c5x4ht.jpg' },
-    { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580136068/subte.uy/Imagenes%20de%20Proyectos/4_Affur_VozYEco/04_01_03_mhtsbx.jpg' },
     { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580136071/subte.uy/Imagenes%20de%20Proyectos/4_Affur_VozYEco/04_02_01_eldyqa.jpg' },
+    { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580136068/subte.uy/Imagenes%20de%20Proyectos/4_Affur_VozYEco/04_01_02_c5x4ht.jpg' },
     { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580136069/subte.uy/Imagenes%20de%20Proyectos/4_Affur_VozYEco/04_02_02_icaoxr.jpg' },
+    { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580136068/subte.uy/Imagenes%20de%20Proyectos/4_Affur_VozYEco/04_01_03_mhtsbx.jpg' },
     { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580136069/subte.uy/Imagenes%20de%20Proyectos/4_Affur_VozYEco/04_02_03_wc1oyg.jpg' },
   ],
   client: 'AFFUR',

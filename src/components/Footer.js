@@ -17,7 +17,7 @@ function Footer() {
 
             <div className='col-12 col-md-3 social-networks-container align-self-center mt-2 mt-md-0 mb-4 mb-md-0'>
               <a href='https://www.facebook.com/subteuy' target='_blank' rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
-              <a href='https://twitter.com/subteuy' target='_blank' rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+              <a href='https://twitter.com/subte_uy' target='_blank' rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
               <a href='https://www.instagram.com/subteuy/' target='_blank' rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
             </div>
           </div>
