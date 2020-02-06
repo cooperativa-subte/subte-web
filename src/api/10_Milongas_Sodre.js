@@ -1,28 +1,29 @@
 let MilongasSodrePortada =
 {
   id: 10,
-  name: '',
+  name: 'Lo eléctrico del sentimiento',
   url: 'milongas-sodre',
-  cardImgURI: '',
+  cardImgURI: 'https://res.cloudinary.com/subteuy/image/upload/v1581000168/subte.uy/Imagenes%20de%20Proyectos/10_Milongas_Sodre/10_00_cover_v8ajkp.jpg',
   tags: ['Gráfico']
 };
 
 let MilongasSodre = {
-  name: '',
-  shortDescription: '.',
+  name: 'Lo eléctrico del sentimiento',
+  shortDescription: 'Diseño del afiche para Milongas Extremas',
   descriptionPharagraphs: [
-    '.',
+    'Milongas Extremas es un cuarteto de guitarras criollas y voces, con espíritu roquero, un carácter musical único, propio y una actitud escénica que expone lo extremo de sus milongas.',
   ],
-  coverPhoto: 'https://res.cloudinary.com/subteuy/image/upload/v1579903490/subte.uy/Imagenes%20de%20Proyectos/1%20-%20Milongas%20Extremas%20CD/01_00_fj4ilt.jpg',
+  coverPhoto: 'https://res.cloudinary.com/subteuy/image/upload/v1580999897/subte.uy/Imagenes%20de%20Proyectos/10_Milongas_Sodre/10_00_pvgwir.jpg',
   trabajosUrls: [
-    { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1579903490/subte.uy/Imagenes%20de%20Proyectos/1%20-%20Milongas%20Extremas%20CD/01_01_iouzkj.jpg' },
-    { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1579903490/subte.uy/Imagenes%20de%20Proyectos/1%20-%20Milongas%20Extremas%20CD/01_02_xmcenn.jpg' },
-    { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1579903490/subte.uy/Imagenes%20de%20Proyectos/1%20-%20Milongas%20Extremas%20CD/01_03_vuxflo.jpg' },
+    { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580999898/subte.uy/Imagenes%20de%20Proyectos/10_Milongas_Sodre/10_02_00_m7dmcj.jpg' },
+    { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580999897/subte.uy/Imagenes%20de%20Proyectos/10_Milongas_Sodre/10_02_012_vraa4i.jpg' },
+    { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580999897/subte.uy/Imagenes%20de%20Proyectos/10_Milongas_Sodre/10_02_016_fxmv6s.jpg' },
+    { lowRes: 'https://res.cloudinary.com/subteuy/image/upload/v1580999897/subte.uy/Imagenes%20de%20Proyectos/10_Milongas_Sodre/10_02_rzqokb.jpg' },
   ],
   client: 'Milongas Extremas',
   sector: 'Música',
-  tags: 'Gráfico',
-  date: '2016'
+  tags: MilongasSodrePortada.tags,
+  date: '2014'
 }
 
 export {

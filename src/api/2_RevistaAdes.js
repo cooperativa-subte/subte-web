@@ -8,9 +8,9 @@ let RevistaAdesPortada = {
 
 let RevistaAdes = {
   name: 'Boletín sindical',
-  shortDescription: 'Diseño de boletín mensual para la filial sindical ADES Montevideo.',
+  shortDescription: 'Diseño de boletín mensual para la filial sindical ADES Montevideo',
   descriptionPharagraphs: [
-    'Los sindicatos siempre tienen mucha información para difundir entre sus afiliadas y afiliados. Un boletín sigue siendo una muy buena forma de hacerlo',
+    'Los sindicatos siempre tienen mucha información para difundir entre sus afiliadas y afiliados. Un boletín sigue siendo una muy buena forma de hacerlo.',
   ],
   coverPhoto: 'https://res.cloudinary.com/subteuy/image/upload/v1580135770/subte.uy/Imagenes%20de%20Proyectos/2_Revista_Ades/02_00_vinffw.jpg',
   trabajosUrls: [
