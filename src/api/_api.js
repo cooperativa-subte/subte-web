@@ -109,8 +109,22 @@ const sendPostRequest = async (URI, data) => {
   return await response.json()
 }
 
+const makeGetRequest = async (URI, data) => {
+
+  const response = await fetch(URI, {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+
+  return await response.json()
+}
+
 export {
   getProjects,
   getProjectDetail,
-  sendContactEmail
+  sendContactEmail,
+  sendPostRequest,
+  makeGetRequest
 }

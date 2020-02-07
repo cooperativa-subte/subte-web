@@ -5,10 +5,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Auth0Provider } from './components/contexts/auth0-context'
+import { ProjectsProvider } from './components/contexts/projects-context';
 
 ReactDOM.render(
   <Auth0Provider>
-    <App />
+    <ProjectsProvider>
+      <App />
+    </ProjectsProvider>
   </Auth0Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
