@@ -11,9 +11,7 @@ import { AicooPortada, Aicoo } from './11_Aicoo';
 import { PalabrasAlChePortada, PalabrasAlChe } from './12_PalabrasAlChe';
 import { MilongasSodrePortada, MilongasSodre } from './10_Milongas_Sodre';
 
-
 const EMAIL_URI = 'https://subte-api.herokuapp.com/contactemail'
-
 
 function getProjects() {
   return new Promise((resolve, reject) => {

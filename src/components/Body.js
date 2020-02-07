@@ -11,7 +11,7 @@ import Contact from './sections/Contact'
 import Footer from './Footer'
 import Admin from './Admin'
 
-import ProjectDetail from './sections/projects/ProjectDetail'
+import ProjectDetail from './sections/ProjectDetail'
 
 import '../styles/Body.scss'
 

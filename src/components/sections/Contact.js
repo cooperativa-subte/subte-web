@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { useSignUpForm } from '../utils/CustomHooks'
 import { sendContactEmail } from '../../api/_api'
@@ -18,11 +18,9 @@ export default function Contact(props) {
   const [userMessage, setUserMessage] = useState({})
   const [showSpinner, setShowSpinner] = useState(false)
   const [spinnerText, setSpinnerText] = useState('')
-  const [messageText] = useState(() => {
-    console.log(props)
-  return (
+  const [messageText] = useState(() => (
     qs.parse(props.location.search.slice(1)).subject != null ? qs.parse(props.location.search.slice(1)).subject : ''
-  )})
+  ))
 
   const spinnerTextRef = useRef('Enviando')
 
@@ -31,9 +29,7 @@ export default function Contact(props) {
   useEffect(() => {
   }, [spinnerText])
 
-  useEffect(() => {
-
-  }, [])
+  useEffect(() => { }, [])
 
   const onSubmitForm = async () => {
     await validateForm()

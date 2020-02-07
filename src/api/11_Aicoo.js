@@ -1,6 +1,6 @@
 let AicooPortada =
 {
-  id: 10,
+  id: 11,
   name: 'AICOO',
   url: 'aicoo-signo',
   cardImgURI: 'https://res.cloudinary.com/subteuy/image/upload/v1580234828/subte.uy/Imagenes%20de%20Proyectos/11_Aicoo/11_00_cover_krfayl.jpg',

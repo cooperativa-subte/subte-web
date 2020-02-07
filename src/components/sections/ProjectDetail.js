@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useParams, NavLink } from 'react-router-dom'
-import { getProjectDetail, getProjects } from '../../../api/_api'
+import { getProjectDetail, getProjects } from '../../api/_api'
 
-import { ReactComponent as RightArrowSvg } from '../../../images/right-arrow.svg'
-import { ReactComponent as LeftArrowSvg } from '../../../images/left-arrow.svg'
+import { ReactComponent as RightArrowSvg } from '../../images/right-arrow.svg'
+import { ReactComponent as LeftArrowSvg } from '../../images/left-arrow.svg'
 
-import '../../../styles/ProjectDetail.scss'
+import '../../styles/ProjectDetail.scss'
 
 export default function ProjectDetail() {
   let { id } = useParams();
