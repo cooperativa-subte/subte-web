@@ -102,7 +102,7 @@ export default function ProjectDetail() {
                       {
                         projectDetail.tags.map((tag, i) => (
                           <span key={i}>
-                            <NavLink exact to={`/portfolio?tag=${tag}`} className='tag-link ml-1'>{tag}</NavLink>
+                            <NavLink exact to={`/proyectos?tag=${tag}`} className='tag-link ml-1'>{tag}</NavLink>
                             {i === projectDetail.tags.length - 1 ? '' : ','}
                           </span>
                         ))
@@ -130,11 +130,11 @@ export default function ProjectDetail() {
       <div className={`footer-container`}>
         <div className='row justify-content-center'>
           <div className='col-11 align-self-center'>
-            <NavLink exact to={`/portfolio/${beforeProjectUrl}`} className='' activeClassName='active'>
+            <NavLink exact to={`/proyectos/${beforeProjectUrl}`} className='' activeClassName='active'>
               <LeftArrowSvg />
               <span className='ml-3'>Anterior</span>
             </NavLink>
-            <NavLink exact to={`/portfolio/${afterProjectUrl}`} className='float-right' activeClassName='active'>
+            <NavLink exact to={`/proyectos/${afterProjectUrl}`} className='float-right' activeClassName='active'>
               <span className='mr-3'>Siguiente</span>
               <RightArrowSvg />
             </NavLink>

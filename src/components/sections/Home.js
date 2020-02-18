@@ -5,15 +5,15 @@ import { isMobile } from 'react-device-detect'
 
 import '../../styles/Home.scss'
 
+export default function Home({history}) {
 
-export default function Home() {
   return (
     <div className='section-container container-fluid home-container'>
       <div className='row align-items-center justify-content-center'>
         <div className='col-12 px-0'>
           <Carousel indicators={false} interval={2500} pauseOnHover={false}>
             <Carousel.Item>
-              <NavLink exact to='/portfolio/acrin-signo'>
+              <NavLink exact to='/proyectos/acrin-signo'>
                 {
                   isMobile ?
                     <img
@@ -31,7 +31,7 @@ export default function Home() {
               </NavLink>
             </Carousel.Item>
             <Carousel.Item>
-              <NavLink exact to='/portfolio/sintep-inaguracion'>
+              <NavLink exact to='/proyectos/sintep-inaguracion'>
                 {
                   isMobile ?
                     <img
@@ -48,7 +48,7 @@ export default function Home() {
               </NavLink>
             </Carousel.Item>
             <Carousel.Item>
-              <NavLink exact to='/portfolio/aicoo-signo'>
+              <NavLink exact to='/proyectos/aicoo-signo'>
                 {
                   isMobile ?
                     <img
@@ -66,7 +66,7 @@ export default function Home() {
               </NavLink>
             </Carousel.Item>
             <Carousel.Item>
-              <NavLink exact to='/portfolio/zur-1968'>
+              <NavLink exact to='/proyectos/zur-1968'>
                 {
                   isMobile ?
                     <img
@@ -84,7 +84,7 @@ export default function Home() {
               </NavLink>
             </Carousel.Item>
             <Carousel.Item>
-              <NavLink exact to='/portfolio/librillos-comuna'>
+              <NavLink exact to='/proyectos/librillos-comuna'>
                 {
                   isMobile ?
                     <img

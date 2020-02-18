@@ -63,7 +63,7 @@ export default function Header({ shadow }) {
                 <NavLink exact to='/' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Inicio</NavLink>
               </div>
               <div className='col-12 text-right mt-2'>
-                <NavLink exact to='/nosotres' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Quiénes somos</NavLink>
+                <NavLink exact to='/nosotres' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Nosotres</NavLink>
               </div>
               <div className='col-12 text-right mt-2'>
                 <NavLink exact to='/servicios' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Servicios</NavLink>

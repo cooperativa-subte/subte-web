@@ -1,13 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
-
+import { useScrollPosition } from './components/utils/CustomHooks'
 import './App.scss';
 
 import Header from './components/Header'
 import Body from './components/Body'
-
-import { useScrollPosition } from './components/utils/CustomHooks'
-
 
 function App() {
 
