@@ -16,14 +16,21 @@ import ProjectDetail from './sections/ProjectDetail'
 
 import '../styles/Body.scss'
 
-export default function Body({ setBodyInnerElement, history }) {
+import { createBrowserHistory } from 'history';
+
+export default function Body({ setBodyInnerElement }) {
 
   let bodyContainer = useRef(null)
   let location = useLocation();
+  const history = createBrowserHistory();
 
   useEffect(() => {
     console.log(history)
-  })
+    history.listen((a, b) => {
+      console.log(a)
+      console.log(b)
+    })
+  }, [history])
 
   useEffect(() => {
 
