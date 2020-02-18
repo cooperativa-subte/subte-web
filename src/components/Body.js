@@ -16,10 +16,14 @@ import ProjectDetail from './sections/ProjectDetail'
 
 import '../styles/Body.scss'
 
-export default function Body({ setBodyInnerElement }) {
+export default function Body({ setBodyInnerElement, history }) {
 
   let bodyContainer = useRef(null)
   let location = useLocation();
+
+  useEffect(() => {
+    console.log(history)
+  })
 
   useEffect(() => {
 

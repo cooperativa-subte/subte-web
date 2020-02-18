@@ -60,7 +60,7 @@ export default function Services() {
           <Accordion>
             {
               sections.map((section, i) => (
-                <div>
+                <div key={i}>
                   <Card key={i} className={`py-2 ${section.isExpanded && 'expanded'}`}>
                     <div className='row justify-content-center mx-0'>
                       <div className='col-11'>
@@ -74,11 +74,11 @@ export default function Services() {
                           <Card.Body className='px-0'>
                             {
                               section.description.map((d, index) => (
-                                <div>
+                                <div key={index}>
                                   {
                                     d.subtitle ? <h3>{d.subtitle}</h3> : <></>
                                   }
-                                  <p key={index} className={index === section.description.length - 1 ? 'mb-0': '' }>{d.paragraph}</p>
+                                  <p className={index === section.description.length - 1 ? 'mb-0': '' }>{d.paragraph}</p>
                                 </div>
                               ))
                             }
