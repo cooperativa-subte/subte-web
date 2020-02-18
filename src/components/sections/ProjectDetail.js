@@ -80,7 +80,7 @@ export default function ProjectDetail() {
                   {
                     projectDetail.coverVideo ?
                       <iframe id='cover-video' width="100%" title='cover-video' src={projectDetail.coverVideo} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> :
-                      <img src={projectDetail.coverPhoto} alt='Cover Project' className='img-fluid' />
+                      <img src={projectDetail.coverPhoto} alt='Imagen Proyecto Portada' className='img-fluid' />
                   }
 
                 </div>
@@ -117,7 +117,7 @@ export default function ProjectDetail() {
                     {
                       trabajosUrls.map((trabajo, index) => (
                         <div key={index} className='col-12 mt-4'>
-                          <img className='img-fluid' src={trabajo.lowRes} alt={`Projecto ${index}`} />
+                          <img className='img-fluid' src={trabajo.lowRes} alt='Projecto' />
                         </div>
                       ))
                     }

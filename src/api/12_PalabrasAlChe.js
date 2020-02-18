@@ -4,7 +4,7 @@ let PalabrasAlChePortada =
   name: 'Palabras al Che',
   url: 'palabras-al-che',
   cardImgURI: 'https://res.cloudinary.com/subteuy/image/upload/v1581000192/subte.uy/Imagenes%20de%20Proyectos/12_Palabras_Al_Che/12_00_cover_dt4dsi.jpg',
-  tags: ['Gráfico']
+  tags: ['Gráfico', 'Editorial']
 };
 
 let PalabrasAlChe = {

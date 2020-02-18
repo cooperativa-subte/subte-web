@@ -10,6 +10,7 @@ import Projects from './sections/Projects'
 import Contact from './sections/Contact'
 import Footer from './Footer'
 import Admin from './Admin'
+import NotFound from './NotFound'
 
 import ProjectDetail from './sections/ProjectDetail'
 
@@ -44,10 +45,11 @@ export default function Body({ setBodyInnerElement }) {
             <Route exact path='/' component={Home} />
             <Route exact path='/nosotres' component={About} />
             <Route exact path='/servicios' component={Services} />
-            <Route exact path='/portfolio' component={Projects} />
-            <Route path='/portfolio/:id' children={<ProjectDetail />} />
+            <Route exact path='/proyectos' component={Projects} />
+            <Route path='/proyectos/:id' children={<ProjectDetail />} />
             <Route exact path='/contacto' component={Contact} />
             <Route exact path='/admin' component={Admin} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </CSSTransition>
       </TransitionGroup>

@@ -78,7 +78,7 @@ export default function Services() {
                                   {
                                     d.subtitle ? <h3>{d.subtitle}</h3> : <></>
                                   }
-                                  <p key={index}>{d.paragraph}</p>
+                                  <p key={index} className={index === section.description.length - 1 ? 'mb-0': '' }>{d.paragraph}</p>
                                 </div>
                               ))
                             }

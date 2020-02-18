@@ -64,3 +64,28 @@
     }
   }
 }
+
+// Mobile
+@media screen and (max-width: 576px) {
+  .services-container {
+    .black-intro {
+      padding-top: 15vh;
+      h2 {
+        font-size: $font-big;
+      }
+    }
+    .accordion {
+      .service-title {
+        font-size: $font-m-large;
+      }
+      .card {
+        .card-body {
+          width: 100%;
+          h3 {
+            font-size: $font-m-large;
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ let MilongasSodrePortada =
 
 let MilongasSodre = {
   name: 'Lo eléctrico del sentimiento',
-  shortDescription: 'Diseño del afiche para Milongas Extremas',
+  shortDescription: 'Diseño de afiche para Milongas Extremas',
   descriptionPharagraphs: [
     'Milongas Extremas es un cuarteto de guitarras criollas y voces, con espíritu roquero, un carácter musical único, propio y una actitud escénica que expone lo extremo de sus milongas.',
   ],

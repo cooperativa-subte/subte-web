@@ -1,0 +1,9 @@
+@import './variables';
+
+.not-found-container {
+  min-height: 80vh;
+  .not-found-img {
+    width: 100%;
+    height: auto;
+  }
+}
