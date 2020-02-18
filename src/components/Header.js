@@ -16,7 +16,7 @@ export default function Header({ shadow }) {
 
   useEffect(() => {
     let classes = isMobile ? 'container' : 'container-fluid'
-    classes += shadow ? ' box-shadow' : ' '
+    classes += shadow ? ' border-bottom' : ' '
     setHeaderClasses(classes)
   }, [shadow])
 
@@ -58,7 +58,7 @@ export default function Header({ shadow }) {
             </div>
           </div>
           <CSSTransition in={showMenu} timeout={675} classNames='menu-items'>
-            <div className='row menu-items box-shadow' ref={menuItemsEle}>
+            <div className='row menu-items border-bottom' ref={menuItemsEle}>
               <div className='col-12 text-right'>
                 <NavLink exact to='/' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Inicio</NavLink>
               </div>
