@@ -21,7 +21,7 @@ let Milongas = {
   ],
   client: 'Milongas Extremas',
   sector: 'Música',
-  tags: ['Gráfico'],
+  tags: MilongasPortada.tags,
   date: '2016'
 }
 

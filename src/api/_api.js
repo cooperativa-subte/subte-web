@@ -7,15 +7,17 @@ import { SintepCampaniaPortada, SintepCampania } from './8_SintepCampania';
 import { AcrinSignoPortada, AcrinSigno } from './6_Acrin';
 import { Zur1968Portada, Zur1968 } from './7_Zur_1968';
 import { SintepInaguracion, SintepInaguracionPortada } from './9_Sintep_Inaguracion';
+import { MilongasSodrePortada, MilongasSodre } from './10_Milongas_Sodre';
 import { AicooPortada, Aicoo } from './11_Aicoo';
 import { PalabrasAlChePortada, PalabrasAlChe } from './12_PalabrasAlChe';
-import { MilongasSodrePortada, MilongasSodre } from './10_Milongas_Sodre';
+import { ColectivoCatalejoPortada, ColectivoCatalejo } from './13_ColectivoCatalejo';
 
 const EMAIL_URI = 'https://subte-api.herokuapp.com/contactemail'
 
 function getProjects() {
   return new Promise((resolve, reject) => {
     resolve([
+      ColectivoCatalejoPortada,
       SintepInaguracionPortada,
       AicooPortada,
       SintepCampaniaPortada,
@@ -73,6 +75,9 @@ function getProjectDetail(name) {
       break;
     case 'milongas-sodre':
       project = MilongasSodre
+      break;
+    case 'web-colectivo-catalejo':
+      project = ColectivoCatalejo
       break;
     default:
       project = null
