@@ -6,6 +6,9 @@
   .row .row {
     min-height: unset;
   }
+  .carousel {
+    z-index: 0;
+  }
 }
 .home-container {
   background-color: black;
