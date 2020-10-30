@@ -5,7 +5,7 @@ import { isMobile } from 'react-device-detect';
 
 import '../../styles/Home.scss';
 
-export default function Home({ history }) {
+export default function Home() {
   return (
     <div className="section-container container-fluid home-container">
       <div className="row align-items-center justify-content-center">

@@ -1,6 +1,6 @@
 .contact-section-container {
   .error {
-    color: #CB4335;
+    color: #cb4335;
     font-size: 0.8em;
     &.server {
       font-size: 0.9em;
@@ -9,11 +9,12 @@
   textarea {
     height: 25vh;
   }
-  input, textarea {
-    border: 1px solid #99A9BB;
+  input,
+  textarea {
+    border: 1px solid #99a9bb;
     outline-style: none;
     &:focus {
-      border-color: #2E4053
+      border-color: #2e4053;
     }
   }
   form {
@@ -22,8 +23,11 @@
       border: 1px solid black;
       color: white;
     }
-    .success{
-      color: #229954
+    .success {
+      color: #229954;
+    }
+    .send-message p {
+      margin: 0;
     }
   }
   .align-center {
