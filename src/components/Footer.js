@@ -9,7 +9,7 @@ function Footer() {
         <div className="col-xl-11">
           <div className="row justify-content justify-content-between align-items-center">
             <div className="col-12 col-md-6 info-container text-center text-md-left">
-              <p>San Salvador 1510 (Casa en el aire)</p>
+              <p>San Salvador 1510 (Casa en el Aire)</p>
               <p>
                 <a
                   href="mailto:hola@subte.uy"
