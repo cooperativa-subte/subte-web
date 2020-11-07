@@ -50,6 +50,7 @@ const Contact = (props) => {
           name: inputs.name,
           tel: inputs.tel,
           text: inputs.message,
+          subject: inputs.subject,
         });
         if (response.status === 'ok') {
           setUserMessage({
