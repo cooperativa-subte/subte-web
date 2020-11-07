@@ -23,7 +23,9 @@ const Contact = (props) => {
       : '',
   );
 
-  const spinnerTextRef = useRef('Enviando');
+  const spinnerTextRef = useRef(
+    'No cierre el navegador se está enviando el mensaje',
+  );
 
   let stopper = `${spinnerTextRef.current}...`;
 
@@ -76,6 +78,7 @@ const Contact = (props) => {
       name: '',
       tel: '',
       email: '',
+      subject: '',
       message: `${messageText}`,
     },
     onSubmitForm,
@@ -84,7 +87,8 @@ const Contact = (props) => {
   const setSendingIntervalEvent = () => {
     return setInterval(() => {
       spinnerTextRef.current === stopper
-        ? (spinnerTextRef.current = 'Enviando')
+        ? (spinnerTextRef.current =
+            'No cierre el navegador se está enviando el mensaje')
         : (spinnerTextRef.current = `${spinnerTextRef.current}.`);
 
       setSpinnerText(spinnerTextRef.current);
@@ -128,6 +132,7 @@ const Contact = (props) => {
     handleInputChange({ custom: true, name: 'name', value: '' });
     handleInputChange({ custom: true, name: 'email', value: '' });
     handleInputChange({ custom: true, name: 'tel', value: '' });
+    handleInputChange({ custom: true, name: 'subject', value: '' });
     handleInputChange({ custom: true, name: 'message', value: '' });
   };
 
@@ -144,7 +149,7 @@ const Contact = (props) => {
                 noValidate
               >
                 <div className="col-12 col-md-10">
-                  <label className="d-block">Nombre Completo:</label>
+                  <label className="d-block">Nombre y Apellido:</label>
                   <input
                     name="name"
                     type="text"
@@ -155,15 +160,13 @@ const Contact = (props) => {
                     onBlur={() => validateForm('name')}
                   />
                 </div>
-                {errors.name ? (
+                {errors.name && (
                   <div className="col-12 col-md-10 mt-2 error">
                     <span>
-                      El nombre completo tiene que tener al menos{' '}
+                      El nombre y apellido tiene que tener al menos{' '}
                       <span className="negrita">3 letras</span>
                     </span>
                   </div>
-                ) : (
-                  <></>
                 )}
                 <div className="w-100"></div>
                 <div className="col-12 col-md-10 mt-2">
@@ -197,7 +200,7 @@ const Contact = (props) => {
                     onBlur={() => validateForm('email')}
                   />
                 </div>
-                {errors.email ? (
+                {errors.email && (
                   <div className="col-12 col-md-10 mt-2 error">
                     <p className="my-0">
                       <span>
@@ -210,9 +213,20 @@ const Contact = (props) => {
                       </span>
                     </p>
                   </div>
-                ) : (
-                  <></>
                 )}
+                <div className="w-100"></div>
+                <div className="col-12 col-md-10 mt-2">
+                  <label className="d-block">Asunto:</label>
+                  <input
+                    name="subject"
+                    type="text"
+                    className="w-100"
+                    autoComplete="on"
+                    onChange={handleInputChange}
+                    value={inputs.subject}
+                    onBlur={() => validateForm('subject')}
+                  />
+                </div>
                 <div className="w-100"></div>
                 <div className="col-12 col-md-10 mt-2">
                   <label className="d-block">Mensaje:</label>
@@ -225,19 +239,17 @@ const Contact = (props) => {
                     onBlur={() => validateForm('message')}
                   />
                 </div>
-                {errors.message ? (
+                {errors.message && (
                   <div className="col-12 col-md-10 mt-2 error">
                     <span>
                       El mensaje tiene que tener al menos{' '}
                       <span className="negrita">10 letras</span>
                     </span>
                   </div>
-                ) : (
-                  <></>
                 )}
 
                 {/* Error de cuando se envio el mail correctamente */}
-                {userMessage ? (
+                {userMessage && (
                   <div className="col-12 col-md-10 mt-2 error">
                     {userMessage.type === 'success' ? (
                       <span className="success">{userMessage.message}</span>
@@ -247,17 +259,12 @@ const Contact = (props) => {
                       </span>
                     )}
                   </div>
-                ) : (
-                  <></>
                 )}
                 <div className="w-100"></div>
                 <div className="col-12 col-md-10 mt-2">
                   {showSpinner ? (
                     <div className="send-message">
                       <p>{spinnerTextRef.current}</p>
-                      <p>
-                        No cierre el navegador, se está enviando el mensaje...
-                      </p>
                     </div>
                   ) : (
                     <button type="subtmi">Enviar Mensaje</button>

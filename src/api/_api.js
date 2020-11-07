@@ -22,7 +22,7 @@ import {
   PartidoSocialista,
 } from './14_Partido_Socialista';
 
-const EMAIL_URI = 'https://subte-api.herokuapp.com/contactemail';
+const EMAIL_URI = 'https://subte-api.herokuapp.com/sendcontactemail';
 
 function getProjects() {
   return new Promise((resolve, reject) => {
@@ -103,12 +103,13 @@ function getProjectDetail(name) {
   });
 }
 
-const sendContactEmail = async ({ email, tel, name, text }) => {
+const sendContactEmail = async ({ email, tel, name, text, subject }) => {
   const emailData = {
     from: email,
     tel: tel !== '' ? tel : undefined,
     name,
     text,
+    subject,
   };
 
   return await sendPostRequest(EMAIL_URI, emailData);

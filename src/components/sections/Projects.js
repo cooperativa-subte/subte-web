@@ -3,7 +3,7 @@ import { Link, useRouteMatch } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 
 import { getProjects } from '../../api/_api';
-
+import shuffleArray from '../utils/utilities';
 import '../../styles/Projects.scss';
 
 const ALL_PROJECTS = 'Todos';
@@ -143,23 +143,3 @@ export default function Projects(props) {
     </div>
   );
 }
-
-const shuffleArray = (array) => {
-  let currentIndex = array.length;
-  let temporaryValue;
-  let randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-};
