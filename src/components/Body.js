@@ -11,6 +11,7 @@ import Footer from './Footer';
 import Admin from './Admin';
 import NotFound from './NotFound';
 import Nosotres from './sections/Nosotres';
+import Conversatorios from './sections/Conversatorios';
 
 import ProjectDetail from './sections/ProjectDetail';
 
@@ -44,6 +45,7 @@ export default function Body({ setBodyInnerElement }) {
             <Route exact path="/servicios" component={Services} />
             <Route exact path="/proyectos" component={Projects} />
             <Route path="/proyectos/:id" children={<ProjectDetail />} />
+            <Route path="/conversatorios" component={Conversatorios} />
             <Route exact path="/contacto" component={Contact} />
             <Route exact path="/admin" component={Admin} />
             <Route path="*" component={NotFound} />

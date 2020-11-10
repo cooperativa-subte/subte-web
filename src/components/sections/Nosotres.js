@@ -8,7 +8,9 @@ const StyledNosotresContainer = styled.div`
   background-color: white;
   color: black;
   .texto-sobre-nosotres {
+    margin-top: 4rem;
     display: flex;
+    font-size: 19px;
     h2 {
       font-weight: 800;
       font-size: 2.25rem;

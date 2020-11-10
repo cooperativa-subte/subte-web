@@ -1,45 +1,80 @@
-import React, { useEffect, useState, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
-import { BrowserView, MobileView, isMobile } from 'react-device-detect'
+import React, { useEffect, useState, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
+import { BrowserView, MobileView, isMobile } from 'react-device-detect';
 import { CSSTransition } from 'react-transition-group';
 
-import logoSrc from '../images/LogoSUBTE_horizontal.svg'
-import menuIcon from '../images/menu-icon.svg'
+import logoSrc from '../images/LogoSUBTE_horizontal.svg';
+import menuIcon from '../images/menu-icon.svg';
 
-import '../styles/Header.scss'
+import '../styles/Header.scss';
 
 export default function Header({ shadow }) {
-
-  const [headerClasses, setHeaderClasses] = useState('container-fluid')
-  const [showMenu, setShowMenu] = useState(false)
-  const menuItemsEle = useRef(null)
+  const [headerClasses, setHeaderClasses] = useState('container-fluid');
+  const [showMenu, setShowMenu] = useState(false);
+  const menuItemsEle = useRef(null);
 
   useEffect(() => {
-    let classes = isMobile ? 'container' : 'container-fluid'
-    classes += shadow ? ' border-bottom' : ' '
-    setHeaderClasses(classes)
-  }, [shadow])
+    let classes = isMobile ? 'container' : 'container-fluid';
+    classes += shadow ? ' border-bottom' : ' ';
+    setHeaderClasses(classes);
+  }, [shadow]);
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu)
-  }
+    setShowMenu(!showMenu);
+  };
 
   return (
     <header className={headerClasses}>
       <BrowserView>
-        <nav className='row justify-content-center align-items-center'>
-          <div className='col-xl-11'>
-            <div className='row justify-content-between align-items-center menu-content'>
-              <div className='col-3'>
-                <NavLink exact to='/' className='d-block link-img mr-5 pr-4'>
-                  <img className='logo-header' src={logoSrc} alt='Logo SUBTE' />
+        <nav className="row justify-content-center align-items-center">
+          <div className="col-xl-11">
+            <div className="row justify-content-between align-items-center menu-content">
+              <div className="col-3">
+                <NavLink exact to="/" className="d-block link-img mr-5 pr-4">
+                  <img className="logo-header" src={logoSrc} alt="Logo SUBTE" />
                 </NavLink>
               </div>
-              <div className='col-7 text-right'>
-                <NavLink exact to='/nosotres' className='' activeClassName='active'>Nosotres</NavLink>
-                <NavLink exact to='/servicios' className='' activeClassName='active'>Servicios</NavLink>
-                <NavLink exact to='/proyectos' className='' activeClassName='active'>Proyectos</NavLink>
-                <NavLink exact to='/contacto' className='' activeClassName='active'>Contacto</NavLink>
+              <div className="col-7 text-right">
+                <NavLink
+                  exact
+                  to="/nosotres"
+                  className=""
+                  activeClassName="active"
+                >
+                  Nosotres
+                </NavLink>
+                <NavLink
+                  exact
+                  to="/servicios"
+                  className=""
+                  activeClassName="active"
+                >
+                  Servicios
+                </NavLink>
+                <NavLink
+                  exact
+                  to="/proyectos"
+                  className=""
+                  activeClassName="active"
+                >
+                  Proyectos
+                </NavLink>
+                <NavLink
+                  exact
+                  to="/conversatorios"
+                  className=""
+                  activeClassName="active"
+                >
+                  Conversatorios
+                </NavLink>
+                <NavLink
+                  exact
+                  to="/contacto"
+                  className=""
+                  activeClassName="active"
+                >
+                  Contacto
+                </NavLink>
               </div>
             </div>
           </div>
@@ -47,37 +82,107 @@ export default function Header({ shadow }) {
       </BrowserView>
       <MobileView>
         <nav>
-          <div className='menu-bar row justify-content-between align-items-center'>
-            <div className='col-5 ml-3'>
-              <NavLink exact to='/' className='d-block link-img'>
-                <img className='img-fluid' src={logoSrc} alt='Logo SUBTE' />
+          <div className="menu-bar row justify-content-between align-items-center">
+            <div className="col-5 ml-3">
+              <NavLink exact to="/" className="d-block link-img">
+                <img className="img-fluid" src={logoSrc} alt="Logo SUBTE" />
               </NavLink>
             </div>
-            <div className='col-5 text-right mr-3'>
-              <img className='menu-icon' src={menuIcon} alt='Menu Icon' onClick={() => { toggleMenu() }} />
+            <div className="col-5 text-right mr-3">
+              <img
+                className="menu-icon"
+                src={menuIcon}
+                alt="Menu Icon"
+                onClick={() => {
+                  toggleMenu();
+                }}
+              />
             </div>
           </div>
-          <CSSTransition in={showMenu} timeout={675} classNames='menu-items'>
-            <div className='row menu-items border-bottom' ref={menuItemsEle}>
-              <div className='col-12 text-right'>
-                <NavLink exact to='/' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Inicio</NavLink>
+          <CSSTransition in={showMenu} timeout={675} classNames="menu-items">
+            <div className="row menu-items border-bottom" ref={menuItemsEle}>
+              <div className="col-12 text-right">
+                <NavLink
+                  exact
+                  to="/"
+                  className="mr-3"
+                  activeClassName="active"
+                  onClick={() => {
+                    toggleMenu();
+                  }}
+                >
+                  Inicio
+                </NavLink>
               </div>
-              <div className='col-12 text-right mt-2'>
-                <NavLink exact to='/nosotres' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Nosotres</NavLink>
+              <div className="col-12 text-right mt-2">
+                <NavLink
+                  exact
+                  to="/nosotres"
+                  className="mr-3"
+                  activeClassName="active"
+                  onClick={() => {
+                    toggleMenu();
+                  }}
+                >
+                  Nosotres
+                </NavLink>
               </div>
-              <div className='col-12 text-right mt-2'>
-                <NavLink exact to='/servicios' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Servicios</NavLink>
+              <div className="col-12 text-right mt-2">
+                <NavLink
+                  exact
+                  to="/servicios"
+                  className="mr-3"
+                  activeClassName="active"
+                  onClick={() => {
+                    toggleMenu();
+                  }}
+                >
+                  Servicios
+                </NavLink>
               </div>
-              <div className='col-12 text-right mt-2'>
-                <NavLink exact to='/proyectos' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Proyectos</NavLink>
+              <div className="col-12 text-right mt-2">
+                <NavLink
+                  exact
+                  to="/proyectos"
+                  className="mr-3"
+                  activeClassName="active"
+                  onClick={() => {
+                    toggleMenu();
+                  }}
+                >
+                  Proyectos
+                </NavLink>
               </div>
-              <div className='col-12 text-right my-2 pb-2'>
-                <NavLink exact to='/contacto' className='mr-3' activeClassName='active' onClick={() => { toggleMenu() }}>Contacto</NavLink>
+              <div className="col-12 text-right mt-2">
+                <NavLink
+                  exact
+                  to="/conversatorios"
+                  className="mr-3"
+                  activeClassName="active"
+                  onClick={() => {
+                    toggleMenu();
+                  }}
+                >
+                  Conversatorios
+                </NavLink>
+              </div>
+              <div className="col-12 text-right my-2 pb-2">
+                <NavLink
+                  exact
+                  to="/contacto"
+                  className="mr-3"
+                  activeClassName="active"
+                  onClick={() => {
+                    toggleMenu();
+                  }}
+                >
+                  Contacto
+                </NavLink>
               </div>
             </div>
           </CSSTransition>
         </nav>
       </MobileView>
-    </header >
-  )
+    </header>
+  );
 }
