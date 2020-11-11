@@ -1,17 +1,72 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 
 import '../../styles/Conversatorios.scss';
+import suffleArray, { verificaciones } from '../utils/utilities';
+import { sendConvesatoriosInscripcion } from '../../api/_api';
+
+const formCaptchas = suffleArray(verificaciones);
 
 const Conversatorios = () => {
   const [formOpened, setFormOpened] = useState(false);
-  const { register, handleSubmit } = useForm();
-  const inscribirse = (data) => {
-    console.log(data);
+  const { register, handleSubmit, errors } = useForm();
+  const [selectedFormCaptcha, setSelectedFormCaptcha] = useState();
+  const [spinnerText, setSpinnerText] = useState('');
+  const [showSpinner, setShowSpinner] = useState(false);
+  const [formMessage, setFormMessage] = useState({
+    type: '',
+    message: '',
+  });
+
+  const spinnerTextRef = useRef(
+    'No cierre el navegador se está enviando la inscripción',
+  );
+
+  let stopper = `${spinnerTextRef.current}...`;
+
+  const inscribirse = async (data, e) => {
+    let interval = setSendingIntervalEvent();
+    setShowSpinner(true);
+    const response = await sendConvesatoriosInscripcion({
+      nombre: data.nombre,
+      organizacion: data.organizacion,
+      mail: data.mail,
+      pregunta: data.pregunta,
+    });
+    if (response.status === 'ok') {
+      setFormMessage({
+        type: 'success',
+        message: 'Inscripción enviada correctamente',
+      });
+      e.target.reset();
+    } else {
+      setFormMessage({
+        type: 'error',
+        message:
+          'Hubo un error al enviar la inscripción, trate de nuevo o escriba un mail a hola@subte.uy',
+      });
+    }
+    clearInterval(interval);
+    setShowSpinner(false);
   };
 
+  const setSendingIntervalEvent = () => {
+    return setInterval(() => {
+      spinnerTextRef.current === stopper
+        ? (spinnerTextRef.current =
+            'No cierre el navegador se está enviando el mensaje')
+        : (spinnerTextRef.current = `${spinnerTextRef.current}.`);
+
+      setSpinnerText(spinnerTextRef.current);
+    }, 300);
+  };
+
+  useEffect(() => {
+    setSelectedFormCaptcha(formCaptchas[0]);
+  }, []);
+
   return (
-    <div>
+    <div className="conversatorios-container">
       <div className="header-conversatorios">
         <img
           src="https://res.cloudinary.com/subteuy/image/upload/v1605008507/subte.uy/Conversatorios/BannersWeb_conversatorios_sfqpuq.jpg"
@@ -23,7 +78,7 @@ const Conversatorios = () => {
           <div className="col-xl-11">
             <div className="row mb-5">
               <div className="col-12 col-md-6">
-                <h2>¿Qué son los Conversatorios Subterráneos?</h2>
+                <h2>¿Qué son?</h2>
                 <p>
                   Los Conversatorios Subterráneos son espacios donde nos
                   proponemos reflexionar colectivamente sobre los principales
@@ -45,14 +100,14 @@ const Conversatorios = () => {
                   consensos y disensos en torno a las problemáticas comunes y
                   particulares de cada organización.{' '}
                 </p>
-                <p>
+                <p className="last-p">
                   Entendemos que la comunicación es una herramienta clave en los
                   procesos colectivos, y es sumamente potente el poder
                   cuestionar los lenguajes y dispositivos hegemónicos para
                   construir otros más cercanos y propios de las organizaciones.
                 </p>
                 <div className="proximos-conversatorios-container">
-                  <h3>Próximo conversatorio</h3>
+                  <h2>Próximo conversatorio</h2>
                   <div>
                     <img
                       src="https://res.cloudinary.com/subteuy/image/upload/v1605009236/subte.uy/Conversatorios/CuadradoFecha_nmqhma.jpg"
@@ -104,7 +159,43 @@ const Conversatorios = () => {
                       Pregunta o problema que quieras plantear
                     </label>
                     <textarea name="pregunta" id="pregunta" ref={register} />
-                    <button type="submit">Inscribirse</button>
+
+                    <p>
+                      Cupos limitados. Te confirmaremos por mail tu inscripción.
+                    </p>
+                    <div className="veri">
+                      <label htmlFor="veri">
+                        Completa para enviar: ¿Cuánto es{' '}
+                        {selectedFormCaptcha.label}?
+                      </label>
+                      <input
+                        id="veri"
+                        name="veri"
+                        type="text"
+                        ref={register({
+                          validate: (value) =>
+                            value === selectedFormCaptcha.value,
+                        })}
+                      />
+                      {errors.veri && (
+                        <span className="error-veri">
+                          Resultado incorrecto.
+                        </span>
+                      )}
+                    </div>
+                    {showSpinner ? (
+                      <div className="send-message">
+                        <p>{spinnerTextRef.current}</p>
+                      </div>
+                    ) : (
+                      <button type="submit">Inscribirse</button>
+                    )}
+
+                    {formMessage.message && (
+                      <p className={`${formMessage.type}`}>
+                        {formMessage.message}
+                      </p>
+                    )}
                   </form>
                 )}
               </div>

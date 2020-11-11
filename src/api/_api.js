@@ -23,6 +23,8 @@ import {
 } from './14_Partido_Socialista';
 
 const EMAIL_URI = 'https://subte-api.herokuapp.com/sendcontactemail';
+const INSCRIPCION_URI =
+  'https://subte-api.herokuapp.com/registrationconversatorios';
 
 function getProjects() {
   return new Promise((resolve, reject) => {
@@ -113,6 +115,27 @@ const sendContactEmail = async ({ email, tel, name, text, subject }) => {
   };
 
   return await sendPostRequest(EMAIL_URI, emailData);
+};
+
+export const sendConvesatoriosInscripcion = async ({
+  nombre,
+  organizacion,
+  mail,
+  pregunta,
+}) => {
+  const data = {
+    nombre,
+    organizacion,
+    mail,
+    pregunta,
+  };
+  try {
+    const response = sendPostRequest(INSCRIPCION_URI, data);
+    return response;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 };
 
 const sendPostRequest = async (URI, data) => {
