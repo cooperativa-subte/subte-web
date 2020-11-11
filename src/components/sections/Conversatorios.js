@@ -18,6 +18,10 @@ const Conversatorios = () => {
     message: '',
   });
 
+  useEffect(() => {}, [spinnerText]);
+
+  useEffect(() => {}, []);
+
   const spinnerTextRef = useRef(
     'No cierre el navegador se está enviando la inscripción',
   );
@@ -54,7 +58,7 @@ const Conversatorios = () => {
     return setInterval(() => {
       spinnerTextRef.current === stopper
         ? (spinnerTextRef.current =
-            'No cierre el navegador se está enviando el mensaje')
+            'No cierre el navegador se está enviando la inscripción')
         : (spinnerTextRef.current = `${spinnerTextRef.current}.`);
 
       setSpinnerText(spinnerTextRef.current);
@@ -77,7 +81,7 @@ const Conversatorios = () => {
         <div className="row justify-content-center">
           <div className="col-xl-11">
             <div className="row mb-5">
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-6 order-2 order-md-1">
                 <h2>¿Qué son?</h2>
                 <p>
                   Los Conversatorios Subterráneos son espacios donde nos
@@ -199,10 +203,16 @@ const Conversatorios = () => {
                   </form>
                 )}
               </div>
-              <div className="col-12 col-md-6">
-                <video className="video-conversatorios" autoPlay loop>
+              <div className="col-12 col-md-6 order-1 order-md-2">
+                <video
+                  className="video-conversatorios"
+                  autoPlay
+                  loop
+                  controls
+                  muted
+                >
                   <source
-                    src="https://res.cloudinary.com/subteuy/video/upload/v1605008842/subte.uy/Conversatorios/VideoAnimado_2_bqb5wk.mp4"
+                    src="https://res.cloudinary.com/subteuy/video/upload/v1605135953/subte.uy/Conversatorios/SPOTCS_C4_baja_mb2j9f.mp4"
                     type="video/mp4"
                   />
                 </video>
