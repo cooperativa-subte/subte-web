@@ -22,13 +22,20 @@
         display: flex;
         flex-wrap: wrap;
         .fecha-img {
-          width: 3.5rem;
-          height: 3.5rem;
+          width: 3rem;
+          height: 3rem;
           margin-right: 1rem;
+          @media (min-width: 576px) {
+            width: 3.5rem;
+            height: 3.5rem;
+          }
         }
         .fecha {
-          font-size: 1.3rem;
+          font-size: 1.15rem;
           margin-bottom: 0;
+          @media (min-width: 576px) {
+            font-size: 1.3rem;
+          }
         }
         .direccion {
           font-size: 0.9rem;

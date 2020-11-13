@@ -24,7 +24,7 @@ const StyledNosotresContainer = styled.div`
   .fotos-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 2rem;
     & > div {
       img {
@@ -34,6 +34,9 @@ const StyledNosotresContainer = styled.div`
       p {
         font-size: 0.85rem;
       }
+    }
+    @media (min-width: 576px) {
+      justify-content: space-between;
     }
   }
   @media (min-width: 576px) {
