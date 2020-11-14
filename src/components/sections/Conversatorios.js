@@ -6,27 +6,19 @@ import suffleArray, { verificaciones } from '../utils/utilities';
 import { sendConvesatoriosInscripcion } from '../../api/_api';
 
 const formCaptchas = suffleArray(verificaciones);
+const loadingText = 'No cierre el navegador se está enviando la inscripción';
 
 const Conversatorios = () => {
   const [formOpened, setFormOpened] = useState(false);
   const { register, handleSubmit, errors } = useForm();
   const [selectedFormCaptcha, setSelectedFormCaptcha] = useState();
-  const [spinnerText, setSpinnerText] = useState('');
   const [showSpinner, setShowSpinner] = useState(false);
   const [formMessage, setFormMessage] = useState({
     type: '',
     message: '',
   });
 
-  useEffect(() => {}, [spinnerText]);
-
-  useEffect(() => {}, []);
-
-  const spinnerTextRef = useRef(
-    'No cierre el navegador se está enviando la inscripción',
-  );
-
-  let stopper = `${spinnerTextRef.current}...`;
+  const spinnerTextRef = useRef(loadingText);
 
   const inscribirse = async (data, e) => {
     let interval = setSendingIntervalEvent();
@@ -37,7 +29,7 @@ const Conversatorios = () => {
       mail: data.mail,
       pregunta: data.pregunta,
     });
-    if (response.status === 'ok') {
+    if (response && response.status === 'ok') {
       setFormMessage({
         type: 'success',
         message: 'Inscripción enviada correctamente',
@@ -57,12 +49,11 @@ const Conversatorios = () => {
 
   const setSendingIntervalEvent = () => {
     return setInterval(() => {
-      spinnerTextRef.current === stopper
-        ? (spinnerTextRef.current =
-            'No cierre el navegador se está enviando la inscripción')
-        : (spinnerTextRef.current = `${spinnerTextRef.current}.`);
-
-      setSpinnerText(spinnerTextRef.current);
+      let text = spinnerTextRef.current;
+      spinnerTextRef.current =
+        spinnerTextRef.current === `${loadingText}...`
+          ? loadingText
+          : `${text}.`;
     }, 300);
   };
 
