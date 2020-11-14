@@ -23,8 +23,8 @@ import {
 } from './14_Partido_Socialista';
 
 const EMAIL_URI = 'https://subte-api.herokuapp.com/sendcontactemail';
-const INSCRIPCION_URI =
-  'https://subte-api.herokuapp.com/registrationconversatorios';
+const AWS_LAMBDA_FN =
+  'https://51rceu869k.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
 
 function getProjects() {
   return new Promise((resolve, reject) => {
@@ -130,8 +130,8 @@ export const sendConvesatoriosInscripcion = async ({
     pregunta,
   };
   try {
-    const response = sendPostRequest(INSCRIPCION_URI, data);
-    return response;
+    const response = await sendPostRequest(AWS_LAMBDA_FN, data);
+    return JSON.parse(response.body);
   } catch (error) {
     console.log(error);
     return null;

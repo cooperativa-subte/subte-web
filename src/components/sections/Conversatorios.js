@@ -44,6 +44,7 @@ const Conversatorios = () => {
       });
       e.target.reset();
     } else {
+      console.log(response);
       setFormMessage({
         type: 'error',
         message:
