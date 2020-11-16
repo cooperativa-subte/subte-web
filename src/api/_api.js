@@ -24,7 +24,7 @@ import {
 
 const EMAIL_URI = 'https://subte-api.herokuapp.com/sendcontactemail';
 const AWS_LAMBDA_FN =
-  'https://51rceu869k.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
+  'https://ypucw7xqdb.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
 
 function getProjects() {
   return new Promise((resolve, reject) => {
