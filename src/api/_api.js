@@ -122,15 +122,18 @@ export const sendConvesatoriosInscripcion = async ({
   organizacion,
   mail,
   pregunta,
+  requestType,
 }) => {
   const data = {
     nombre,
     organizacion,
     mail,
     pregunta,
+    requestType,
   };
   try {
     const response = await sendPostRequest(AWS_LAMBDA_FN, data);
+    console.log(response);
     return JSON.parse(response.body);
   } catch (error) {
     console.log(error);

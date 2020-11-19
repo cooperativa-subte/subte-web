@@ -33,7 +33,7 @@ const Contact = (props) => {
         text: data.message,
         subject: data.subject,
       });
-      if (response.status === 'ok') {
+      if (response && response.status === 'ok') {
         setUserMessage({
           type: 'success',
           message: `Tu mensaje fue enviado con éxito.`,

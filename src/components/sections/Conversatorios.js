@@ -28,6 +28,7 @@ const Conversatorios = () => {
       organizacion: data.organizacion,
       mail: data.mail,
       pregunta: data.pregunta,
+      requestType: 'registroConversatorio',
     });
     if (response && response.status === 'ok') {
       setFormMessage({
