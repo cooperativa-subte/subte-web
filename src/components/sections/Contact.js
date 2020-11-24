@@ -30,7 +30,7 @@ const Contact = (props) => {
         email: data.email,
         name: data.name,
         tel: data.tel,
-        text: data.message,
+        message: data.message,
         subject: data.subject,
       });
       if (response && response.status === 'ok') {
@@ -67,7 +67,7 @@ const Contact = (props) => {
       <div className="row justify-content-center mt-5">
         <div className="col-11">
           <div className="row justify-content-center mb-5">
-            {/* <div className="col-md-6">
+            <div className="col-md-6">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Nombre y Apellido: *</label>
                 <input
@@ -116,7 +116,7 @@ const Contact = (props) => {
                   </div>
                 )}
                 {userMessage && (
-                  <div className="col-12 col-md-10 mt-2 error">
+                  <div className="col-12 col-md-10 mt-2 pl-0 error">
                     {userMessage.type === 'success' ? (
                       <span className="success">{userMessage.message}</span>
                     ) : (
@@ -157,13 +157,6 @@ const Contact = (props) => {
                   allowFullScreen=""
                 ></iframe>
               </div>
-            </div> */}
-            <div className="col-12">
-              <iframe
-                id="yprt"
-                title="Your priorities"
-                src="https://ypus.org/community/55"
-              ></iframe>
             </div>
           </div>
         </div>

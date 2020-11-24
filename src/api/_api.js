@@ -22,7 +22,6 @@ import {
   PartidoSocialista,
 } from './14_Partido_Socialista';
 
-const EMAIL_URI = 'https://subte-api.herokuapp.com/sendcontactemail';
 const AWS_LAMBDA_FN =
   'https://ypucw7xqdb.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
 
@@ -105,16 +104,19 @@ function getProjectDetail(name) {
   });
 }
 
-const sendContactEmail = async ({ email, tel, name, text, subject }) => {
+const sendContactEmail = async ({ email, tel, name, message, subject }) => {
   const emailData = {
-    from: email,
+    email,
     tel: tel !== '' ? tel : undefined,
     name,
-    text,
+    message,
     subject,
+    requestType: 'contact',
   };
+  console.log(emailData);
+  const response = await sendPostRequest(AWS_LAMBDA_FN, emailData);
 
-  return await sendPostRequest(EMAIL_URI, emailData);
+  return JSON.parse(response.body);
 };
 
 export const sendConvesatoriosInscripcion = async ({
