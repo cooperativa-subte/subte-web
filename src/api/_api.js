@@ -21,6 +21,7 @@ import {
   PartidoSocialistaPortada,
   PartidoSocialista,
 } from './14_Partido_Socialista';
+import { PicaderoPortada, Picadero } from './15_Picadero';
 
 const AWS_LAMBDA_FN =
   'https://ypucw7xqdb.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
@@ -42,6 +43,7 @@ function getProjects() {
       PalabrasAlChePortada,
       MilongasSodrePortada,
       PartidoSocialistaPortada,
+      PicaderoPortada,
     ]);
   });
 }
@@ -94,6 +96,9 @@ function getProjectDetail(name) {
     case 'partido-socialista-spot':
       project = PartidoSocialista;
       break;
+    case 'el-picadero-web':
+      project = Picadero;
+      break;
     default:
       project = null;
       break;
@@ -113,7 +118,7 @@ const sendContactEmail = async ({ email, tel, name, message, subject }) => {
     subject,
     requestType: 'contact',
   };
-  console.log(emailData);
+
   const response = await sendPostRequest(AWS_LAMBDA_FN, emailData);
 
   return JSON.parse(response.body);
