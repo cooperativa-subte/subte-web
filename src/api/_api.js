@@ -22,6 +22,7 @@ import {
   PartidoSocialista,
 } from './14_Partido_Socialista';
 import { PicaderoPortada, Picadero } from './15_Picadero';
+import { ConeVecinoPortada, ConeVecino } from './16_Cone_Vecino';
 
 const AWS_LAMBDA_FN =
   'https://ypucw7xqdb.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
@@ -44,6 +45,7 @@ function getProjects() {
       MilongasSodrePortada,
       PartidoSocialistaPortada,
       PicaderoPortada,
+      ConeVecinoPortada,
     ]);
   });
 }
@@ -98,6 +100,9 @@ function getProjectDetail(name) {
       break;
     case 'el-picadero-web':
       project = Picadero;
+      break;
+    case 'cone-vecino-ese-momento':
+      project = ConeVecino;
       break;
     default:
       project = null;
