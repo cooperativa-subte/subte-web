@@ -23,6 +23,7 @@ import {
 } from './14_Partido_Socialista';
 import { PicaderoPortada, Picadero } from './15_Picadero';
 import { ConeVecinoPortada, ConeVecino } from './16_Cone_Vecino';
+import { MEEHPortada, MEEH } from './17_MEEH';
 
 const AWS_LAMBDA_FN =
   'https://ypucw7xqdb.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
@@ -46,6 +47,7 @@ function getProjects() {
       PartidoSocialistaPortada,
       PicaderoPortada,
       ConeVecinoPortada,
+      MEEHPortada,
     ]);
   });
 }
@@ -103,6 +105,9 @@ function getProjectDetail(name) {
       break;
     case 'cone-vecino-ese-momento':
       project = ConeVecino;
+      break;
+    case 'meeh':
+      project = MEEH;
       break;
     default:
       project = null;

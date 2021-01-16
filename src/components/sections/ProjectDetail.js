@@ -59,88 +59,138 @@ export default function ProjectDetail() {
   }, [id])
 
   return (
-    <div className='container-fluid project-detail-container'  >
-      {
-        projectDetail !== null ?
-
-          <div className='row justify-content-center mt-5'>
-            <div className='col-xl-11'>
-
-              <div className='row justify-content-between mb-5'>
-                <div className='col-12 col-md-6'>
-                  <h2 className='negrita title'>{projectDetail.name}</h2>
-                </div>
-                <div className='col-12 col-md-6 text-left'>
-                  <h3 className='subtitle negrita'>{projectDetail.shortDescription}</h3>
-                </div>
+    <div className="container-fluid project-detail-container">
+      {projectDetail !== null ? (
+        <div className="row justify-content-center mt-5">
+          <div className="col-xl-11">
+            <div className="row justify-content-between mb-5">
+              <div className="col-12 col-md-6">
+                <h2 className="negrita title">{projectDetail.name}</h2>
               </div>
-
-              <div className='row mb-5'>
-                <div className='col-12 text-center'>
-                  {
-                    projectDetail.coverVideo ?
-                      <iframe id='cover-video' width="100%" title='cover-video' src={projectDetail.coverVideo} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> :
-                      <img src={projectDetail.coverPhoto} alt='Imagen Proyecto Portada' className='img-fluid' />
-                  }
-
-                </div>
+              <div className="col-12 col-md-6 text-left">
+                <h3 className="subtitle negrita">
+                  {projectDetail.shortDescription}
+                </h3>
               </div>
+            </div>
 
-              <div className='row my-3'>
+            <div className="row mb-5">
+              <div className="col-12 text-center">
+                {projectDetail.coverVideo ? (
+                  <iframe
+                    id="cover-video"
+                    width="100%"
+                    title="cover-video"
+                    src={projectDetail.coverVideo}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <img
+                    src={projectDetail.coverPhoto}
+                    alt="Imagen Proyecto Portada"
+                    className="img-fluid"
+                  />
+                )}
+              </div>
+            </div>
 
-                <div className={`col-12 col-md-6 ${bottomStickPosition ? 'bottom-stick-container' : 'top-stick-container'}`}>
-                  <div className={`position-sticky font-medium mt-auto ${bottomStickPosition ? 'bottom-stick' : 'top-stick'}`} ref={stickyElement}>
-                    {
-                      projectDetail.descriptionPharagraphs.map((p, i) => (
-                        <p key={i} className={`description-p ${i === 0 ? 'pt-3' : ''}`}>{p}</p>
-                      ))
-                    }
-                    <p className='description-p'><span className='negrita grey'>Cliente: </span>{projectDetail.client}</p>
-                    <p className='description-p'><span className='negrita grey'>Sector: </span>{projectDetail.sector}</p>
-                    <p className='description-p'>
-                      <span className='negrita grey'>Tipo de Proyecto: </span>
-                      {
-                        projectDetail.tags.map((tag, i) => (
-                          <span key={i}>
-                            <NavLink exact to={`/proyectos?tag=${tag}`} className='tag-link ml-1'>{tag}</NavLink>
-                            {i === projectDetail.tags.length - 1 ? '' : ','}
-                          </span>
-                        ))
-                      }
+            <div className="row my-3">
+              <div
+                className={`col-12 col-md-6 ${
+                  bottomStickPosition
+                    ? 'bottom-stick-container'
+                    : 'top-stick-container'
+                }`}
+              >
+                <div
+                  className={`position-sticky font-medium mt-auto ${
+                    bottomStickPosition ? 'bottom-stick' : 'top-stick'
+                  }`}
+                  ref={stickyElement}
+                >
+                  {projectDetail.descriptionPharagraphs.map((p, i) => (
+                    <p
+                      key={i}
+                      className={`description-p ${i === 0 ? 'pt-3' : ''}`}
+                      dangerouslySetInnerHTML={{ __html: p }}
+                    >
                     </p>
-                    <p className='description-p'><span className='negrita grey'>Mes/Año: </span>{projectDetail.date}</p>
-                  </div>
+                  ))}
+                  <p className="description-p">
+                    <span className="negrita grey">Cliente: </span>
+                    {projectDetail.client}
+                  </p>
+                  <p className="description-p">
+                    <span className="negrita grey">Sector: </span>
+                    {projectDetail.sector}
+                  </p>
+                  <p className="description-p">
+                    <span className="negrita grey">Tipo de Proyecto: </span>
+                    {projectDetail.tags.map((tag, i) => (
+                      <span key={i}>
+                        <NavLink
+                          exact
+                          to={`/proyectos?tag=${tag}`}
+                          className="tag-link ml-1"
+                        >
+                          {tag}
+                        </NavLink>
+                        {i === projectDetail.tags.length - 1 ? '' : ','}
+                      </span>
+                    ))}
+                  </p>
+                  <p className="description-p">
+                    <span className="negrita grey">Mes/Año: </span>
+                    {projectDetail.date}
+                  </p>
                 </div>
+              </div>
 
-                <div className='col-12 col-md-6'>
-                  <div className='row'>
-                    {
-                      trabajosUrls.map((trabajo, index) => (
-                        <div key={index} className='col-12 mt-4'>
-                          <img className='img-fluid' src={trabajo.lowRes} alt='Projecto' />
-                        </div>
-                      ))
-                    }
-                  </div>
+              <div className="col-12 col-md-6">
+                <div className="row">
+                  {trabajosUrls.map((trabajo, index) => (
+                    <div key={index} className="col-12 mt-4">
+                      <img
+                        className="img-fluid"
+                        src={trabajo.lowRes}
+                        alt="Projecto"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          </div> : <></>
-      }
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
       <div className={`footer-container`}>
-        <div className='row justify-content-center'>
-          <div className='col-11 align-self-center'>
-            <NavLink exact to={`/proyectos/${beforeProjectUrl}`} className='' activeClassName='active'>
+        <div className="row justify-content-center">
+          <div className="col-11 align-self-center">
+            <NavLink
+              exact
+              to={`/proyectos/${beforeProjectUrl}`}
+              className=""
+              activeClassName="active"
+            >
               <LeftArrowSvg />
-              <span className='ml-3'>Anterior</span>
+              <span className="ml-3">Anterior</span>
             </NavLink>
-            <NavLink exact to={`/proyectos/${afterProjectUrl}`} className='float-right' activeClassName='active'>
-              <span className='mr-3'>Siguiente</span>
+            <NavLink
+              exact
+              to={`/proyectos/${afterProjectUrl}`}
+              className="float-right"
+              activeClassName="active"
+            >
+              <span className="mr-3">Siguiente</span>
               <RightArrowSvg />
             </NavLink>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
