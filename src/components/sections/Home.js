@@ -3,7 +3,51 @@ import { NavLink } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
 import { isMobile } from 'react-device-detect';
 
+import shuffleArray from '../utils/utilities';
 import '../../styles/Home.scss';
+
+const proyectos = [
+  {
+    url: '/proyectos/meeh',
+    mobileUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1610826812/subte.uy/Home/PortadaDesktop_MEEH_am2n12.jpg',
+    desktopUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1610826812/subte.uy/Home/PortadaDesktop_MEEH_am2n12.jpg',
+    alt: 'MEEH Portada',
+  },
+  {
+    url: '/proyectos/web-colectivo-catalejo',
+    mobileUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1610826812/subte.uy/Home/PortadaMobile_Catalejo_t54wpz.jpg',
+    desktopUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1610826813/subte.uy/Home/PortadaDesktop_Catalejo_tbwsfq.jpg',
+    alt: 'Colectivo Catalejo Portada',
+  },
+  {
+    url: '/proyectos/cone-vecino-ese-momento',
+    mobileUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1610826812/subte.uy/Home/PortadaMobile_Cone_w1etmx.jpg',
+    desktopUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1610826813/subte.uy/Home/PortadaDesktop_Cone_o7avij.jpg',
+    alt: 'Coné Vecino, Ese momento Portada',
+  },
+  {
+    url: '/proyectos/aicoo-signo',
+    mobileUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1580479097/subte.uy/Home/11_00_home_mobile_hfvbbh.jpg',
+    desktopUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1580139473/subte.uy/Home/11_00_apu2vx.jpg',
+    alt: 'Aicoo Portada'
+  },
+  {
+    url: '/proyectos/zur-1968',
+    mobileUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1580479258/subte.uy/Home/07_00_home_mobile_mjo8sf.jpg',
+    desktopUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1580137261/subte.uy/Home/07_00_xuhm5j.jpg',
+    alt: 'Zur 1968'
+  },
+];
 
 export default function Home() {
   return (
@@ -11,91 +55,27 @@ export default function Home() {
       <div className="row align-items-center justify-content-center">
         <div className="col-12 px-0">
           <Carousel indicators={false} interval={2500} pauseOnHover={false}>
-            <Carousel.Item>
-              <NavLink exact to="/proyectos/acrin-signo">
-                {isMobile ? (
-                  <img
-                    className="d-block w-100"
-                    src="https://res.cloudinary.com/subteuy/image/upload/v1580479150/subte.uy/Imagenes%20de%20Proyectos/6%20-%20Acrin/06_00_home_mobile_j9oxvs.jpg"
-                    alt="Acrin Portada"
-                  />
-                ) : (
-                  <img
-                    className="d-block w-100"
-                    src="https://res.cloudinary.com/subteuy/image/upload/v1579906162/subte.uy/Imagenes%20de%20Proyectos/6%20-%20Acrin/06_00_qbizee.jpg"
-                    alt="Acrin Portada"
-                  />
-                )}
-              </NavLink>
-            </Carousel.Item>
-            <Carousel.Item>
-              <NavLink exact to="/proyectos/sintep-inaguracion">
-                {isMobile ? (
-                  <img
-                    className="d-block w-100"
-                    src="https://res.cloudinary.com/subteuy/image/upload/v1580479048/subte.uy/Imagenes%20de%20Proyectos/9_Sintep_Inaguracion/09_00_home_mobile_k1yexr.jpg"
-                    alt="Sintep Portada"
-                  />
-                ) : (
-                  <img
-                    className="d-block w-100"
-                    src="https://res.cloudinary.com/subteuy/image/upload/v1580251481/subte.uy/Imagenes%20de%20Proyectos/9_Sintep_Inaguracion/09_00_lbbrdj.jpg"
-                    alt="Sintep Portada"
-                  />
-                )}
-              </NavLink>
-            </Carousel.Item>
-            <Carousel.Item>
-              <NavLink exact to="/proyectos/aicoo-signo">
-                {isMobile ? (
-                  <img
-                    className="d-block w-100"
-                    src="https://res.cloudinary.com/subteuy/image/upload/v1580479097/subte.uy/Imagenes%20de%20Proyectos/11_Aicoo/11_00_home_mobile_hfvbbh.jpg"
-                    alt="Aicoo Portada"
-                  />
-                ) : (
-                  <img
-                    className="d-block w-100"
-                    src="https://res.cloudinary.com/subteuy/image/upload/v1580139473/subte.uy/Imagenes%20de%20Proyectos/11_Aicoo/11_00_apu2vx.jpg"
-                    alt="Aicoo Portada"
-                  />
-                )}
-              </NavLink>
-            </Carousel.Item>
-            <Carousel.Item>
-              <NavLink exact to="/proyectos/zur-1968">
-                {isMobile ? (
-                  <img
-                    className="d-block w-100"
-                    src="https://res.cloudinary.com/subteuy/image/upload/v1580479258/subte.uy/Imagenes%20de%20Proyectos/7_Zur_1968/07_00_home_mobile_mjo8sf.jpg"
-                    alt="1968 Zur Portada"
-                  />
-                ) : (
-                  <img
-                    className="d-block w-100"
-                    src="https://res.cloudinary.com/subteuy/image/upload/v1580137261/subte.uy/Imagenes%20de%20Proyectos/7_Zur_1968/07_00_xuhm5j.jpg"
-                    alt="1968 Zur Portada"
-                  />
-                )}
-              </NavLink>
-            </Carousel.Item>
-            <Carousel.Item>
-              <NavLink exact to="/proyectos/librillos-comuna">
-                {isMobile ? (
-                  <img
-                    className="d-block w-100"
-                    src="https://res.cloudinary.com/subteuy/image/upload/v1580479336/subte.uy/Imagenes%20de%20Proyectos/5_Comuna_Librillos/05_00_home_mobile_ou1msk.jpg"
-                    alt="Librillos Comuna Portada"
-                  />
-                ) : (
-                  <img
-                    className="d-block w-100"
-                    src="https://res.cloudinary.com/subteuy/image/upload/v1580136275/subte.uy/Imagenes%20de%20Proyectos/5_Comuna_Librillos/05_00_00_ibavlk.jpg"
-                    alt="Librillos Comuna Portada"
-                  />
-                )}
-              </NavLink>
-            </Carousel.Item>
+            {
+              shuffleArray(proyectos.map((proyecto) => (
+                <Carousel.Item key={proyecto.url}>
+                  <NavLink exact to={proyecto.url}>
+                    {isMobile ? (
+                      <img
+                        className="d-block w-100"
+                        src={proyecto.mobileUrl}
+                        alt={proyecto.alt}
+                      />
+                    ) : (
+                      <img
+                        className="d-block w-100"
+                        src={proyecto.desktopUrl}
+                        alt={proyecto.alt}
+                      />
+                    )}
+                  </NavLink>
+                </Carousel.Item>
+              )))
+            }
           </Carousel>
         </div>
       </div>

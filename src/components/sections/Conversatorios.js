@@ -66,7 +66,7 @@ const Conversatorios = () => {
     <div className="conversatorios-container">
       <div className="header-conversatorios">
         <img
-          src="https://res.cloudinary.com/subteuy/image/upload/v1605008507/subte.uy/Conversatorios/BannersWeb_conversatorios_sfqpuq.jpg"
+          src="https://res.cloudinary.com/subteuy/image/upload/v1610825690/subte.uy/Conversatorios/BannersWeb_conversatorios_ya8gln.jpg"
           alt="Cabezal de la sección Conversatorios"
         />
       </div>
@@ -103,7 +103,6 @@ const Conversatorios = () => {
                   cuestionar los lenguajes y dispositivos hegemónicos para
                   construir otros más cercanos y propios de las organizaciones.
                 </p>
-                <div className="proximos-conversatorios-container"></div>
               </div>
               <div className="col-12 col-md-6 order-1 order-md-2">
                 <video
@@ -114,7 +113,7 @@ const Conversatorios = () => {
                   muted
                 >
                   <source
-                    src="https://res.cloudinary.com/subteuy/video/upload/v1605135953/subte.uy/Conversatorios/SPOTCS_C4_baja_mb2j9f.mp4"
+                    src="https://res.cloudinary.com/subteuy/video/upload/v1610826241/subte.uy/Conversatorios/SPOTCS_C4_baja_u82811.mp4"
                     type="video/mp4"
                   />
                 </video>
