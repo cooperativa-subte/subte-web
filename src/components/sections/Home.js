@@ -10,7 +10,7 @@ const proyectos = [
   {
     url: '/proyectos/meeh',
     mobileUrl:
-      'https://res.cloudinary.com/subteuy/image/upload/v1610826812/subte.uy/Home/PortadaDesktop_MEEH_am2n12.jpg',
+      'https://res.cloudinary.com/subteuy/image/upload/v1610826812/subte.uy/Home/PortadaMobile_MEEH_dbdyxr.jpg',
     desktopUrl:
       'https://res.cloudinary.com/subteuy/image/upload/v1610826812/subte.uy/Home/PortadaDesktop_MEEH_am2n12.jpg',
     alt: 'MEEH Portada',
@@ -37,7 +37,7 @@ const proyectos = [
       'https://res.cloudinary.com/subteuy/image/upload/v1580479097/subte.uy/Home/11_00_home_mobile_hfvbbh.jpg',
     desktopUrl:
       'https://res.cloudinary.com/subteuy/image/upload/v1580139473/subte.uy/Home/11_00_apu2vx.jpg',
-    alt: 'Aicoo Portada'
+    alt: 'Aicoo Portada',
   },
   {
     url: '/proyectos/zur-1968',
@@ -45,7 +45,7 @@ const proyectos = [
       'https://res.cloudinary.com/subteuy/image/upload/v1580479258/subte.uy/Home/07_00_home_mobile_mjo8sf.jpg',
     desktopUrl:
       'https://res.cloudinary.com/subteuy/image/upload/v1580137261/subte.uy/Home/07_00_xuhm5j.jpg',
-    alt: 'Zur 1968'
+    alt: 'Zur 1968',
   },
 ];
 

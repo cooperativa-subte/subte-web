@@ -4,7 +4,7 @@ let MEEHPortada = {
   url: 'meeh',
   cardImgURI:
     'https://res.cloudinary.com/subteuy/image/upload/v1610823645/subte.uy/Imagenes%20de%20Proyectos/17_MEEH/preview_ptgtem.jpg',
-  tags: ['Gráfico, Identidad, Web'],
+  tags: ['Gráfico', 'Identidad', 'Web'],
 };
 
 let MEEH = {
