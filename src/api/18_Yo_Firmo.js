@@ -44,7 +44,7 @@ let YoFirmo = {
   client: 'Campaña “Yo Firmo”',
   sector: 'Movimientos sociales, Política',
   tags: YoFirmoPortada.tags,
-  date: 'Enero, 2021',
+  date: 'Febrero, 2021',
 };
 
 export { YoFirmoPortada, YoFirmo };
