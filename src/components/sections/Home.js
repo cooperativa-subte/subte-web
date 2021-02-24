@@ -47,6 +47,14 @@ const proyectos = [
       'https://res.cloudinary.com/subteuy/image/upload/v1580137261/subte.uy/Home/07_00_xuhm5j.jpg',
     alt: 'Zur 1968',
   },
+  {
+    url: '/proyectos/yofirmo',
+    mobileUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1614196291/subte.uy/Home/ImagenesPreviewMobile_fsi4yj.jpg',
+    desktopUrl:
+      'https://res.cloudinary.com/subteuy/image/upload/v1614196289/subte.uy/Home/_00destacada_stxjxp.jpg',
+    alt: 'Yo Firmo',
+  },
 ];
 
 export default function Home() {
@@ -55,8 +63,8 @@ export default function Home() {
       <div className="row align-items-center justify-content-center">
         <div className="col-12 px-0">
           <Carousel indicators={false} interval={2500} pauseOnHover={false}>
-            {
-              shuffleArray(proyectos.map((proyecto) => (
+            {shuffleArray(
+              proyectos.map((proyecto) => (
                 <Carousel.Item key={proyecto.url}>
                   <NavLink exact to={proyecto.url}>
                     {isMobile ? (
@@ -74,8 +82,8 @@ export default function Home() {
                     )}
                   </NavLink>
                 </Carousel.Item>
-              )))
-            }
+              )),
+            )}
           </Carousel>
         </div>
       </div>

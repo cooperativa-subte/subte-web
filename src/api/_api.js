@@ -24,6 +24,7 @@ import {
 import { PicaderoPortada, Picadero } from './15_Picadero';
 import { ConeVecinoPortada, ConeVecino } from './16_Cone_Vecino';
 import { MEEHPortada, MEEH } from './17_MEEH';
+import { YoFirmoPortada, YoFirmo } from './18_Yo_Firmo';
 
 const AWS_LAMBDA_FN =
   'https://ypucw7xqdb.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
@@ -48,6 +49,7 @@ function getProjects() {
       PicaderoPortada,
       ConeVecinoPortada,
       MEEHPortada,
+      YoFirmoPortada,
     ]);
   });
 }
@@ -108,6 +110,9 @@ function getProjectDetail(name) {
       break;
     case 'meeh':
       project = MEEH;
+      break;
+    case 'yofirmo':
+      project = YoFirmo;
       break;
     default:
       project = null;

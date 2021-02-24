@@ -1,62 +1,50 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { useParams, NavLink } from 'react-router-dom'
-import { getProjectDetail, getProjects } from '../../api/_api'
+import React, { useState, useEffect, useRef } from 'react';
+import { useParams, NavLink } from 'react-router-dom';
+import { getProjectDetail, getProjects } from '../../api/_api';
 
-import { ReactComponent as RightArrowSvg } from '../../images/right-arrow.svg'
-import { ReactComponent as LeftArrowSvg } from '../../images/left-arrow.svg'
+import { ReactComponent as RightArrowSvg } from '../../images/right-arrow.svg';
+import { ReactComponent as LeftArrowSvg } from '../../images/left-arrow.svg';
 
-import '../../styles/ProjectDetail.scss'
+import '../../styles/ProjectDetail.scss';
 
 export default function ProjectDetail() {
   let { id } = useParams();
 
-  const [projectDetail, setProjectDetail] = useState(null)
-  const [trabajosUrls, setTrabajosUrls] = useState([])
-  const [bottomStickPosition, setBottomStickPosition] = useState(false)
+  const [projectDetail, setProjectDetail] = useState(null);
+  const [trabajosUrls, setTrabajosUrls] = useState([]);
 
-  const [beforeProjectUrl, setBeforeProjectUrl] = useState('')
-  const [afterProjectUrl, setAfterProjectUrl] = useState('')
+  const [beforeProjectUrl, setBeforeProjectUrl] = useState('');
+  const [afterProjectUrl, setAfterProjectUrl] = useState('');
 
-  let stickyElement = useRef(null)
+  let stickyElement = useRef(null);
 
   useEffect(() => {
-
     getProjectDetail(id).then((project) => {
-
-      setProjectDetail(project)
-      setTrabajosUrls(project.trabajosUrls)
-      if (stickyElement.current) {
-        const totalSpace = document.body.clientHeight - (document.body.clientHeight * 0.1)
-
-        if (stickyElement.current.clientHeight > totalSpace) {
-          setBottomStickPosition(true)
-        }
-      }
-    })
+      setProjectDetail(project);
+      setTrabajosUrls(project.trabajosUrls);
+    });
     getProjects().then((projects) => {
-
-      let beforeProjectIndex = null
-      let afterProjectIndex = null
+      let beforeProjectIndex = null;
+      let afterProjectIndex = null;
 
       projects.forEach((p, i) => {
         if (id === p.url) {
           if (i === 0) {
-            beforeProjectIndex = projects.length - 1
-            afterProjectIndex = i + 1
+            beforeProjectIndex = projects.length - 1;
+            afterProjectIndex = i + 1;
           } else if (i === projects.length - 1) {
-            beforeProjectIndex = i - 1
-            afterProjectIndex = 0
+            beforeProjectIndex = i - 1;
+            afterProjectIndex = 0;
           } else {
-            beforeProjectIndex = i - 1
-            afterProjectIndex = i + 1
+            beforeProjectIndex = i - 1;
+            afterProjectIndex = i + 1;
           }
-          setBeforeProjectUrl(projects[beforeProjectIndex].url)
-          setAfterProjectUrl(projects[afterProjectIndex].url)
+          setBeforeProjectUrl(projects[beforeProjectIndex].url);
+          setAfterProjectUrl(projects[afterProjectIndex].url);
         }
-      })
-    })
-
-  }, [id])
+      });
+    });
+  }, [id]);
 
   return (
     <div className="container-fluid project-detail-container">
@@ -97,17 +85,9 @@ export default function ProjectDetail() {
             </div>
 
             <div className="row my-3">
-              <div
-                className={`col-12 col-md-6 ${
-                  bottomStickPosition
-                    ? 'bottom-stick-container'
-                    : 'top-stick-container'
-                }`}
-              >
+              <div className={`col-12 col-md-6 top-stick-container`}>
                 <div
-                  className={`position-sticky font-medium mt-auto ${
-                    bottomStickPosition ? 'bottom-stick' : 'top-stick'
-                  }`}
+                  className={`position-sticky font-medium mt-auto top-stick`}
                   ref={stickyElement}
                 >
                   {projectDetail.descriptionPharagraphs.map((p, i) => (
@@ -115,8 +95,7 @@ export default function ProjectDetail() {
                       key={i}
                       className={`description-p ${i === 0 ? 'pt-3' : ''}`}
                       dangerouslySetInnerHTML={{ __html: p }}
-                    >
-                    </p>
+                    ></p>
                   ))}
                   <p className="description-p">
                     <span className="negrita grey">Cliente: </span>
