@@ -29,6 +29,7 @@ import {
   ConeVecinoVamosAHacerloPortada,
   ConeVecinoVamosAHacerlo,
 } from './19_Cone_Vecino_Vamos_a_hacerlo';
+import { AfuceIbirapitaPortada, AfuceIbirapita } from './20_Afuce_Ibirapita';
 
 const AWS_LAMBDA_FN =
   'https://ypucw7xqdb.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
@@ -55,6 +56,7 @@ function getProjects() {
       MEEHPortada,
       YoFirmoPortada,
       ConeVecinoVamosAHacerloPortada,
+      AfuceIbirapitaPortada,
     ]);
   });
 }
@@ -121,6 +123,9 @@ function getProjectDetail(name) {
       break;
     case 'cone-vecino-vamos-a-hacerlo':
       project = ConeVecinoVamosAHacerlo;
+      break;
+    case 'afuce-ibirapita':
+      project = AfuceIbirapita;
       break;
     default:
       project = null;

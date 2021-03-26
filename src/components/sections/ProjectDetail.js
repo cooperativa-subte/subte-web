@@ -47,44 +47,44 @@ export default function ProjectDetail() {
   }, [id]);
 
   return (
-    <div className="container-fluid project-detail-container">
+    <div className='container-fluid project-detail-container'>
       {projectDetail !== null ? (
-        <div className="row justify-content-center mt-5">
-          <div className="col-xl-11">
-            <div className="row justify-content-between mb-5">
-              <div className="col-12 col-md-6">
-                <h2 className="negrita title">{projectDetail.name}</h2>
+        <div className='row justify-content-center mt-5'>
+          <div className='col-xl-11'>
+            <div className='row justify-content-between mb-5'>
+              <div className='col-12 col-md-6'>
+                <h2 className='negrita title'>{projectDetail.name}</h2>
               </div>
-              <div className="col-12 col-md-6 text-left">
-                <h3 className="subtitle negrita">
+              <div className='col-12 col-md-6 text-left'>
+                <h3 className='subtitle negrita'>
                   {projectDetail.shortDescription}
                 </h3>
               </div>
             </div>
 
-            <div className="row mb-5">
-              <div className="col-12 text-center">
+            <div className='row mb-5'>
+              <div className='col-12 text-center'>
                 {projectDetail.coverVideo ? (
                   <iframe
-                    id="cover-video"
-                    width="100%"
-                    title="cover-video"
+                    id='cover-video'
+                    width='100%'
+                    title='cover-video'
                     src={projectDetail.coverVideo}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    frameBorder='0'
+                    allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
                     allowFullScreen
                   ></iframe>
                 ) : (
                   <img
                     src={projectDetail.coverPhoto}
-                    alt="Imagen Proyecto Portada"
-                    className="img-fluid"
+                    alt='Imagen Proyecto Portada'
+                    className='img-fluid'
                   />
                 )}
               </div>
             </div>
 
-            <div className="row my-3">
+            <div className='row my-3'>
               <div className={`col-12 col-md-6 top-stick-container`}>
                 <div
                   className={`position-sticky font-medium mt-auto top-stick`}
@@ -97,22 +97,22 @@ export default function ProjectDetail() {
                       dangerouslySetInnerHTML={{ __html: p }}
                     ></p>
                   ))}
-                  <p className="description-p">
-                    <span className="negrita grey">Cliente: </span>
+                  <p className='description-p'>
+                    <span className='negrita grey'>Cliente: </span>
                     {projectDetail.client}
                   </p>
-                  <p className="description-p">
-                    <span className="negrita grey">Sector: </span>
+                  <p className='description-p'>
+                    <span className='negrita grey'>Sector: </span>
                     {projectDetail.sector}
                   </p>
-                  <p className="description-p">
-                    <span className="negrita grey">Tipo de Proyecto: </span>
+                  <p className='description-p'>
+                    <span className='negrita grey'>Tipo de Proyecto: </span>
                     {projectDetail.tags.map((tag, i) => (
                       <span key={i}>
                         <NavLink
                           exact
                           to={`/proyectos?tag=${tag}`}
-                          className="tag-link ml-1"
+                          className='tag-link ml-1'
                         >
                           {tag}
                         </NavLink>
@@ -120,22 +120,28 @@ export default function ProjectDetail() {
                       </span>
                     ))}
                   </p>
-                  <p className="description-p">
-                    <span className="negrita grey">Mes/Año: </span>
+                  <p className='description-p'>
+                    <span className='negrita grey'>Mes/Año: </span>
                     {projectDetail.date}
                   </p>
                 </div>
               </div>
 
-              <div className="col-12 col-md-6">
-                <div className="row">
+              <div className='col-12 col-md-6'>
+                <div className='row'>
                   {trabajosUrls.map((trabajo, index) => (
-                    <div key={index} className="col-12 mt-4">
-                      <img
-                        className="img-fluid"
-                        src={trabajo.lowRes}
-                        alt="Projecto"
-                      />
+                    <div key={index} className='col-12 mt-4 text-center'>
+                      {trabajo.videoRes ? (
+                        <video className='video' autoPlay loop controls muted>
+                          <source src={trabajo.videoRes} type='video/mp4' />
+                        </video>
+                      ) : (
+                        <img
+                          className='img-fluid'
+                          src={trabajo.lowRes}
+                          alt='Projecto'
+                        />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -147,24 +153,24 @@ export default function ProjectDetail() {
         <></>
       )}
       <div className={`footer-container`}>
-        <div className="row justify-content-center">
-          <div className="col-11 align-self-center">
+        <div className='row justify-content-center'>
+          <div className='col-11 align-self-center'>
             <NavLink
               exact
               to={`/proyectos/${beforeProjectUrl}`}
-              className=""
-              activeClassName="active"
+              className=''
+              activeClassName='active'
             >
               <LeftArrowSvg />
-              <span className="ml-3">Anterior</span>
+              <span className='ml-3'>Anterior</span>
             </NavLink>
             <NavLink
               exact
               to={`/proyectos/${afterProjectUrl}`}
-              className="float-right"
-              activeClassName="active"
+              className='float-right'
+              activeClassName='active'
             >
-              <span className="mr-3">Siguiente</span>
+              <span className='mr-3'>Siguiente</span>
               <RightArrowSvg />
             </NavLink>
           </div>
