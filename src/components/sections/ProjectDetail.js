@@ -137,7 +137,7 @@ export default function ProjectDetail() {
                         </video>
                       ) : (
                         <img
-                          className='img-fluid'
+                          className='img-fluid imagen-proyecto'
                           src={trabajo.lowRes}
                           alt='Projecto'
                         />

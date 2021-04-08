@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Cooperativa de comunicación visual, programación y formación" />
-  <!--
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Cooperativa de comunicación visual, programación y formación"
+    />
+    <meta property="og:url" content="https://subte.uy" />
+    <meta property="og:site_name" content="Cooperativa de trabajo SUBTE" />
+    <meta
+      property="og:title"
+      content="Cooperar, una idea simple y potente que elegimos para trabajar juntes"
+    />
+    <meta
+      property="og:description"
+      content="Cooperar, una idea simple y potente que elegimos para trabajar juntes. Diseño, programación, ilustración, producción audiovisual, formación y más."
+    />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/subteuy/image/upload/v1580933506/subte.uy/seo/PerfilSubte_h6db3e.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1000" />
+    <meta name="twitter:site" content="@github" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Cooperar, una idea simple y potente que elegimos para trabajar juntes."
+    />
+    <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <!-- Fontawesome -->
-  <script src="https://kit.fontawesome.com/ff2dd4c496.js" crossorigin="anonymous"></script>
-  <!--
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ff2dd4c496.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,13 +52,13 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>Cooperativa de trabajo SUBTE</title>
-</head>
+    <title>Cooperativa de trabajo SUBTE</title>
+  </head>
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <!--
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -40,29 +68,28 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
 
-  <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
 
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyDC2WyUTt7CTNZKjdo4yZ2eb1OhcU6cq00",
-      authDomain: "subte-web.firebaseapp.com",
-      databaseURL: "https://subte-web.firebaseio.com",
-      projectId: "subte-web",
-      storageBucket: "subte-web.appspot.com",
-      messagingSenderId: "590928077766",
-      appId: "1:590928077766:web:a556d5e944c9a9c8f388c7",
-      measurementId: "G-EV7G1LME9D"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
-</body>
-
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyDC2WyUTt7CTNZKjdo4yZ2eb1OhcU6cq00',
+        authDomain: 'subte-web.firebaseapp.com',
+        databaseURL: 'https://subte-web.firebaseio.com',
+        projectId: 'subte-web',
+        storageBucket: 'subte-web.appspot.com',
+        messagingSenderId: '590928077766',
+        appId: '1:590928077766:web:a556d5e944c9a9c8f388c7',
+        measurementId: 'G-EV7G1LME9D',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
 </html>
