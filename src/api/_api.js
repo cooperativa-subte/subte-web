@@ -30,6 +30,7 @@ import {
   ConeVecinoVamosAHacerlo,
 } from './19_Cone_Vecino_Vamos_a_hacerlo';
 import { AfuceIbirapitaPortada, AfuceIbirapita } from './20_Afuce_Ibirapita';
+import { CICPortada, CIC } from './21_CIC';
 
 const AWS_LAMBDA_FN =
   'https://ypucw7xqdb.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
@@ -57,6 +58,7 @@ function getProjects() {
       YoFirmoPortada,
       ConeVecinoVamosAHacerloPortada,
       AfuceIbirapitaPortada,
+      CICPortada,
     ]);
   });
 }
@@ -126,6 +128,9 @@ function getProjectDetail(name) {
       break;
     case 'afuce-ibirapita':
       project = AfuceIbirapita;
+      break;
+    case 'cic':
+      project = CIC;
       break;
     default:
       project = null;

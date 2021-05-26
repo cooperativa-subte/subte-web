@@ -31,8 +31,11 @@
     }
     .card {
       border: none;
+      transition: padding 0.3s ease-out;
+      padding: 1rem 0;
       &.expanded {
         background-color: #ececec;
+        padding: 3rem 0;
         .card-header {
           background-color: #ececec;
         }
@@ -44,6 +47,7 @@
       }
       .card-body {
         width: 50%;
+        padding-bottom: 3rem;
         h3 {
           font-size: $font-large;
         }
@@ -53,6 +57,7 @@
       font-size: $font-big;
       line-height: 1;
       cursor: pointer;
+      transition: all 100 ease-out;
       svg {
         width: 1em;
         height: 1em;

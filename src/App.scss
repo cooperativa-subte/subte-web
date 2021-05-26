@@ -1,21 +1,25 @@
 @font-face {
   font-family: 'Helvetica Now Display';
-  src: url('./fonts/HelveticaNowDisplay-Regular.ttf') format("truetype");
+  src: url('./fonts/HelveticaNowDisplay-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Helvetica Now Display Bold';
-  src: url('./fonts/HelveticaNowDisplay-Bold.ttf') format('truetype')
+  src: url('./fonts/HelveticaNowDisplay-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Helvetica Now Display Italic';
-  src: url('./fonts/HelveticaNowDisplay-RegIta.ttf') format('truetype')
+  src: url('./fonts/HelveticaNowDisplay-RegIta.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Helvetica Now Display Medium';
-  src: url('./fonts/HelveticaNowDisplay-Medium.ttf') format('truetype')
+  src: url('./fonts/HelveticaNowDisplay-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Helvetica Now Display Light';
+  src: url('./fonts/HelveticaNowDisplay-Light.ttf') format('truetype');
 }
 body {
-  .doc-container{
+  .doc-container {
     font-family: 'Helvetica Now Display', sans-serif;
   }
   .subte-font-sm {
@@ -32,8 +36,17 @@ body {
 .font-medium {
   font-family: 'Helvetica Now Display Medium', sans-serif;
 }
+.font-light {
+  font-family: 'Helvetica Now Display Light', sans-serif;
+  font-size: 1rem;
+}
 
 .content-body {
   height: 90vh;
   overflow-y: auto;
+}
+
+.paragraph {
+  font-family: 'Helvetica Now Display Light', sans-serif;
+  font-size: 1.4rem;
 }

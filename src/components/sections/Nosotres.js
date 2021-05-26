@@ -11,7 +11,6 @@ const StyledNosotresContainer = styled.div`
     margin-top: 4rem;
     display: flex;
     flex-wrap: wrap;
-    font-size: 19px;
     h2 {
       font-weight: 800;
       font-size: 2.25rem;
@@ -63,60 +62,54 @@ const Nosotres = () => {
   const [photosArray] = useState(
     suffleArray([
       {
-        url:
-          'https://res.cloudinary.com/subteuy/image/upload/v1604764416/subte.uy/Nosotres/Nosotres-Web-800x800-Pancho_lub5or.jpg',
+        url: 'https://res.cloudinary.com/subteuy/image/upload/v1604764416/subte.uy/Nosotres/Nosotres-Web-800x800-Pancho_lub5or.jpg',
         alt: 'Foto Pancho',
         nombre: 'Francisco Cobas',
         key: '1',
       },
       {
-        url:
-          'https://res.cloudinary.com/subteuy/image/upload/v1604764413/subte.uy/Nosotres/Nosotres-Web-800x800-Nat_wrq0hh.jpg',
+        url: 'https://res.cloudinary.com/subteuy/image/upload/v1604764413/subte.uy/Nosotres/Nosotres-Web-800x800-Nat_wrq0hh.jpg',
         alt: 'Foto Nati',
         nombre: 'Natalia Acosta',
         key: '2',
       },
       {
-        url:
-          'https://res.cloudinary.com/subteuy/image/upload/v1604764412/subte.uy/Nosotres/Nosotres-Web-800x800-Mar_e0bpaf.jpg',
+        url: 'https://res.cloudinary.com/subteuy/image/upload/v1604764412/subte.uy/Nosotres/Nosotres-Web-800x800-Mar_e0bpaf.jpg',
         alt: 'Foto Mariana',
         nombre: 'Mariana Escobar',
         key: '3',
       },
       {
-        url:
-          'https://res.cloudinary.com/subteuy/image/upload/v1604764413/subte.uy/Nosotres/Nosotres-Web-800x800-Cata_iph9m6.jpg',
+        url: 'https://res.cloudinary.com/subteuy/image/upload/v1604764413/subte.uy/Nosotres/Nosotres-Web-800x800-Cata_iph9m6.jpg',
         alt: 'Foto Cata',
         nombre: 'Catalina Alonso',
         key: '4',
       },
       {
-        url:
-          'https://res.cloudinary.com/subteuy/image/upload/v1604764413/subte.uy/Nosotres/Nosotres-Web-800x800-Joac_j4rnap.jpg',
+        url: 'https://res.cloudinary.com/subteuy/image/upload/v1604764413/subte.uy/Nosotres/Nosotres-Web-800x800-Joac_j4rnap.jpg',
         alt: 'Foto Joaco',
         nombre: 'Joaquín Cabrera',
         key: '5',
       },
       {
-        url:
-          'https://res.cloudinary.com/subteuy/image/upload/v1604764413/subte.uy/Nosotres/Nosotres-Web-800x800-Val_rm6gzt.jpg',
+        url: 'https://res.cloudinary.com/subteuy/image/upload/v1604764413/subte.uy/Nosotres/Nosotres-Web-800x800-Val_rm6gzt.jpg',
         alt: 'Foto Vale',
         nombre: 'Valentina Lasalvia',
         key: '6',
       },
-    ]),
+    ])
   );
 
   return (
     <StyledNosotresContainer>
-      <div className="container-fluid">
-        <div className="row justify-content-center">
-          <div className="col-xl-11">
-            <div className="row">
-              <div className="col-12">
-                <div className="texto-sobre-nosotres">
+      <div className='container-fluid'>
+        <div className='row justify-content-center'>
+          <div className='col-xl-11'>
+            <div className='row'>
+              <div className='col-12'>
+                <div className='texto-sobre-nosotres'>
                   <h2>No somos una agencia</h2>
-                  <div>
+                  <div className='paragraph'>
                     <p>
                       Somos una cooperativa de trabajo enfocada en la
                       comunicación, con una perspectiva popular y colaborativa.
@@ -132,7 +125,7 @@ const Nosotres = () => {
                     </p>
                   </div>
                 </div>
-                <div className="fotos-container">
+                <div className='fotos-container'>
                   {photosArray.map((foto) => (
                     <div key={foto.url}>
                       <img src={foto.url} alt={foto.alt} key={foto.key} />

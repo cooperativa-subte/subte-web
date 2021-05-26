@@ -6,12 +6,12 @@
     font-size: $font-x-big;
   }
   .description-p {
-    font-size: 19px;
     a {
       color: black;
     }
-    .grey {
-      color: #999
+    .black {
+      color: black;
+      font-family: 'Helvetica Now Display', sans-serif;
     }
   }
   #cover-video {
@@ -30,7 +30,6 @@
   }
   .tag-link {
     color: $black;
-
   }
   .footer-container {
     background-color: white;

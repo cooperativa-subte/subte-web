@@ -87,26 +87,26 @@ export default function ProjectDetail() {
             <div className='row my-3'>
               <div className={`col-12 col-md-6 top-stick-container`}>
                 <div
-                  className={`position-sticky font-medium mt-auto top-stick`}
+                  className={`position-sticky font-light mt-auto top-stick`}
                   ref={stickyElement}
                 >
                   {projectDetail.descriptionPharagraphs.map((p, i) => (
                     <p
                       key={i}
-                      className={`description-p ${i === 0 ? 'pt-3' : ''}`}
+                      className={`paragraph ${i === 0 ? 'pt-3' : ''}`}
                       dangerouslySetInnerHTML={{ __html: p }}
                     ></p>
                   ))}
-                  <p className='description-p'>
-                    <span className='negrita grey'>Cliente: </span>
+                  <p className='paragraph'>
+                    <span className='negrita black'>Cliente: </span>
                     {projectDetail.client}
                   </p>
-                  <p className='description-p'>
-                    <span className='negrita grey'>Sector: </span>
+                  <p className='paragraph'>
+                    <span className='negrita black'>Sector: </span>
                     {projectDetail.sector}
                   </p>
-                  <p className='description-p'>
-                    <span className='negrita grey'>Tipo de Proyecto: </span>
+                  <p className='paragraph'>
+                    <span className='negrita black'>Tipo de Proyecto: </span>
                     {projectDetail.tags.map((tag, i) => (
                       <span key={i}>
                         <NavLink
@@ -120,8 +120,8 @@ export default function ProjectDetail() {
                       </span>
                     ))}
                   </p>
-                  <p className='description-p'>
-                    <span className='negrita grey'>Mes/Año: </span>
+                  <p className='paragraph'>
+                    <span className='negrita black'>Mes/Año: </span>
                     {projectDetail.date}
                   </p>
                 </div>
