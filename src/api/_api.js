@@ -31,6 +31,7 @@ import {
 } from './19_Cone_Vecino_Vamos_a_hacerlo';
 import { AfuceIbirapitaPortada, AfuceIbirapita } from './20_Afuce_Ibirapita';
 import { CICPortada, CIC } from './21_CIC';
+import { TerraTabuPortada, TerraTabu } from './22_Terra_Tabu';
 
 const AWS_LAMBDA_FN =
   'https://ypucw7xqdb.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
@@ -59,6 +60,7 @@ function getProjects() {
       ConeVecinoVamosAHacerloPortada,
       AfuceIbirapitaPortada,
       CICPortada,
+      TerraTabuPortada,
     ]);
   });
 }
@@ -131,6 +133,9 @@ function getProjectDetail(name) {
       break;
     case 'cic':
       project = CIC;
+      break;
+    case 'terra-tabu':
+      project = TerraTabu;
       break;
     default:
       project = null;
