@@ -34,7 +34,7 @@ import { CICPortada, CIC } from './21_CIC';
 import { TerraTabuPortada, TerraTabu } from './22_Terra_Tabu';
 
 const AWS_LAMBDA_FN =
-  'https://ypucw7xqdb.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
+  'https://ro3myest47.execute-api.us-east-1.amazonaws.com/default/registerConverstarorios';
 
 function getProjects() {
   return new Promise((resolve, reject) => {
