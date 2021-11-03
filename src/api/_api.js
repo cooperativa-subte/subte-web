@@ -167,14 +167,13 @@ export const sendConvesatoriosInscripcion = async ({
   organizacion,
   mail,
   pregunta,
-  requestType,
 }) => {
   const data = {
-    nombre,
+    name: nombre,
     organizacion,
-    mail,
-    pregunta,
-    requestType,
+    email: mail,
+    subject: pregunta,
+    requestType: 'registroConversatorio',
   };
   try {
     const response = await sendPostRequest(AWS_LAMBDA_FN, data);
