@@ -103,8 +103,9 @@ const Conversatorios = () => {
                     <div>
                       <p className="fecha">Sábado 13 de noviembre 2021, 19 h</p>
                       <p className="direccion">
-                        Casa en el Aire (San Salvador 1510)
+                        Encuentro virtual por ZOOM.
                       </p>
+                      <p className="direccion">Ingresá al conversatorio haciendo click <a href="https://zoom.us/j/94711499170" target="_blank" rel="noopener noreferrer">acá</a>.</p>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         version="1.1"
@@ -303,7 +304,7 @@ const Conversatorios = () => {
                         accordionItemSelected === 'juanma' ? 'selected' : ''
                       }
                     >
-                      <p>Juan Manuel Chávez <span className='gray gt'>&gt;</span><span className='gray'>FCPU</span></p>
+                      <p>Juan Manuel Chaves <span className='gray gt'>&gt;</span><span className='gray'>FCPU</span></p>
                       <p>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
