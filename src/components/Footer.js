@@ -23,21 +23,21 @@ function Footer() {
 
             <div className="col-12 col-md-3 social-networks-container align-self-center mt-2 mt-md-0 mb-4 mb-md-0">
               <a
-                href="https://www.facebook.com/subteuy"
+                href="https://www.facebook.com/cooperativasubte"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a
-                href="https://twitter.com/subte_uy"
+                href="https://twitter.com/coop_subte"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <i className="fab fa-twitter"></i>
               </a>
               <a
-                href="https://www.instagram.com/subteuy/"
+                href="https://www.instagram.com/cooperativasubte/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
