@@ -5,7 +5,7 @@
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.17.0",
     "bootstrap": "^4.6.0",
-    "qs": "^6.10.1",
+    "qs": "^6.10.3",
     "react": "^16.14.0",
     "react-bootstrap": "^1.6.1",
     "react-device-detect": "^1.17.0",
